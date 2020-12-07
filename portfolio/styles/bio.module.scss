@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+
+.bioContainer{
+    background-color: #021b39;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bioContent{
+    width: 55%;
+    height: 95vh;
+    padding-left: 1em;
+    color: snow;
+    font-family: "montserrat", serif;
+    
+}
+.bioContent h1{
+font-weight: lighter;
+font-style: italic;;
+}
+.bioContent p{
+    font-size: 1.2em;
+}
+.bioContent span{
+    font-style: normal;
+    font-size: 1.5em;
+    font-family: 'Ranchers';
+}
+.bioContent a{
+    color: springgreen;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.bioContent a:hover{
+    color: rgb(235, 180, 78);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
