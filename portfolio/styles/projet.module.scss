@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap');
+.projetContainer{
+  font-family: 'Elsie', cursive;
+  color: #e3dada;
+  background-color: #b57645;
+  padding: 1em;
+  width: 100%;
+  height: 120vh;
+}
+.projetContent h1{
+  font-size: 4em
+}
+.projetContent{
+  width: 80%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon{
+  font-size: 1.5em;
+}
+.icon:hover{
+  cursor: pointer;
+  color: #242424;
+}
+.iconCont{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+}
