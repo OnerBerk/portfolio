@@ -1,10 +1,15 @@
 import React from "react"
 import styles from '../styles/Home.module.scss'
 import Link from "next/link"
+import Head from 'next/head'
 
 export default function Home() {
   return (
   <div className={styles.container}>
+    <Head>
+      <title>Oner Berk Portfolio</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
 
     <div className={styles.main}>
       <div className={styles.image}></div>
