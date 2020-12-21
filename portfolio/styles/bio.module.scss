@@ -27,7 +27,7 @@
   font-weight: lighter;
   font-style: italic;
 
-  background: linear-gradient(to right, snow, rgb(156, 245, 227), black);
+  background: linear-gradient(to right, snow, rgb(131, 205, 224), black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -76,3 +76,22 @@
   align-items: center;
   padding: 1em;
 }
+@media screen and (max-width:500px){
+  .bioContainer {
+   font-size: 0.75em;
+  }
+  .bioContent {
+    margin-top: -10em;
+    width: 95%;
+  }
+  .bioContent span{
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width:327px){
+  .bioContent{
+    font-size: 1.1em;
+  }
+}
+
+

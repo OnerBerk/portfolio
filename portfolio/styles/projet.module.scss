@@ -32,3 +32,11 @@
   align-items: center;
   padding: 1em;
 }
+@media screen and (max-width:700px){
+  .projetContainer {
+    font-size: 0.6em;
+  }
+  .projetContent {
+    width: 90%;
+  }
+}

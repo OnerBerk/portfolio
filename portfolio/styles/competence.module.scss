@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap');
 .compContainer{
   font-family: 'Elsie', cursive;
-
-  border: #021b39 8px solid;
   background-color: #67b192;
   padding: 1em;
   width: 100%;
@@ -32,4 +30,12 @@
   justify-content: space-around;
   align-items: center;
   padding: 1em;
+}
+@media screen and (max-width:700px){
+  .compContainer {
+    font-size: 0.6em;
+  }
+  .compContent {
+    width: 90%;
+  }
 }
