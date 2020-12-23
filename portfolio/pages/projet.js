@@ -1,3 +1,4 @@
+import React from "react"
 import styles from "../styles/projet.module.scss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Link from "next/link"

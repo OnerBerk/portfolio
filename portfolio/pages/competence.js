@@ -14,19 +14,25 @@ const Competence = () => {
             <div className={styles.compContent}>
                 <div className={styles.progressglobal}>
                     <h2> Front </h2>
-                    <div className={styles.progressBlock}><span>{"< Html > "}</span>  <Progress done={70}/></div><br/>
-                    <div className={styles.progressBlock}><span> #Css</span> <Progress done={80}/></div><br/><br/>
+                    <div className={styles.progressBlock}> <Progress done={70} color={"#F8A839"} title={"< Html > "}/></div><br/>
+                    <div className={styles.progressBlock}><Progress done={80}color={"#399BF8"} title={"#Css "}/></div><br/>
+
                     <h2> Back </h2>
-                    <div className={styles.progressBlock}><span>Node Js </span> <Progress done={85}/></div><br/><br/>
+                    <div className={styles.progressBlock}><Progress done={85} color={"#57D94D "} title={"🔶 NodeJs"}/></div><br/>
+
                     <h2> FrameWork </h2>
-                    <div className={styles.progressBlock}> <span>{"{ ...React Js } "}</span> <Progress done={85}/></div><br/><br/>
+                    <div className={styles.progressBlock}><Progress done={85} color={"#90F7FB "} title={"○ ○ ○ ReactJs "}/></div><br/>
+                    <div className={styles.progressBlock}><Progress done={85} color={"snow"} title={"•NextJs "}/></div><br/>
+
                     <h2> Base de donnée </h2>
-                    <div className={styles.progressBlock}> <span>MongoDb</span> <Progress done={70}/></div><br/>
-                    <div className={styles.progressBlock}><span> MySql </span><Progress done={50}/></div><br/><br/>
-                    <h2> Outil </h2>
-                    <div className={styles.progressBlock}><span> Git </span><Progress done={70}/></div>
-                </div><br/><br/>
-            </div><br/><br/><br/>
+                    <div className={styles.progressBlock}><Progress done={85} color={"#10AC26"} title={"🌱 MongoDb"}/></div><br/>
+                    <div className={styles.progressBlock}><Progress done={85} color={"#EA3B08"} title={"🐬 MySql"}/></div><br/>
+
+                    <h2> Outils </h2>
+                    <div className={styles.progressBlock}><Progress done={85} color={"#F5F27D "} title={" ⍼ Git"}/></div><br/>
+
+                </div><br/>
+            </div><br/>
             <div className={styles.iconCont}>
                 <Link href="/"><FontAwesomeIcon className={styles.icon} icon={faHome}/></Link>
                 <Link href="/projet"><FontAwesomeIcon className={styles.icon} icon={faAngleDoubleRight}/></Link>
