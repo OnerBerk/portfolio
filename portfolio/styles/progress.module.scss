@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+.progress {
+  background-color: #242424;
+  height: 1.2em;
+  width: 48%;
+  border: 3px double #333370;
+  opacity: 0.6;
+  border-radius: 15px;
+  position: relative;
+  margin-left: auto;
+}
+
+.progressDone {
+  background: linear-gradient(to left, #9ad09a, snow);
+  font-family: 'Luckiest Guy', cursive;
+  font-size: smaller;
+  color: #242424;
+  display: flex;
+  padding: 0.25em;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  transition: 1s ease 0.3s;
+  border-radius: 15px;
+}
