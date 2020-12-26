@@ -1,0 +1,38 @@
+.block{
+  border: black 4px double;
+  padding: 1.5em;
+  background-color: #097fa5;
+}
+.row{
+  display: flex;
+}
+.blockUnit{
+  background: #b57645;
+  width: 2.1em;
+  height: 2.1em;
+  border: 2px solid black;
+  margin: 0.01em;
+  font-size: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reset{
+  padding: 1em;
+  color: snow;
+  font-size: 1.5em;
+}
+.reset:hover{
+  color: black;
+  cursor: pointer;
+}
+.gameOver{
+  position: absolute;
+  width: 22em;
+  height: 22em;
+  border: 5px double black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3dada;
+}

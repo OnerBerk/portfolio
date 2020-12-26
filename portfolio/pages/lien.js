@@ -13,6 +13,7 @@ const Lien = (props) => {
             </div>
             <div className={styles.iconCont}>
                 <Link href="/"><FontAwesomeIcon className={styles.icon} icon={faHome}></FontAwesomeIcon></Link>
+                <Link href="/game"><FontAwesomeIcon className={styles.icon} icon={faAngleDoubleRight}></FontAwesomeIcon></Link>
             </div>
         </div>
     )

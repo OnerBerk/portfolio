@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap');
+.gameContainer{
+  font-family: 'Elsie', cursive;
+  color: #3b3838;
+  background-color: #6ec6ea;
+  padding: 1em;
+  width: 100%;
+  height: 100vh;
+}
+.gameContent h1{
+  font-size: 4em
+}
+.gameContent{
+  width: 80%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon{
+  font-size: 1.5em;
+}
+.icon:hover{
+  cursor: pointer;
+  color: #67b192;
+}
+.iconCont{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+}
+.pStyle{
+  color: #9ad09a;
+}
+.styles{
+  width: 200px;
+  margin: 20px auto;
+}
+@media screen and (max-width:700px){
+  .gameContainer {
+    font-size: 0.6em;
+  }
+  .gameContent {
+    width: 90%;
+  }
+}
