@@ -1,9 +1,15 @@
 import React, {useState, useEffect} from "react"
 import Block from "./block"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowAltCircleRight, faHome} from "@fortawesome/free-solid-svg-icons";
+import {faArrowAltCircleLeft} from "@fortawesome/free-solid-svg-icons";
+import {faArrowAltCircleUp} from "@fortawesome/free-solid-svg-icons";
+import {faArrowAltCircleDown} from "@fortawesome/free-solid-svg-icons";
 
 import cloneDeep from 'lodash/cloneDeep';
 import styles from "./2048.module.scss"
 import {useEvent} from "./utils";
+import Link from "next/link";
 
 const Game2048 = () => {
 
@@ -287,7 +293,7 @@ const Game2048 = () => {
 
     return (
         <div className={styles.block}>
-        {gameOver && <div className={styles.gameOver}>  C'est mort </div> }
+            {gameOver && <div className={styles.gameOver}> C'est mort </div>}
             {data.map((row, oneIndex) => {
                 return (
                     <div className={styles.row} key={oneIndex}>
@@ -301,7 +307,15 @@ const Game2048 = () => {
                     </div>
                 );
             })}
-            <div className={styles.reset} onClick={()=>resetGame()}> New game </div>
+            <div className={styles.reset} onClick={() => resetGame()}> New game</div>
+            <div className={styles.pad}>
+                <div className={styles.iconCont}>
+                    <p className={styles.iconUp} onClick={()=>swipeUp()}><FontAwesomeIcon  icon={faArrowAltCircleUp} /></p>
+                    <p className={styles.iconLeft} onClick={()=>swipeLeft()}><FontAwesomeIcon className={styles.iconLeft} icon={faArrowAltCircleLeft}/></p>
+                    <p className={styles.iconRight} onClick={()=>swipeRight()}><FontAwesomeIcon className={styles.iconRight} icon={faArrowAltCircleRight}/></p>
+                    <p className={styles.iconDown} onClick={()=>swipeDown()}><FontAwesomeIcon className={styles.iconDown} icon={faArrowAltCircleDown}/></p>
+                </div>
+            </div>
 
         </div>
     )
