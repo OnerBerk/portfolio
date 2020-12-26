@@ -1,7 +1,7 @@
 .block {
   border: black 4px double;
   padding: 1.5em;
-  background-color: #097fa5;
+  background-color: rgba(0,0,0,0.5);
 }
 
 .row {
@@ -9,11 +9,11 @@
 }
 
 .blockUnit {
-  background: #b57645;
   width: 2.1em;
   height: 2.1em;
   border: 2px solid black;
-  margin: 0.01em;
+  border-radius: 15px;
+  margin: 0.025em;
   font-size: 2.6em;
   display: flex;
   align-items: center;
@@ -39,7 +39,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e3dada;
+  background-image: url("https://media1.giphy.com/media/2gWG9myjzSYpQMBCPx/giphy.gif?cid=ecf05e470fkrheakmyq8e42lwgo5spatxni2x7o6myu26tji&rid=giphy.gif");
+  background-size: contain;
 }
 
 .iconCont {
@@ -80,12 +81,23 @@
   justify-content: center;
   margin: auto;
 }
-@media screen and (max-width:450px){
+//tel portrait
+@media only screen and (max-width:450px){
   .iconCont {
     display: grid;
-    grid-template-columns: 4em 4em 4em;
-    grid-template-rows: 4em 4em 4em;
-    grid-gap: 0.5em;
-    padding: 0.5em;
+  }
+}
+
+//tablette payasage
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .iconCont {
+    display: grid;
+  }
+
+}
+//tablette portrait
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  .iconCont {
+    display: grid;
   }
 }

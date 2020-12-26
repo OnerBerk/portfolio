@@ -9,7 +9,6 @@ import {faArrowAltCircleDown} from "@fortawesome/free-solid-svg-icons";
 import cloneDeep from 'lodash/cloneDeep';
 import styles from "./2048.module.scss"
 import {useEvent} from "./utils";
-import Link from "next/link";
 
 const Game2048 = () => {
 
@@ -293,7 +292,7 @@ const Game2048 = () => {
 
     return (
         <div className={styles.block}>
-            {gameOver && <div className={styles.gameOver}> C'est mort </div>}
+            {gameOver && <div className={styles.gameOver}/>}
             {data.map((row, oneIndex) => {
                 return (
                     <div className={styles.row} key={oneIndex}>
