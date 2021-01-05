@@ -3,10 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link"
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import Head from "next/head";
 
 const Bio =()=>{
     return(
         <div className={styles.bioContainer} >
+            <Head>
+                <title>Oner Berk Portfolio Bio</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <div className={styles.bioContent}>
             <h1> Bonjour, Je suis <span> Berk Öner</span> .</h1>
             <h2>  ✿ Devellopeur Fullstack Junior ✿</h2><br/>

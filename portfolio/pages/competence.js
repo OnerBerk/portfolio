@@ -7,10 +7,15 @@ import Link from "next/link"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
+import Head from "next/head";
 
 const Competence = () => {
     return (
         <div className={styles.compContainer}>
+            <Head>
+                <title>Oner Berk Portfolio Compétences </title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
                 <h1> Compétences<span>.Tech( )</span></h1>
             <div className={styles.compContent}>
                 <div className={styles.progressglobal}>

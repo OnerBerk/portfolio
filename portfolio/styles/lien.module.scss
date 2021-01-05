@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap');
-.lienContainer{
+
+.lienContainer {
   font-family: 'Elsie', cursive;
   color: #e3dada;
   background-color: #67b192;
@@ -7,10 +8,12 @@
   width: 100%;
   height: 120vh;
 }
-.lienContent h1{
+
+.lienContent h1 {
   font-size: 4em
 }
-.lienContent{
+
+.lienContent {
   width: 80%;
   display: flex;
   margin-right: auto;
@@ -19,20 +22,46 @@
   justify-content: center;
   align-items: center;
 }
-.icon{
+
+.icon {
   font-size: 1.5em;
 }
-.icon:hover{
+
+.icon:hover {
   cursor: pointer;
   color: gold;
 }
-.iconCont{
+
+.iconCont {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 1em;
 }
-@media screen and (max-width:700px){
+
+.mainLienContainer {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.github {
+  border: 5px solid black;
+  padding: 1em;;
+  margin-bottom: 1em;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.github:hover {
+  background-color: #aff3dc;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
   .lienContainer {
     font-size: 0.6em;
   }

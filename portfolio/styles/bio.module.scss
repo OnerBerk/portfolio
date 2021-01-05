@@ -4,16 +4,15 @@
 
 .bioContainer {
   background-color: #021b39;
-  width: 100%;
-  height: 120vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 120vh;
 }
 
 .bioContent {
-  width: 55%;
-  height: 95vh;
+  width: 70%;
   padding-left: 1em;
   font-family: "montserrat", serif;
   font-size: 1.3em;
@@ -81,7 +80,6 @@
    font-size: 0.75em;
   }
   .bioContent {
-    margin-top: -10em;
     width: 95%;
   }
   .bioContent span{
