@@ -18,6 +18,11 @@ const Projet = () => {
             <div className={styles.projetContent}>
                 <h1> Projet </h1>
                 <div className={styles.mainProjetContainer}>
+                    <iframe
+                        className={styles.tictac}
+                        src="https://configtictac-5uzms56qj.vercel.app/"
+                        frameBorder="0"
+                    />
 
                 </div>
 

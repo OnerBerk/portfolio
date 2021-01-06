@@ -4,9 +4,8 @@ import Link from "next/link"
 import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
-import Image from 'next/image'
 
-const Lien = (props) => {
+const Lien = () => {
     return (
         <div className={styles.lienContainer}>
             <Head>
@@ -26,15 +25,14 @@ const Lien = (props) => {
                         <img
                             alt="github logo"
                             className={styles.github}
-                            target="_blank"
                             src="/linkedin.png"/>
                     </Link>
                 </div>
 
             </div>
             <div className={styles.iconCont}>
-                <Link href="/"><FontAwesomeIcon className={styles.icon} icon={faHome}></FontAwesomeIcon></Link>
-                <Link href="/game"><FontAwesomeIcon className={styles.icon} icon={faAngleDoubleRight}></FontAwesomeIcon></Link>
+                <Link href="/"><FontAwesomeIcon className={styles.icon} icon={faHome}/></Link>
+                <Link href="/game"><FontAwesomeIcon className={styles.icon} icon={faAngleDoubleRight}/></Link>
             </div>
         </div>
     )
