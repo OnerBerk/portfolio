@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ribeye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
 
 .progress {
+  display: flex;
   background-color: #242424;
-  height: 2em;
-  width: 68%;
+  height: 1.5em;
+  width: 98%;
   border: 3px double #333370;
   opacity: 0.6;
-  border-radius: 15px;
 }
 
 .progressDone {
-  font-family:'Ribeye', cursive,  serif;
+  font-family: 'Gabriela','Playfair Display SC', cursive,  serif;
   font-weight: bold;
   padding-left: 1em;
   color: #242424;
@@ -23,5 +23,10 @@
   width: 0;
   opacity: 0;
   transition: 1s ease 0.3s;
-  border-radius: 15px;
+}
+
+@media screen and (max-width:600px){
+.progressDone{
+  font-size: smaller;
+}
 }

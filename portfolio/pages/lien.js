@@ -21,7 +21,7 @@ const Lien = () => {
                         className={styles.github}
                         src="/github.png"/>
                     </Link>
-                    <Link href="https://www.linkedin.com/in/onerberk/" >
+                    <Link href="https://www.linkedin.com/in/onerberk" >
                         <img
                             alt="github logo"
                             className={styles.github}

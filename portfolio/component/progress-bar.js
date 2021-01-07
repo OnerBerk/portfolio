@@ -14,7 +14,8 @@ const Progress =({done,color,title})=>{
     return(
         <div className={styles.progress}>
             <div className={styles.progressDone} style={style}>
-                {title}
+                {title} {'   '}
+                {done}%
             </div>
 
         </div>
