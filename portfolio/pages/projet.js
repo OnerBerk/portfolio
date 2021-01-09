@@ -25,7 +25,7 @@ const Projet = () => {
                             <div className={styles.content}>
                                 <h2 className={styles.title}>Module OnDemand</h2>
                                 <p className={styles.copy}>
-                                    Création d'un Composant dynamique en Reactjs Pour light & Shadows,
+                                    Composant dynamique Reactjs Pour light & Shadows,
                                     qui charge un modele 3d generé par playcanvas.
                                 </p>
                                 <Link href="https://configtictac.vercel.app/" passHref={true}>
@@ -55,7 +55,7 @@ const Projet = () => {
                                 <h2 className={styles.title}> Ca arrive </h2>
                                 <p className={styles.copy}></p>
                                 <Link href="https://configtictac.vercel.app/" passHref={true}>
-                                    <button className={styles.btn}>View Trips</button>
+                                    <button className={styles.btn}> Apercu </button>
                                 </Link>
                             </div>
                         </div>
@@ -64,7 +64,7 @@ const Projet = () => {
                             <div className={styles.content}>
                                 <h2 className={styles.title}>Ca arrive </h2>
                                 <p className={styles.copy}></p>
-                                <button className={styles.btn}>View Trips</button>
+                                <button className={styles.btn}> Apercu </button>
                             </div>
                         </div>
 

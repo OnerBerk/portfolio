@@ -118,7 +118,7 @@
     transform: translateY(-50%);
     transition: transform calc(var(--d) * 2) var(--e);
   }
-  background-image: url("../public/comos.webp");
+  background-image: url("../public/tree.webp");
   background-size: cover;
 }
 .content {
@@ -144,7 +144,7 @@
 
 .copy {
   font-family: var(--font-serif);
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   line-height: 1.35;
 }
 
@@ -157,7 +157,7 @@
   letter-spacing: 0.025rem;
   text-transform: uppercase;
   color: whitesmoke;
-  background-color: black;
+  background-color: #282525;
   border: none;
   border-radius: 15px;
 
