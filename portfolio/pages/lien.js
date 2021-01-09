@@ -10,22 +10,27 @@ const Lien = () => {
         <div className={styles.lienContainer}>
             <Head>
                 <title>Oner Berk Portfolio Lien </title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
             </Head>
             <div className={styles.lienContent}>
                 <h1> Liens </h1>
                 <div className={styles.mainLienContainer}>
-                    <Link href="https://github.com/OnerBerk" >
-                    <img
-                        alt="github logo"
-                        className={styles.github}
-                        src="/github.png"/>
-                    </Link>
-                    <Link href="https://www.linkedin.com/in/onerberk" >
+                    <Link href="https://github.com/OnerBerk">
+                        <a target="_blank">
                         <img
                             alt="github logo"
                             className={styles.github}
-                            src="/linkedin.png"/>
+                            src="/github.png"/>
+                        </a>
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/onerberk" >
+                        <a target="_blank">
+                            <img
+                                alt="github logo"
+                                className={styles.github}
+                                src="/linkedin.png"/>
+                        </a>
+
                     </Link>
                 </div>
 
