@@ -14,12 +14,12 @@ const Bio =()=>{
             </Head>
             <div className={styles.bioContent}>
             <h1> Bonjour, Je suis <span> Berk Öner</span> .</h1>
-            <h2>  ✿ Devellopeur Fullstack Junior ✿</h2><br/>
+            <h2>  ✿ Développeur  Fullstack Junior ✿</h2><br/>
             <div>
-                <div className={styles.a} >Bienvenue dans mon Portfolio</div> avec certain de
+                <div className={styles.a} >Bienvenue dans mon Portfolio</div> avec certains de
                 <Link href="/projet"> Mes Projets.</Link><br/><br/>
                 Après une Vingtaine d'années dans le commerce et le Management,
-                <br/> j'ai decidé de me reconvertir dans le Devellopement Informatique .<br/>
+                <br/> j'ai décidé de me reconvertir dans le Développement  Informatique .<br/>
                 Formé à <a href="https://www.coding-academy.fr/code-go/" target="blank"> Epitech Paris. </a> 
                 veille sur  <a href="https://www.udemy.com/"> Udemy, </a>
                             <a href="https://openclassrooms.com/fr/">OpenClassroom </a> <br/>
@@ -27,9 +27,9 @@ const Bio =()=>{
                 Je suis Aujourd'hui disponible en Freelance ou en salarié .
             </div><br/>
             <div>
-                <div className={styles.b}>A ce stade il faut parlé un peu de moi,</div>
+                <div className={styles.b}>A ce stade il faut parler un peu de moi,</div>
                 <br/> je suis passionné du Japon ,
-                creatif à travers la Linogravure et le Devellopement.<br/>
+                créatif à travers la Linogravure et le Développement.<br/>
                 D'un Naturel Curieux, J'aime les challenges et l'apprentissage.
             </div><br/><br/>
             <div className={styles.iconCont}>
