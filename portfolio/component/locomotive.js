@@ -4,9 +4,6 @@ import styles from "../styles/locomotive.module.scss"
 const Locomotive = () => {
     return (
         <section className={styles.stage}>
-            <div className={styles.sky}>
-                <div className={styles.cloud}/>
-            </div>
             <div className={styles.train}>
                 <div className={styles.wagon}/>
                 <div className={styles.wagon}/>
