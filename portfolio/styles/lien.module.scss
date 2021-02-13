@@ -33,8 +33,10 @@
 }
 
 .iconCont {
+  width: 80%;
+  margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 1em;
 }
@@ -52,16 +54,24 @@
 
 .github {
   border: 3px solid black;
-  padding: 1em;;
+  padding: 1em;
   margin-bottom: 1em;
   width: 18em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.github a{
+  font-size: 2.7em;
+  color: black;
+  text-shadow: 1px 2px 3px rgba(0,0,0, 0.5);
+}
 .github:hover {
   background-color: #aff3dc;
   cursor: pointer;
+}
+.mail{
+  font-size: 3.5em;
 }
 
 @media screen and (max-width: 700px) {

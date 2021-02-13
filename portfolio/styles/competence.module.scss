@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap');
 .compContainer{
-  font-family: 'Elsie', cursive;
   background-color: #282727;
+  font-family: 'Elsie', cursive;
   padding: 1em;
   width: 100%;
-  height: 135vh;
+  height: 100vh;
 }
 .compContainer h1{
   font-size: 4em;
@@ -39,8 +39,10 @@
   color:#b57645;
 }
 .iconCont{
+  margin: auto;
+  width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 1em;
 }

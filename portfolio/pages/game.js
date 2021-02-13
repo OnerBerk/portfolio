@@ -14,12 +14,12 @@ const Game =()=>{
                 <title>Oner Berk Portfolio Game </title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
+            <div className={styles.iconCont}>
+                <Link href="/"><i><FontAwesomeIcon className={styles.icon} icon={faHome}/></i></Link>
+            </div>
             <div className={styles.gameContent}>
                 <h1> Game </h1>
                 <Game2048/>
-            <div className={styles.iconCont}>
-                <Link href="/"><FontAwesomeIcon className={styles.icon} icon={faHome}/></Link>
-            </div>
             </div>
         </div>
     )

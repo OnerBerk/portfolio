@@ -15,6 +15,10 @@ const Projet = () => {
                 <title>Oner Berk Portfolio Projet</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
             </Head>
+                <div className={styles.iconCont}>
+                    <Link href="/"><i><FontAwesomeIcon className={styles.icon} icon={faHome}/></i></Link>
+                    <Link href="/lien"><i><FontAwesomeIcon className={styles.icon} icon={faAngleDoubleRight}/></i></Link>
+                </div>
 
             <div className={styles.projetContent}>
                 <h1> Projet </h1>
@@ -95,16 +99,9 @@ const Projet = () => {
                                 </Link>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
 
-            </div>
-            <div className={styles.iconCont}>
-                <Link href="/"><a> <FontAwesomeIcon className={styles.icon} icon={faHome}/></a></Link>
-                <Link href="/lien"><a><FontAwesomeIcon className={styles.icon} icon={faAngleDoubleRight}/></a></Link>
             </div>
         </div>
     )
