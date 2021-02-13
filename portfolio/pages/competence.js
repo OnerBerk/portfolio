@@ -35,8 +35,8 @@ const Competence = () => {
                     <div className={styles.progressBlock}><Progress done={45} color={"#EA3B08"} title={"MySql"}/></div><br/>
                     <div className={styles.progressBlock}><Progress done={70} color={"#F5F27D "} title={"Git"}/></div><br/>
                 </div><br/>
-                <Locomotive/>
             </div><br/>
+                <div className={styles.train}><Locomotive/></div>
         </div>
     )
 }

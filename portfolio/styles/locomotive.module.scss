@@ -43,7 +43,7 @@ $yellow:#ffc928;
 
 .sky .cloud:nth-child(1) {
   -webkit-animation: wind 80s infinite;
-  animation: wind 50s infinite;
+  animation: wind 100s infinite;
 }
 
 .sky .cloud:nth-child(2) {
@@ -197,7 +197,7 @@ $yellow:#ffc928;
 
 .train {
   -webkit-animation: voyage 20s linear infinite;
-  animation: voyage 20s linear infinite;
+  animation: voyage 80s linear infinite;
 }
 
 
