@@ -35,7 +35,7 @@ const Lien = () => {
                                 src="/linkedin.png"/>
                         </a>
                     </Link>
-                   <span className={styles.github}><a href="../public/cvDevFrancais.pdf" download="cvDevFrancais.pdf"> Curiculum<br/> </a></span>
+                   <span className={styles.github}><a href="../public/cvDevFr.pdf" download="cvDevFr.pdf"> Curiculum<br/> </a></span>
                     <a href="mailto:oner_berk@hotmail.com"><i><FontAwesomeIcon className={styles.mail} icon={faEnvelope}/></i></a>
                 </div>
             </div>

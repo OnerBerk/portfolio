@@ -84,17 +84,18 @@ const Projet = () => {
 
                         <div className={styles.card}
                              style={{
-                                 backgroundImage: "url(/soon.webp)",
-                                 backgroundSize: 'contain',
+                                 backgroundImage: "url(/yellow.jpg)",
                                  backgroundRepeat: 'no-repeat',
                                  backgroundColor:"black"
                              }}>
                             <div className={styles.content}>
-                                <h2 className={styles.title}>Ca arrive </h2>
-                                <p className={styles.copy}></p>
-                                <Link href="https://www.joza-it.fr/" passHref={true}>
+                                <h2 className={styles.title}>Last Sentence </h2>
+                                <p className={styles.copy}>
+                                    Création d'une application de partage de citations. En cous de création
+                                </p>
+                                <Link href="https://lastsentence.herokuapp.com/" passHref={true}>
                                     <a target="_blank">
-                                        <button className={styles.btn}> Apercu</button>
+                                        <button className={styles.btn}> Apercu </button>
                                     </a>
                                 </Link>
                             </div>

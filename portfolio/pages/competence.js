@@ -7,8 +7,6 @@ import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
 
-import Locomotive from '../component/locomotive'
-
 const Competence = () => {
     return (
         <div className={styles.compContainer}>
@@ -36,7 +34,6 @@ const Competence = () => {
                     <div className={styles.progressBlock}><Progress done={70} color={"#F5F27D "} title={"Git"}/></div><br/>
                 </div><br/>
             </div><br/>
-                <div className={styles.train}><Locomotive/></div>
         </div>
     )
 }

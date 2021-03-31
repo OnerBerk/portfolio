@@ -1,45 +1,11 @@
 $red:#e04f60;
 $yellow:#ffc928;
 
-
-/*CLOUDS*/
-
 .sky {
   position: relative;
 }
 
-.cloud {
-  margin: 5% 0 0 100%;
-  position: relative;
-}
 
-.cloud:before,
-.cloud:after {
-  position: absolute;
-  content: '';
-}
-
-.cloud,
-.cloud:before,
-.cloud:after {
-  background: #fff;
-  border-radius: 50%;
-  border: 25px solid #fff;
-  width: 0.5%;
-  overflow: visible;
-}
-
-.cloud:before {
-  top: -35px;
-  right: -60px;
-  border-width: 30px;
-}
-
-.cloud:after {
-  bottom: -25px;
-  right: -95px;
-  border-width: 28px;
-}
 
 .sky .cloud:nth-child(1) {
   -webkit-animation: wind 80s infinite;
@@ -108,9 +74,9 @@ $yellow:#ffc928;
   border: 6px solid #333;
   bottom: -10px;
   background-color: #666;
-  -webkit-animation: spin 4s linear infinite;
-  -moz-animation: spin 4s linear infinite;
-  animation: spin 4s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 .wagon:before {
@@ -183,7 +149,7 @@ $yellow:#ffc928;
   right: -6px;
   bottom: 10px;
   -webkit-animation: puf 4s 2;
-  animation: puf 4s 2;
+  animation: puf 2s 2;
 }
 
 .locomotive .light {
