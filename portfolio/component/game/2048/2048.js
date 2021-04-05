@@ -298,7 +298,7 @@ const Game2048 = () => {
                     <div className={styles.row} key={oneIndex}>
                         {row.map((digit, index) => {
                             return (
-                                <div>
+                                <div key={index}>
                                     <Block num={digit} key={index}/>
                                 </div>
                             )

@@ -1,5 +1,4 @@
 import React from "react"
-import styles from "../styles/competence.module.scss";
 import Progress from "../component/progress-bar"
 import Link from "next/link"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -7,8 +6,18 @@ import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
 
+import { motion } from 'framer-motion';
+import pageVariants from "../component/motionVariant/variant";
+import styles from "../styles/competence.module.scss";
+
 const Competence = () => {
     return (
+        <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+        >
         <div className={styles.compContainer}>
             <Head>
                 <title>Oner Berk Portfolio Compétences </title>
@@ -35,6 +44,7 @@ const Competence = () => {
                 </div><br/>
             </div><br/>
         </div>
+        </motion.div>
     )
 }
 export default Competence

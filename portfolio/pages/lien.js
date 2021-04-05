@@ -1,12 +1,22 @@
-import styles from "../styles/lien.module.scss";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Link from "next/link"
-import {faAngleDoubleRight, faHome, faEnvelope} from "@fortawesome/free-solid-svg-icons";
-import Head from "next/head";
 import React from "react";
+import Head from "next/head";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faAngleDoubleRight, faHome, faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link"
+
+import { motion } from 'framer-motion';
+import pageVariants from "../component/motionVariant/variant";
+
+import styles from "../styles/lien.module.scss";
 
 const Lien = () => {
     return (
+        <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+        >
         <div className={styles.lienContainer}>
             <Head>
                 <title>Oner Berk Portfolio Lien </title>
@@ -40,6 +50,7 @@ const Lien = () => {
                 </div>
             </div>
         </div>
+        </motion.div>
     )
 }
 export default Lien

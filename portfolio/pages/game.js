@@ -1,14 +1,24 @@
+import React from "react";
 import Game2048 from "../component/game/2048/2048"
 
 import Link from "next/link";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
+import Head from "next/head";
+
+import { motion } from 'framer-motion';
+import pageVariants from "../component/motionVariant/variant";
 
 import styles from "../styles/game.module.scss";
-import Head from "next/head";
 
 const Game =()=>{
     return(
+        <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+        >
         <div className={styles.gameContainer}>
             <Head>
                 <title>Oner Berk Portfolio Game </title>
@@ -22,6 +32,7 @@ const Game =()=>{
                 <Game2048/>
             </div>
         </div>
+        </motion.div>
     )
 }
 export default Game

@@ -1,15 +1,24 @@
 import React from "react"
 import Head from "next/head";
 import Link from "next/link"
-import styles from "../styles/projet.module.scss";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
 
+import {motion} from "framer-motion";
+import pageVariants from "../component/motionVariant/variant";
+
+import styles from "../styles/projet.module.scss";
 
 const Projet = () => {
     return (
+        <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+        >
         <div className={styles.projetContainer}>
             <Head>
                 <title>Oner Berk Portfolio Projet</title>
@@ -133,6 +142,7 @@ const Projet = () => {
 
             </div>
         </div>
+        </motion.div>
     )
 }
 export default Projet

@@ -4,10 +4,20 @@ import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
 
+import { motion } from 'framer-motion';
+import pageVariants from "../component/motionVariant/variant";
+
 import styles from "../styles/bio.module.scss"
+
 
 const Bio = () => {
     return (
+        <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+        >
         <div className={styles.bioContainer}>
 
             <Head>
@@ -46,6 +56,7 @@ const Bio = () => {
                 <br/><br/>
             </div>
         </div>
+        </motion.div>
     )
 }
 export default Bio

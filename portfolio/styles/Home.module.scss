@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 .container {
-  height:100vh;
+  min-height:100vh;
   display: grid;
   grid-gap: 0.1em;
   grid-template-columns: 25% 25% 25% 25%;

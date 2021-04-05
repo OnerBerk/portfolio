@@ -1,10 +1,19 @@
 import Link from "next/link"
 import Head from 'next/head'
 
+import { motion } from 'framer-motion';
+import pageVariants from "../component/motionVariant/variant";
+
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
+    <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+    >
   <div className={styles.container}>
     <Head>
       <title>Oner Berk Portfolio</title>
@@ -60,7 +69,7 @@ export default function Home() {
       </div>
       </Link>
     </div>
-
   </div>
+    </motion.div>
   )
 }
