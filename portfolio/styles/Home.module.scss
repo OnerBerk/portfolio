@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 .container {
   height:100vh;
   display: grid;
@@ -100,7 +101,7 @@
   height: 100%;
 }
 .maincont{
-  font-family: montserrat, sans-serif;
+  font-family: 'Merriweather', serif;
   border: 1.5px solid black;
   width: 35%;
   position: absolute;
@@ -112,7 +113,7 @@
   border: 2px solid black;
 }
 .maincont3{
-  font-family: montserrat, sans-serif;
+  font-family: 'Merriweather', serif;
   border: 1.5px solid black;
   padding: 0.5em;
   position: absolute;
@@ -120,11 +121,11 @@
 }
 .maincont3:hover{
   color: snow;
-  background-color: rgb(120, 149, 190);
+  background-color: rgba(22, 22, 22,0.2);
   border: 2px solid black;
 }
 .maincont4{
-  font-family: montserrat, sans-serif;
+  font-family: 'Merriweather', serif;
   border: 1.5px solid black;
   padding: 0.5em;
   position: absolute;
@@ -133,12 +134,12 @@
 }
 .maincont4:hover{
   color: snow;
-  background-color: rgb(120, 149, 190);
+  background-color: rgba(22, 22, 22,0.5);
   border: 2px solid black;
 }
 
 .maincont5{
-  font-family: montserrat, sans-serif;
+  font-family: 'Merriweather', serif;
   border: 1.5px solid black;
   padding: 0.5em;
   position: absolute;
@@ -146,7 +147,7 @@
 }
 .maincont5:hover{
   color: snow;
-  background-color: rgb(120, 149, 190);
+  background-color: rgba(22, 22, 22,0.5);
   border: 2px solid snow;
 }
 .maincont h2{

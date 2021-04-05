@@ -1,9 +1,10 @@
-import styles from "../styles/bio.module.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Link from "next/link"
 import {faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
+
+import styles from "../styles/bio.module.scss"
 
 const Bio = () => {
     return (

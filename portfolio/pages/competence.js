@@ -22,7 +22,7 @@ const Competence = () => {
 
             <div className={styles.compContent}>
                 <div className={styles.progressglobal}>
-                    <div className={styles.progressBlock}> <Progress done={90} color={"#f8a839"} title={"< Html > Almost "}/></div><br/>
+                    <div className={styles.progressBlock}><Progress done={90} color={"#f8a839"} title={"< Html > Almost "}/></div><br/>
                     <div className={styles.progressBlock}><Progress done={85}color={"#399BF8"} title={"#Css - .Scss "}/></div><br/>
                     <div className={styles.progressBlock}><Progress done={75} color={"#57D94D "} title={"NodeJs"}/></div><br/>
                     <div className={styles.progressBlock}><Progress done={60} color={"#efcb98"} title={"Python"}/></div><br/>
