@@ -1,44 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap');
-.compContainer{
-  background-color: #282727;
+
+.compContainer {
+  background-color: #3f3e3e;
   font-family: 'Elsie', cursive;
   padding: 1em;
   width: 100%;
   min-height: 100vh;
 }
-.compContainer h1{
+
+.compContainer h1 {
   font-size: 4em;
   color: snow;
   text-align: center;
 }
-.compContainer span{
+
+.compContainer span {
   color: #5555c8;
 }
-.compContent span{
+
+.compContent span {
   color: #9ad09a;
 }
-.compContent h2{
+
+.compContent h2 {
   font-size: 1.8em;
 
 }
-.compContent{
+
+.compContent {
   width: 80%;
-  display: flex;
   margin-right: auto;
   margin-left: auto;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-.icon{
-  font-size: 1.5em;
+
+.progressglobal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
   color: snow;
+  padding: 1em;
+
+  div {
+    margin: auto;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+  }
 }
-.icon:hover{
+
+.icon {
+  font-size: 1.5em;
+  color: #940a6f;
+}
+
+.icon:hover {
   cursor: pointer;
-  color:#b57645;
+  color: #b57645;
 }
-.iconCont{
+
+.iconCont {
   margin: auto;
   width: 80%;
   display: flex;
@@ -46,7 +68,8 @@
   align-items: center;
   padding: 1em;
 }
-.progressBlock{
+
+.progressBlock {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,14 +77,8 @@
   font-size: 1.4em;
 }
 
-.progressglobal{
-  width: 75%;
-  color: snow;
-  padding: 1em;
-}
-.train{
-}
-@media screen and (max-width:850px){
+
+@media screen and (max-width: 850px) {
   .compContainer {
     font-size: 0.9em;
   }
@@ -69,23 +86,32 @@
     width: 90%;
     font-size: 0.9em;
   }
-  .compContainer h1{
+  .compContainer h1 {
     font-size: 3.2em;
   }
 }
-@media screen and (max-width:450px){
+
+@media screen and (max-width: 450px) {
   .compContainer {
     font-size: 0.7em;
   }
-  .compContainer h1{
+  .compContainer h1 {
     font-size: 2.6em;
   }
 }
-@media screen and (max-width:300px){
+
+@media screen and (max-width: 300px) {
   .compContainer {
     font-size: 0.7em;
   }
-  .compContainer h1{
+  .compContainer h1 {
     font-size: 2.2em;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .progressglobal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
