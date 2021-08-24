@@ -35,7 +35,7 @@ const Competence = () => {
 
                 <div className={styles.compContent}>
                     <div className={styles.progressglobal}>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle} >
                             <p>HTML</p>
                             <CircularProgressbarWithChildren
                                 value={90}
@@ -47,7 +47,7 @@ const Competence = () => {
                                 <img style={{width: 80}} src="/html-5.png" alt="html-logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>CSS</p>
                             <CircularProgressbarWithChildren
                                 value={85}
@@ -59,7 +59,7 @@ const Competence = () => {
                                 <img style={{width: 80}} src="/css.png" alt="css-logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>JAVASCRIPT</p>
                             <CircularProgressbarWithChildren
                                 value={65}
@@ -71,7 +71,7 @@ const Competence = () => {
                                 <img style={{width: 80}} src="/javascript.png" alt="javascript logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>NODE JS</p>
                             <CircularProgressbarWithChildren
                                 value={75}
@@ -83,7 +83,7 @@ const Competence = () => {
                                 <img style={{width: 78}} src="/nodeJs.png" alt="nodeJs logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>REACT JS</p>
                             <CircularProgressbarWithChildren
                                 value={85}
@@ -95,7 +95,7 @@ const Competence = () => {
                                 <img style={{width: 98}} src="/react.png" alt="react js logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>NEXT JS</p>
                             <CircularProgressbarWithChildren
                                 value={75}
@@ -107,7 +107,7 @@ const Competence = () => {
                                 <img style={{width: 98}} src="/next-js.png" alt="next js logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>GRAPHQL</p>
                             <CircularProgressbarWithChildren
                                 value={70}
@@ -119,7 +119,7 @@ const Competence = () => {
                                 <img style={{width: 98, marginLeft: 5}} src="/graphql.png" alt="graphql logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>POSTRESQL</p>
                             <CircularProgressbarWithChildren
                                 value={65}
@@ -131,7 +131,7 @@ const Competence = () => {
                                 <img style={{width: 85}} src="/psql.png" alt="psql logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>MONGODB</p>
                             <CircularProgressbarWithChildren
                                 value={85}
@@ -143,7 +143,7 @@ const Competence = () => {
                                 <img style={{width: 35}} src="/mongoDb.png" alt="graphql logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>DOCKER</p>
                             <CircularProgressbarWithChildren
                                 value={55}
@@ -154,7 +154,7 @@ const Competence = () => {
                                 <img style={{width: 95}} src="/docker.png" alt="docker-logo"/>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div style={{width: 150}}>
+                        <div className={styles.circle}>
                             <p>GIT</p>
                             <CircularProgressbarWithChildren
                                 value={75}
