@@ -25,7 +25,7 @@ export default function Home() {
       <Link href="/bio" >
         <div className={styles.maincont}>
           <h2>Oner Berk <br/></h2>
-          <h3> Devellopeur Web </h3>
+          <h3> développeur Web </h3>
           <h3>✻ On.Air ✻</h3>
         </div>
         </Link>
@@ -37,7 +37,7 @@ export default function Home() {
       <div className={styles.image2}/>
         <Link href="/projet" >
           <div className={styles.maincont}>
-          <h2>Projet</h2>
+          <h2>Projets</h2>
           </div>
         </Link>
 
@@ -65,7 +65,7 @@ export default function Home() {
       <div className={styles.image5}/>
       <Link href="/competence">
       <div className={styles.maincont5}>
-        <h2>Competences</h2>
+        <h2>Compétences</h2>
       </div>
       </Link>
     </div>
