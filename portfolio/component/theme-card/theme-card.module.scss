@@ -1,0 +1,15 @@
+.themeCardMain{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  height: 5vh;
+  width:10vw ;
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  font-weight: 500;
+}
+.themeCardMain:hover{
+  font-weight: 600;
+}

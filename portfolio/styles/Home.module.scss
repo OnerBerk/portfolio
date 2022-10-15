@@ -1,8 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 
-.main{
-  width: 100vw;
-  min-height: 100vh;
+.main {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .bo {
+    width: 25em;
+
+    .name {
+      color: darkgoldenrod;
+      font-stretch: 100%;
+
+    }
+
+    .buis {
+      background-color: darkgoldenrod;
+      font-size: 2em;
+      color: #16457a;
+    }
+  }
 }
 
 

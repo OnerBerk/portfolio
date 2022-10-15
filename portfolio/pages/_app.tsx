@@ -1,8 +1,13 @@
-import {ThemeProvider} from "next-themes";
 import '../styles/globals.scss'
+import {ThemeProvider} from "next-themes";
 import {Provider} from "react-redux";
 import {store} from "../store/store";
 import {AppProps} from "next/app";
+
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+
 
 
 function MyApp({Component, pageProps}: AppProps) {
