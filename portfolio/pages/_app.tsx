@@ -1,21 +1,19 @@
 import '../styles/globals.scss'
-import {ThemeProvider} from "next-themes";
 import {Provider} from "react-redux";
 import {store} from "../store/store";
 import {AppProps} from "next/app";
 
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { config } from "@fortawesome/fontawesome-svg-core";
-config.autoAddCss = false;
 
 
 
 function MyApp({Component, pageProps}: AppProps) {
     return (
         <Provider store={store}>
-            <ThemeProvider>
+          <meta
+            name='viewport'
+            content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
+          />
                 <Component {...pageProps} />
-            </ThemeProvider>
         </Provider>
     )
 }

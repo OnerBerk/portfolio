@@ -1,35 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
+
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Advent Pro', Droid Sans, Helvetica Neue, sans-serif;
+  letter-spacing: 3px;
   width: 100vw;
-  height: 100vh;
 }
+
 * {
   box-sizing: border-box;
-}
-:root {
-  --background: white;
-  --text-primary: black;
-  --text-secondary: royalblue;
-  --accent: purple;
-}
-[data-theme='dark'] {
-  --background: black;
-  --text-primary: white;
-  --text-secondary: grey;
-  --accent: darkred;
-}
-[data-theme='light'] {
-  --background: #ffffff;
-  --text-primary: #0c0000;
-  --text-secondary: grey;
-  --accent: darkred;
-}
-[data-theme='blue'] {
-  --background: #16457a;
-  --text-primary: #0c0000;
-  --text-secondary: grey;
-  --accent: darkred;
 }

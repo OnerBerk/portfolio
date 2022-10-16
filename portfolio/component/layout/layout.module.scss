@@ -1,8 +1,7 @@
 .layoutMain {
   width: 100vw;
-  min-height: 100vh;
   display: grid;
-  grid-template-rows: 6vh 94vh;
+  grid-template-rows: 8vh 92vh;
   position: relative;
 
   .themeContainer {
@@ -12,6 +11,7 @@
     width: 100%;
     height: 20vh;
     display: flex;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px -25px 50px -12px;
 
     .themeContainerLeft {
       position: absolute;
@@ -20,13 +20,26 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      .container{
+
+      .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 1em;
         width: 70vw;
         height: 10vh;
+      }
+
+      @media screen and (max-width: 800px) {
+        .container {
+          align-items: center;
+          justify-content: center;
+          display: grid;
+          grid-template-columns: 32% 32% 32%;
+          grid-gap: 0.5em;
+          grid-template-rows: 50% 50%;
+          height: 15vh;
+        }
       }
     }
 
@@ -41,15 +54,23 @@
   }
 
   .layoutHeader {
+    border-bottom: 1px solid #0c0000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left: 1em;
     padding-right: 1em;
-    color: blanchedalmond;
-    img {
-      cursor: pointer;
-      height: 4vh;
+
+    .headerRight {
+      display: flex;
+      align-items: center;
+      width: 20vh;
+      justify-content: space-between;
+
+      img {
+        cursor: pointer;
+        height: 5vh;
+      }
     }
   }
 

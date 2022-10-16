@@ -5,6 +5,7 @@ import {
     useSelector as useSelectorBase,
 } from 'react-redux';
 import themeHeaderSlice from "./slices/header/themeHeader.slice";
+import themeSlice from "./slices/theme/theme.slice";
 
 /**
  * Creates a store and includes all the slices as reducers.
@@ -12,6 +13,7 @@ import themeHeaderSlice from "./slices/header/themeHeader.slice";
 export const store = configureStore({
     reducer: {
         open: themeHeaderSlice,
+        theme:themeSlice
     },
 });
 

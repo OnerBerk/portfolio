@@ -1,26 +1,22 @@
-import styles from '../styles/Home.module.scss'
-import {useTheme} from "next-themes";
-import {useDispatch, useSelector} from "../store/store";
+import styles from "../styles/Home.module.scss";
 import Layout from "../component/layout/layout";
+import {useSelector} from "../store/store";
+import {getTheme} from "../store/slices/theme/theme.slice";
 
 function Home() {
-    const dispatch = useDispatch()
-    const {theme, setTheme} = useTheme()
+  const {bgColor, primaryColor, secondaryColor} = useSelector(getTheme);
 
-    return (
-        <Layout title="Öner home">
-            <div className={styles.main}>
-                <div className={styles.bo}>
-                    <div className={styles.name}>{`ÖNER Berk`}</div>
-                    <div className={styles.buis}>Développeur web</div>
-                </div>
-
-                {/*<button onClick={() => setTheme('dark')}>Dark Mode</button>
-                    <button onClick={() => setTheme('light')}>Light</button>
-                    <button onClick={() => setTheme('blue')}>Blue</button>*/}
-            </div>
-        </Layout>
-    )
+  return (
+    <Layout title="Öner home">
+      <div className={styles.main}>
+        <div className={styles.bo}>
+          <div style={{color: primaryColor}} className={styles.name}>{`ÖNER Berk`}</div>
+          <div style={{color: bgColor, backgroundColor: secondaryColor}} className={styles.buis}>Développeur web
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
 }
 
-export default Home
+export default Home;
