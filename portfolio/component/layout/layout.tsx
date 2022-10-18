@@ -1,13 +1,5 @@
 import styles from "./layout.module.scss";
 import Head from "next/head";
-// @ts-ignore
-import daruma1 from "../../public/daruma1.png";
-// @ts-ignore
-import closeRed from "../../public/close-red.png";
-// @ts-ignore
-import closeYellow from "../../public/close yellow.png";
-// @ts-ignore
-import arrowRight from "../../public/arrow-right.png";
 
 import {useDispatch, useSelector} from "../../store/store";
 import {
@@ -18,8 +10,11 @@ import {
 import ThemeCard from "../theme-card/theme-card";
 import {useEffect, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCircleXmark} from "@fortawesome/free-solid-svg-icons";
+import {faCircleXmark, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {getTheme, setStoreTheme} from "../../store/slices/theme/theme.slice";
+import SocialMedia from "../social-media/social-media";
+import PdfPrev from "../pdf-preview/pdf-prev";
+import Image from "next/image";
 
 export type LayoutProps = {
   title: string
@@ -38,6 +33,7 @@ const Layout = ({children, title}: LayoutProps) => {
 
   const {bgColor, primaryColor, secondaryColor} = useSelector(getTheme);
   const [prevThem, setPrevThem] = useState(initialPrevColors);
+  const [openPdf, setOpenPdf] = useState(false);
 
   const OnHover = (bgColor: string, color: string, secondaryColor: string) => {
     setPrevThem({
@@ -58,6 +54,7 @@ const Layout = ({children, title}: LayoutProps) => {
   }, [bgColor]);
   return (
     <div style={{backgroundColor: bgColor, color: primaryColor}} className={styles.layoutMain}>
+      {openPdf && <PdfPrev setOpenPdf={setOpenPdf} />}
       <>
         {open &&
           <div
@@ -94,6 +91,7 @@ const Layout = ({children, title}: LayoutProps) => {
                    className={styles.container}>
                 <ThemeCard
                   onClick={() => {
+                    dispatch(setCloseThemeHeader());
                     dispatch(setStoreTheme({
                       bgColor: "#FFFFFF",
                       primaryColor: "#001621",
@@ -112,6 +110,7 @@ const Layout = ({children, title}: LayoutProps) => {
                   label="Light" />
                 <ThemeCard
                   onClick={() => {
+                    dispatch(setCloseThemeHeader());
                     dispatch(setStoreTheme({
                       bgColor: "#ebebde",
                       primaryColor: "#4f4747",
@@ -127,6 +126,7 @@ const Layout = ({children, title}: LayoutProps) => {
                   label="Momo" />
                 <ThemeCard
                   onClick={() => {
+                    dispatch(setCloseThemeHeader());
                     dispatch(setStoreTheme({
                       bgColor: "#3d4c41",
                       primaryColor: "#e6e6e6",
@@ -142,6 +142,7 @@ const Layout = ({children, title}: LayoutProps) => {
                   label="Milton" />
                 <ThemeCard
                   onClick={() => {
+                    dispatch(setCloseThemeHeader());
                     dispatch(setStoreTheme({
                       bgColor: "#234E70",
                       primaryColor: "#FBF8BE",
@@ -157,6 +158,7 @@ const Layout = ({children, title}: LayoutProps) => {
                   label="Totorro" />
                 <ThemeCard
                   onClick={() => {
+                    dispatch(setCloseThemeHeader());
                     dispatch(setStoreTheme({
                       bgColor: "#372c2e",
                       primaryColor: "#ffffff",
@@ -172,7 +174,7 @@ const Layout = ({children, title}: LayoutProps) => {
                   label="Brown" />
                 <ThemeCard
                   onClick={() => {
-
+                    dispatch(setCloseThemeHeader());
                     dispatch(setStoreTheme(
                       {bgColor: "#00241F", primaryColor: "#E7DAC7", secondaryColor: "#937047", thirdColor: ""}));
                   }}
@@ -202,18 +204,28 @@ const Layout = ({children, title}: LayoutProps) => {
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="theme-color" content="#234E70" />
       </Head>
       <div className={styles.layoutHeader}>
         <div>Öner Berk</div>
         <div className={styles.headerRight}>
           <span> Thèmes </span>
-          <img alt="fleche droite" src={arrowRight} />
-          <img onClick={() => dispatch(setOpenThemeHeader())} alt="changé de theme" src={daruma1} />
+          <FontAwesomeIcon className={styles.arrow}
+                           style={prevThem.prev
+                             ? {
+                               color: prevThem.secondaryColor
+                             }
+                             : {
+                               color: secondaryColor
+                             }
+                           }
+                           icon={faArrowRight} />
+
+          <Image width={2} height={2} onClick={() => dispatch(setOpenThemeHeader())} alt="changé de theme" src="/daruma1.png" />
         </div>
       </div>
       <div className={styles.layoutChildren}>
         {children}
+        <SocialMedia setOpenPdf={setOpenPdf} />
       </div>
     </div>
   );

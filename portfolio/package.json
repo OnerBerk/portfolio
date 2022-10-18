@@ -28,6 +28,7 @@
     "react-redux": "^8.0.4",
     "react-simple-badges": "^2.0.1",
     "sass": "^1.30.0",
+    "sharp": "^0.31.1",
     "yarn": "^1.22.17"
   },
   "devDependencies": {

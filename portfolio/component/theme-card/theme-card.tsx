@@ -1,9 +1,6 @@
 import styles from "./theme-card.module.scss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faDroplet} from "@fortawesome/free-solid-svg-icons";
-import {useTheme} from "next-themes";
-import {useSelector} from "../../store/store";
-import {getTheme} from "../../store/slices/theme/theme.slice";
 
 type ThemeCardProps = {
   backgroundColor: string
