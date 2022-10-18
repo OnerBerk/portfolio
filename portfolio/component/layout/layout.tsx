@@ -220,7 +220,8 @@ const Layout = ({children, title}: LayoutProps) => {
                            }
                            icon={faArrowRight} />
 
-          <Image width={2} height={2} onClick={() => dispatch(setOpenThemeHeader())} alt="changé de theme" src="/daruma1.png" />
+          {!open && <Image width={30} height={30} onClick={() => dispatch(setOpenThemeHeader())} alt="changé de theme"
+                  src="/daruma1.png" />}
         </div>
       </div>
       <div className={styles.layoutChildren}>

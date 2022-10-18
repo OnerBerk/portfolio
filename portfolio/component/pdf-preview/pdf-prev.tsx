@@ -2,7 +2,6 @@ import styles from "./pdf-preview.module.scss";
 import {useSelector} from "../../store/store";
 import {getTheme} from "../../store/slices/theme/theme.slice";
 import Image from "next/image";
-import {useEffect, useRef} from "react";
 
 type PdfPrevProps = {
   setOpenPdf: (openPdf: boolean) => void
@@ -23,7 +22,7 @@ const PdfPrev = ({setOpenPdf}: PdfPrevProps) => {
              borderColor: secondaryColor
            }}>
         <div className={styles.pdfClose}>
-          <Image onClick={() => setOpenPdf(false)} src="/close-red.png" width={25} height={25} />
+          <Image onClick={() => setOpenPdf(false)} src="/close-red.png" width={15} height={15} />
         </div>
         <div className={styles.pdfPrev}>ss</div>
       </div>

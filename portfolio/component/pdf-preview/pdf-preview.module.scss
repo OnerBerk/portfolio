@@ -14,7 +14,8 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding: 1em;
+      padding-top: 0.5em;
+      padding-right: 0.5em;
 
       img {
         cursor: pointer;
@@ -23,8 +24,9 @@
     .pdfPrev{
      padding: 1em;
     }
+    opacity: 1;
     display: grid;
-    grid-template-rows: 6% 94%;
+    grid-template-rows: 3% 97%;
     border-radius: 4px;
     width: 90%;
     height: 90vh;
