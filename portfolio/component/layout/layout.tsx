@@ -15,6 +15,8 @@ import {getTheme, setStoreTheme} from "../../store/slices/theme/theme.slice";
 import SocialMedia from "../social-media/social-media";
 import PdfPrev from "../pdf-preview/pdf-prev";
 import Image from "next/image";
+import Navigation from "../navigation/navigation";
+import Breadcrumb from "../breadcrumb/breadcrumb";
 
 export type LayoutProps = {
   title: string
@@ -74,7 +76,9 @@ const Layout = ({children, title}: LayoutProps) => {
             }
             className={styles.themeContainer}>
             <div className={styles.themeContainerLeft}>
-              <div style={prevThem.prev
+              <div
+                className={styles.container}
+                style={prevThem.prev
                 ? {
                   border: 1,
                   borderStyle: "solid",
@@ -87,8 +91,7 @@ const Layout = ({children, title}: LayoutProps) => {
                   borderRadius: 4,
                   borderColor: secondaryColor
                 }
-              }
-                   className={styles.container}>
+              }>
                 <ThemeCard
                   onClick={() => {
                     dispatch(setCloseThemeHeader());
@@ -96,10 +99,10 @@ const Layout = ({children, title}: LayoutProps) => {
                       bgColor: "#FFFFFF",
                       primaryColor: "#001621",
                       secondaryColor: "#7a2626",
-                      thirdColor: ""
+                      thirdColor: "#FF7F11"
                     }));
                     localStorage.setItem("theme", JSON.stringify({
-                      bgColor: "#FFFFFF", primaryColor: "#001621", secondaryColor: "#7a2626", thirdColor: ""
+                      bgColor: "#FFFFFF", primaryColor: "#001621", secondaryColor: "#7a2626", thirdColor: "#FF7F11"
                     }));
                   }}
                   onMouseEnter={() => OnHover("#FFFFFF", "#001621", "#7a2626")}
@@ -115,14 +118,14 @@ const Layout = ({children, title}: LayoutProps) => {
                       bgColor: "#ebebde",
                       primaryColor: "#4f4747",
                       secondaryColor: "#777764",
-                      thirdColor: ""
+                      thirdColor: "#2D2327"
                     }));
                   }}
                   onMouseEnter={() => OnHover("#ebebde", "#4f4747", "#777764")}
                   onMouseLeave={() => setPrevThem(initialPrevColors)}
                   backgroundColor="#ebebde"
                   color="#4f4747"
-                  secondaryColor="#777764"
+                  secondaryColor="#2D2327"
                   label="Momo" />
                 <ThemeCard
                   onClick={() => {
@@ -131,7 +134,7 @@ const Layout = ({children, title}: LayoutProps) => {
                       bgColor: "#3d4c41",
                       primaryColor: "#e6e6e6",
                       secondaryColor: "#999999",
-                      thirdColor: ""
+                      thirdColor: "#92AFD7"
                     }));
                   }}
                   onMouseEnter={() => OnHover("#3d4c41", "#e6e6e6", "#999999")}
@@ -147,7 +150,7 @@ const Layout = ({children, title}: LayoutProps) => {
                       bgColor: "#234E70",
                       primaryColor: "#FBF8BE",
                       secondaryColor: "#FBF8BE",
-                      thirdColor: ""
+                      thirdColor: "#C33C54"
                     }));
                   }}
                   onMouseEnter={() => OnHover("#234E70", "#FBF8BE", "#FBF8BE")}
@@ -163,7 +166,7 @@ const Layout = ({children, title}: LayoutProps) => {
                       bgColor: "#372c2e",
                       primaryColor: "#ffffff",
                       secondaryColor: "#DE9E48",
-                      thirdColor: ""
+                      thirdColor: "#8AB0AB"
                     }));
                   }}
                   onMouseEnter={() => OnHover("#372c2e", "#ffffff", "#DE9E48")}
@@ -176,7 +179,9 @@ const Layout = ({children, title}: LayoutProps) => {
                   onClick={() => {
                     dispatch(setCloseThemeHeader());
                     dispatch(setStoreTheme(
-                      {bgColor: "#00241F", primaryColor: "#E7DAC7", secondaryColor: "#937047", thirdColor: ""}));
+                      {bgColor: "#00241F",
+                        primaryColor: "#E7DAC7",
+                        secondaryColor: "#937047", thirdColor: "#8AB0AB"}));
                   }}
                   onMouseEnter={() => OnHover("#00241F", "#937047", "#937047")}
                   onMouseLeave={() => setPrevThem(initialPrevColors)}
@@ -203,10 +208,12 @@ const Layout = ({children, title}: LayoutProps) => {
       </>
       <Head>
         <title>{title}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className={styles.layoutHeader}>
-        <div>Öner Berk</div>
+        <div className={styles.headerLeft}>
+          <div>Öner Berk</div>
+          <Breadcrumb />
+        </div>
         <div className={styles.headerRight}>
           <span> Thèmes </span>
           <FontAwesomeIcon className={styles.arrow}
@@ -220,13 +227,15 @@ const Layout = ({children, title}: LayoutProps) => {
                            }
                            icon={faArrowRight} />
 
-          {!open && <Image width={30} height={30} onClick={() => dispatch(setOpenThemeHeader())} alt="changé de theme"
-                  src="/daruma1.png" />}
+          {!open && <Image width={30} height={30}
+                           onClick={() => dispatch(setOpenThemeHeader())} alt="changé de theme"
+                           src="/daruma1.png" />}
         </div>
       </div>
       <div className={styles.layoutChildren}>
         {children}
         <SocialMedia setOpenPdf={setOpenPdf} />
+        <Navigation />
       </div>
     </div>
   );

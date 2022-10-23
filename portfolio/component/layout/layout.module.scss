@@ -61,6 +61,13 @@
     padding-left: 1em;
     padding-right: 1em;
 
+    .headerLeft {
+      display: flex;
+      div{
+        margin-right: 2em;
+      }
+    }
+
     .headerRight {
       display: flex;
       align-items: center;

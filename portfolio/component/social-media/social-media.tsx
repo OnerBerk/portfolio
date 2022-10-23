@@ -17,7 +17,9 @@ const SocialMedia = ({setOpenPdf}: SocialMediaProps) => {
     <div className={styles.socialMediaMain}>
       <SocialIcon url="https://github.com/OnerBerk" icon={faGithubAlt} />
       <SocialIcon url="https://www.linkedin.com/in/onerberk/" icon={faLinkedin} />
-      <SocialIcon onclick={() => setOpenPdf(true)} icon={faCircleDown} />
+      <SocialIcon onclick={() => {
+        setOpenPdf(true);
+      }} icon={faCircleDown} />
       <FontAwesomeIcon className={styles.socialIcon}
                        style={{color: secondaryColor}}
                        icon={faEllipsisVertical} />

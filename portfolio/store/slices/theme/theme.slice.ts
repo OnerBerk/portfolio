@@ -11,7 +11,7 @@ const initialThemeState: ThemeState = {
   bgColor: "#FFFFFF",
   primaryColor: "#001621",
   secondaryColor: "#7a2626",
-  thirdColor: "#faa7a7"
+  thirdColor: "#FF7F11"
 };
 
 export const themeSlice = createSlice({

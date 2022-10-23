@@ -1,0 +1,83 @@
+.contactMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .contactBody {
+    width: 70vw;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 35VW 35vw;
+    padding: 1em;
+
+    .contactLeft {
+      display: grid;
+      grid-template-rows: 50% 50%;
+
+      .contactleftTop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        font-size: 9vw;
+        max-height: 25vh;
+      }
+
+      .contactLeftBot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        font-size: 19vw;
+        max-height: 25vh;
+      }
+    }
+
+    .contactRight {
+      display: grid;
+      width: 32vw;
+      grid-template-rows: 60% 5% 35%;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+
+      .contactRightDividor {
+        span {
+          margin-left: 0.5em;
+          margin-right: auto;
+          width: 45%;
+        }
+
+        div {
+          margin-top: 0.6em;
+        }
+
+        display: flex;
+      }
+
+      .contactName {
+        padding-top: 0.5em;
+        display: grid;
+        grid-template-columns:29vw 3vw;
+        align-items: center;
+        justify-content: center;
+
+        .lastname {
+          text-align: left;
+          font-size: 9.5vw;
+        }
+
+        .firstname {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          font-size: 2.5vw;
+          writing-mode: vertical-rl;
+          transform: scaleY(-1) scaleX(-1);
+        }
+      }
+    }
+  }
+}

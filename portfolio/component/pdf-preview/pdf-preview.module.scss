@@ -21,9 +21,17 @@
         cursor: pointer;
       }
     }
-    .pdfPrev{
-     padding: 1em;
+
+    .pdfPrev {
+      padding: 1em;
+      overflow-y: scroll;
+      canvas {
+        margin-left: auto;
+        margin-right: auto;
+
+      }
     }
+
     opacity: 1;
     display: grid;
     grid-template-rows: 3% 97%;
