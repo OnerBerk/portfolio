@@ -1,3 +1,5 @@
+$width: 70;
+$height: $width/2;
 .contactMain {
   display: flex;
   justify-content: center;
@@ -5,75 +7,58 @@
   height: 100%;
 
   .contactBody {
-    width: 70vw;
-    height: 60vh;
-    display: grid;
-    grid-template-columns: 35VW 35vw;
-    padding: 1em;
+    width: $width vw;
+    height: $height vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .contactLeft {
-      display: grid;
-      grid-template-rows: 50% 50%;
-
-      .contactleftTop {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Roboto", sans-serif;
-        font-weight: 800;
-        font-size: 9vw;
-        max-height: 25vh;
-      }
-
-      .contactLeftBot {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Roboto", sans-serif;
-        font-weight: 800;
-        font-size: 19vw;
-        max-height: 25vh;
-      }
-    }
 
     .contactRight {
       display: grid;
-      width: 32vw;
-      grid-template-rows: 60% 5% 35%;
+      width: 100%;
+      grid-template-rows: 20% 5% 75%;
       font-family: "Roboto", sans-serif;
-      font-weight: 700;
+      font-weight: 600;
 
-      .contactRightDividor {
-        span {
-          margin-left: 0.5em;
-          margin-right: auto;
-          width: 45%;
-        }
-
-        div {
-          margin-top: 0.6em;
-        }
-
+      .contactTitle {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 4vw;
+        letter-spacing: 0.2em;
+
       }
 
-      .contactName {
-        padding-top: 0.5em;
-        display: grid;
-        grid-template-columns:29vw 3vw;
+      .contactRightDividor {
+        display: flex;
         align-items: center;
         justify-content: center;
 
+        span {
+          width: 46%;
+        }
+
+        div {
+          margin-left: 0.5em;
+          margin-right: 0.5em;
+        }
+      }
+
+      .contactName {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 1em;
+
         .lastname {
-          text-align: left;
-          font-size: 9.5vw;
+          font-size: 20vw;
         }
 
         .firstname {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          font-size: 2.5vw;
+          font-size: 6vw;
+          margin-top: 0.2em;
           writing-mode: vertical-rl;
           transform: scaleY(-1) scaleX(-1);
         }
