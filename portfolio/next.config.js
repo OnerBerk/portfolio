@@ -5,8 +5,11 @@ module.exports = {
   future: {
     webpack5: true
   },
+  env: {
+    NEXT_PUBLIC_MAPBOX_GL_ACCESS_TOKEN: process.env.NEXT_PUBLIC_MAPBOX_GL_ACCESS_TOKEN,
+  },
   webpack: (config) => {
-    // load worker files as a urls with `file-loader`
+    // load worker files as an urls with `file-loader`
     config.module.rules.unshift({
       test: /pdf\.worker\.(min\.)?js/,
       use: [

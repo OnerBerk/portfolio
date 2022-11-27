@@ -1,5 +1,5 @@
 $width: 70;
-$height: $width/2;
+$height:  calc($width / 2);
 .contactMain {
   display: flex;
   justify-content: center;
