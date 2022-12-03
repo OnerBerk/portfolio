@@ -12,28 +12,26 @@ const Navigation = () => {
 
   const iconList = [
     {
-      icon: faIgloo, name: "home", onclick: () => {
-        console.log("hbshbsbh");
-      }, link: "/"
+      icon: faIgloo, name: "home", onclick: () => {}, link: "/"
     },
     {
       icon: faFingerprint, name: "me", onclick: () => {
-        console.log("hbshbsbh");
       }, link: "/me"
     },
     {
       icon: faConnectdevelop, name: "skills", onclick: () => {
-        console.log("hbshbsbh");
       }, link: "/skills"
     },
     {
-      icon: faBriefcase, name: "contact", onclick: () => {
-        console.log("hbshbsbh");
+      icon: faBriefcase, name: "project", onclick: () => {
       }, link: "/projects"
     },
     {
+      icon: faIdBadge, name: "contact", onclick: () => {
+      }, link: "/contact"
+    },
+    {
       icon: faStamp, name: "stamp", onclick: () => {
-        console.log("hbshbsbh");
       }, link: "/stamp"
     }
   ];

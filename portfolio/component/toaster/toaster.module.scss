@@ -1,0 +1,15 @@
+.toasterMain {
+  color: #0c0000;
+  display: flex;
+  font-size: 1.1vw;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 30vw;
+  height: 15vh;
+  background-color: #e0faee;
+  bottom: 6vw;
+  font-weight: 600;
+  right: 6vw;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
