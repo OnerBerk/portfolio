@@ -1,0 +1,116 @@
+$black: #141414;
+$yellowGreen: yellowgreen;
+$yellow: yellow;
+$royalblue: royalblue;
+$magenta: magenta;
+
+.scrollContainer {
+  display: grid;
+  grid-template-columns: 3em auto 3em;
+  height: 92vh;
+  margin-top: -1em;
+  margin-left: -1em;
+  margin-right: -1em;
+
+  .leftCol {
+    border-right: 4px solid black;
+
+  }
+
+  .rightCol {
+    border-left: 4px solid black;
+
+  }
+
+  .leftCol,
+  .rightCol {
+    background-color: rgb(224, 255, 27);
+    display: grid;
+    grid-auto-rows: 15vh auto;
+
+    .leftFirst {
+      cursor: pointer;
+      border-bottom: 4px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      writing-mode: vertical-rl;
+      font-size: 1.6em;
+      margin-top: 0;
+
+      svg {
+        color: black;
+        width: 0.3em;
+      }
+    }
+
+    .rightFirst {
+      cursor: pointer;
+      border-bottom: 4px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      writing-mode: vertical-rl;
+      font-size: 1.6em;
+      margin-top: 0;
+
+      svg {
+        color: black;
+        width: 0.5em;
+      }
+    }
+
+    .leftFirst:hover {
+      svg {
+        width: 0.5em;
+        margin-top: 0.2em;
+        transition: all 1s ease-out;
+      }
+    }
+
+    .rightFirst:hover {
+      svg {
+        width: 0.5em;
+        margin-top: 0.2em;
+        transition: all 1s ease-out;
+      }
+    }
+
+    .leftSecond {
+      padding-top: 2em;
+
+      span {
+        margin-right: auto;
+        margin-left: auto;
+        color: black;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.8em;
+        writing-mode: vertical-rl;
+        rotate: 180deg;
+      }
+    }
+
+    .rightSecond {
+      padding-top: 2em;
+      display: flex;
+      justify-content: center;
+
+      span {
+        margin-right: auto;
+        margin-left: auto;
+        color: black;
+        font-weight: 700;
+        font-size: 1.8em;
+        writing-mode: vertical-rl;
+      }
+    }
+  }
+
+  .body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

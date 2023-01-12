@@ -55,7 +55,8 @@ const Layout = ({children, title}: LayoutProps) => {
     });
   }, [bgColor]);
   return (
-    <div style={{backgroundColor: bgColor, color: primaryColor}} className={styles.layoutMain}>
+    <>
+      <div style={{backgroundColor: bgColor, color: primaryColor}} className={styles.layoutMain}>
       {openPdf && <PdfPrev setOpenPdf={setOpenPdf} />}
       <>
         {open &&
@@ -212,7 +213,6 @@ const Layout = ({children, title}: LayoutProps) => {
       <div className={styles.layoutHeader}>
         <div className={styles.headerLeft}>
           <div>Öner Berk</div>
-          <Breadcrumb />
         </div>
         <div className={styles.headerRight}>
           <span> Thèmes </span>
@@ -234,10 +234,11 @@ const Layout = ({children, title}: LayoutProps) => {
       </div>
       <div className={styles.layoutChildren}>
         {children}
-        <SocialMedia setOpenPdf={setOpenPdf} />
-        <Navigation />
       </div>
     </div>
+      <SocialMedia setOpenPdf={setOpenPdf} />
+      <Navigation />
+    </>
   );
 };
 export default Layout;

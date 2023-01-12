@@ -6,10 +6,11 @@ import {faIdBadge, faStamp,faIgloo, faBriefcase} from "@fortawesome/free-solid-s
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useSelector} from "../../store/store";
 import {getTheme} from "../../store/slices/theme/theme.slice";
+import {useRouter} from "next/router";
 
 const Navigation = () => {
-  const {secondaryColor} = useSelector(getTheme);
-
+  const {secondaryColor, bgColor} = useSelector(getTheme);
+  const routeur = useRouter();
   const iconList = [
     {
       icon: faIgloo, name: "home", onclick: () => {}, link: "/"
@@ -37,7 +38,10 @@ const Navigation = () => {
   ];
 
   return (
-    <div className={styles.navigationMain}>
+    <div style={
+      routeur.pathname.includes("me") ? {backgroundColor: bgColor} : {backgroundColor: "transparent"}
+    }
+         className={styles.navigationMain}>
       {iconList.map((el, index: number) => {
         return (
           <SocialIcon

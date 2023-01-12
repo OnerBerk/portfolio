@@ -5,16 +5,20 @@ import SocialIcon from "../../ui-component/social-icon/social-icon";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useSelector} from "../../store/store";
 import {getTheme} from "../../store/slices/theme/theme.slice";
+import {useRouter} from "next/router";
 
 type SocialMediaProps = {
   setOpenPdf: (openPdf: boolean) => void
 }
 
 const SocialMedia = ({setOpenPdf}: SocialMediaProps) => {
-  const {secondaryColor} = useSelector(getTheme);
-
+  const {secondaryColor, bgColor} = useSelector(getTheme);
+  const routeur = useRouter();
   return (
-    <div className={styles.socialMediaMain}>
+    <div style={
+      routeur.pathname.includes("me") ? {backgroundColor: bgColor} : {backgroundColor: "transparent"}
+    }
+         className={styles.socialMediaMain}>
       <SocialIcon url="https://github.com/OnerBerk" icon={faGithubAlt} />
       <SocialIcon url="https://www.linkedin.com/in/onerberk/" icon={faLinkedin} />
       <SocialIcon onclick={() => {
