@@ -37,8 +37,8 @@ const SocialIcon = ({icon, url, onclick, linkUrl}: SocialIconProps) => {
             onMouseLeave={() => setHov(false)}
             className={styles.socialIcon}
             style={!hov
-              ? {color: focusColor()}
-              : {color: thirdColor, height: "1.7em", fontWeight: "bold"}}
+              ? {color: routeur.pathname.includes("skills") ? "black" : focusColor()}
+              : {color: thirdColor, height: "1.7em", fontWeight: 700}}
             icon={icon} /></a>
         </Link>
       </div>
@@ -53,7 +53,7 @@ const SocialIcon = ({icon, url, onclick, linkUrl}: SocialIconProps) => {
             onMouseLeave={() => setHov(false)}
             className={styles.socialIcon}
             style={!hov
-              ? {color: secondaryColor}
+              ? {color: routeur.pathname.includes("skills") ? "black" : secondaryColor}
               : {
                 color: thirdColor,
                 height: "1.7em",

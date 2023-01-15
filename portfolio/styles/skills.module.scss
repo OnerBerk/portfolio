@@ -7,18 +7,58 @@ $magenta: magenta;
 .scrollContainer {
   display: grid;
   grid-template-columns: 3em auto 3em;
-  height: 92vh;
+  height: 100vh;
   margin-top: -1em;
   margin-left: -1em;
   margin-right: -1em;
 
   .leftCol {
-    border-right: 4px solid black;
+    position: relative;
+    border-right: 3px solid black;
 
+    .openLeft {
+      position: absolute;
+      width: 25em;
+      height: 100vh;
+      background-color: rgb(224, 255, 27);
+      left: 3em;
+      border-right: 3px solid black;
+      transition: left 0.2s ease-out;
+    }
+
+    .closeLeft {
+      position: absolute;
+      width: 25em;
+      height: 100vh;
+      background-color: rgb(224, 255, 27);
+      left: -25em;
+      transition: left 0.2s ease-out;
+    }
   }
 
   .rightCol {
-    border-left: 4px solid black;
+    position: relative;
+    border-left: 3px solid black;
+
+    .openRight {
+      position: absolute;
+      width: 25em;
+      height: 100vh;
+      background-color: rgb(224, 255, 27);
+      right: 3em;
+      border-left: 3px solid black;
+      transition: right 0.2s ease-out;
+    }
+
+    .closeRight {
+      position: absolute;
+      width: 25em;
+      height: 100vh;
+      background-color: rgb(224, 255, 27);
+      right: -25em;
+      transition: right 0.2s ease-out;
+      border-left: 3px solid black;
+    }
 
   }
 
@@ -30,7 +70,7 @@ $magenta: magenta;
 
     .leftFirst {
       cursor: pointer;
-      border-bottom: 4px solid black;
+      border-bottom: 3px solid black;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -46,7 +86,7 @@ $magenta: magenta;
 
     .rightFirst {
       cursor: pointer;
-      border-bottom: 4px solid black;
+      border-bottom: 3px solid black;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -108,7 +148,31 @@ $magenta: magenta;
     }
   }
 
+  .skills {
+    cursor: pointer;
+    border-bottom: 3px solid black;
+    padding: 0.1em 0.1em 0.1em 0.5em;
+    font-size: 4em;
+    background-color: rgb(224, 255, 27);
+  }
+
+  .focusSkills {
+    cursor: pointer;
+    border-bottom: 3px solid #3554f1;
+    color: #3554f1;
+    padding: 0.1em 0.1em 0.1em 0.5em;
+    font-size: 4em;
+    background-color: #e0faee;
+    transition: background-color,color 0.5s ease-in-out;
+  }
+
+  .skills:hover {
+    background-color: #e0faee;
+    transition: background-color 0.5s ease-in-out;
+  }
+
   .body {
+    background-color: #faf9f5;
     display: flex;
     align-items: center;
     justify-content: center;

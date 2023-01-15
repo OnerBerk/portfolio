@@ -36,6 +36,9 @@ const Navigation = () => {
       }, link: "/stamp"
     }
   ];
+const returnColor=()=>{
+  return routeur.pathname.includes('skills') ? "black" : secondaryColor
+}
 
   return (
     <div style={
@@ -54,16 +57,16 @@ const Navigation = () => {
       })}
       <>
         <FontAwesomeIcon className={styles.socialIcon}
-                         style={{color: secondaryColor}}
+                         style={{color: returnColor()}}
                          icon={faEllipsisVertical} />
         <FontAwesomeIcon className={styles.socialIcon}
-                         style={{color: secondaryColor}}
+                         style={{color: returnColor()}}
                          icon={faEllipsisVertical} />
         <FontAwesomeIcon className={styles.socialIcon}
-                         style={{color: secondaryColor}}
+                         style={{color: returnColor()}}
                          icon={faEllipsisVertical} />
         <FontAwesomeIcon className={styles.socialIcon}
-                         style={{color: secondaryColor}}
+                         style={{color: returnColor()}}
                          icon={faEllipsisVertical} />
       </>
     </div>

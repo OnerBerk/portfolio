@@ -6,14 +6,21 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useSelector} from "../../store/store";
 import {getTheme} from "../../store/slices/theme/theme.slice";
 import {useRouter} from "next/router";
+import {useEffect, useState} from "react";
 
 type SocialMediaProps = {
   setOpenPdf: (openPdf: boolean) => void
 }
 
 const SocialMedia = ({setOpenPdf}: SocialMediaProps) => {
-  const {secondaryColor, bgColor} = useSelector(getTheme);
   const routeur = useRouter();
+  const {secondaryColor, bgColor} = useSelector(getTheme);
+  const [skills, setSkills] = useState(false);
+
+  useEffect(() => {
+    routeur.pathname.includes("skills") && setSkills(true);
+  }, [routeur]);
+
   return (
     <div style={
       routeur.pathname.includes("me") ? {backgroundColor: bgColor} : {backgroundColor: "transparent"}
@@ -25,16 +32,16 @@ const SocialMedia = ({setOpenPdf}: SocialMediaProps) => {
         setOpenPdf(true);
       }} icon={faCircleDown} />
       <FontAwesomeIcon className={styles.socialIcon}
-                       style={{color: secondaryColor}}
+                       style={!skills ? {color: secondaryColor} : {color: "black"}}
                        icon={faEllipsisVertical} />
       <FontAwesomeIcon className={styles.socialIcon}
-                       style={{color: secondaryColor}}
+                       style={!skills ? {color: secondaryColor} : {color: "black"}}
                        icon={faEllipsisVertical} />
       <FontAwesomeIcon className={styles.socialIcon}
-                       style={{color: secondaryColor}}
+                       style={!skills ? {color: secondaryColor} : {color: "black"}}
                        icon={faEllipsisVertical} />
       <FontAwesomeIcon className={styles.socialIcon}
-                       style={{color: secondaryColor}}
+                       style={!skills ? {color: secondaryColor} : {color: "black"}}
                        icon={faEllipsisVertical} />
     </div>
   );
