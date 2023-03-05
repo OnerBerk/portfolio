@@ -19,24 +19,25 @@ const Skills = () => {
 
   const backEndSkills: {id: number, name: string}[] = [
     {id: 1, name: "Javascript"},
-    {id: 2, name: "Java"},
-    {id: 3, name: "Python"},
-    {id: 4, name: "Node JS"},
-    {id: 5, name: "Springboot"},
-    {id: 6, name: "Django"},
-    {id: 7, name: "MongoDb"},
-    {id: 8, name: "PostgreSql"}
+    {id: 2, name: "TypeScript"},
+    {id: 3, name: "Java"},
+    {id: 4, name: "Python"},
+    {id: 5, name: "Node JS"},
+    {id: 6, name: "Springboot"},
+    {id: 7, name: "Django"},
+    {id: 8, name: "MongoDb"},
+    {id: 9, name: "PostgreSql"}
   ];
   const frontEndSkills: {id: number, name: string}[] = [
-    {id: 1, name: "React js "},
-    {id: 2, name: "Next js"},
-    {id: 3, name: "Redux Toolkit"},
-    {id: 4, name: "Html"},
-    {id: 9, name: "Css / Sccs"},
-    {id: 10, name: "styled component"},
-    {id: 5, name: "Material Ui"},
-    {id: 6, name: "Bootstrap"},
-    {id: 7, name: "StoryBook"},
+    {id: 10, name: "React js "},
+    {id: 11, name: "Next js"},
+    {id: 12, name: "Redux Toolkit"},
+    {id: 13, name: "Html"},
+    {id: 14, name: "Css / Sccs"},
+    {id: 15, name: "styled component"},
+    {id: 16, name: "Material Ui"},
+    {id: 17, name: "Bootstrap"},
+    {id: 18, name: "StoryBook"},
   ];
 
   return (
