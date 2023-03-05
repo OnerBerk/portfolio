@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from "../styles/contact.module.scss";
 import Layout from "../component/layout/layout";
 import Map from "../component/map/map";
 import {send} from "@emailjs/browser";
 import Toaster from "../component/toaster/toaster";
+import SubmitButton from "../component/button/submit/submit-button";
+import SqueezeButton from "../component/button/squeeze/squeeze-button";
 
 const Contact = () => {
   const service_id = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
@@ -32,6 +34,28 @@ const Contact = () => {
   const returnEmail = () => email.length === 0 ? "Mon adresse e-amil" : email;
   const returnProject = () => project.length === 0 ? "Projet" : email;
 
+  const atLeastOneTrue = () => {
+    if (name.length !== 0 || email.length !== 0 || project.length !== 0) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  const returnButton = () => {
+    return (
+      <div className={styles.returnButtonMain}>
+        <SqueezeButton onClick={() => {
+          setNameFocus(false);
+          setName("");
+          setEmailFocus(false);
+          setEmail("");
+          setProjectFocus(false);
+          setProject("");
+        }} />
+        <SubmitButton />
+      </div>
+    );
+  };
   const displayToaster = (success: boolean) => {
     setToaster(true);
     setSuccess(success);
@@ -45,7 +69,6 @@ const Contact = () => {
       setToaster(false);
       setSuccess(false);
     }, 5000);
-
   };
 
   const onSubmit = (e) => {
@@ -66,6 +89,10 @@ const Contact = () => {
       });
   };
 
+  useEffect(() => {
+    atLeastOneTrue();
+  }, [name, project, email]);
+
   return (
     <Layout title="contact">
       <div className={styles.contactMain}>
@@ -76,9 +103,10 @@ const Contact = () => {
           <div></div>
           <div className={styles.last}>
             <form onSubmit={onSubmit} className={styles.contactForm}>
-              <h1>Un petit mot !</h1>
-              <span> Hello,</span>
-              <div><br />
+              <div className={styles.title}>Un petit mot !</div>
+              <div>
+                <span> Hello,</span>
+                <br />
                 <span onClick={cancel}>Je suis</span>
                 {nameFocus
                   ? (<input onChange={(e) => setName(e.target.value)} placeholder="Votre nom" type="text" />)
@@ -95,7 +123,7 @@ const Contact = () => {
                     {returnEmail()}
                   </span>
                   }
-                    </span><br />
+                    </span>
 
                 <span onClick={cancel}>J'aimerai discuté avec vous de</span>
 
@@ -108,7 +136,10 @@ const Contact = () => {
                   }
                 </span>
               </div>
-              <button type="submit">Submit</button>
+              {atLeastOneTrue()
+                ? returnButton()
+                : <div></div>
+              }
             </form>
           </div>
         </div>

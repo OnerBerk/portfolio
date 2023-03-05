@@ -57,7 +57,7 @@ const Me = () => {
               Bienvenue dans mon Portflio avec certains de Mes Projets.<br/><br/>
 
               Après une Vingtaine d'années dans le commerce et le Management,
-              j'ai décidé de me reconvertir dans le Développement Informatique .
+              j'ai décidé de me reconvertir dans le Développement Informatique .<br/>
               Formé à Epitech Paris. veille sur Udemy et monté en compétences
               dans des Cabinets de conseils Informatique.<br/><br/>
 

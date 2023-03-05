@@ -1,19 +1,11 @@
 "use client";
 import styles from "../styles/skills.module.scss";
-import React, {useState, useRef, useEffect, useCallback} from "react";
+import React, {useState} from "react";
 import Layout from "../component/layout/layout";
-import classNames from "classnames";
 
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useSpring
-} from "framer-motion";
-import {useSelector} from "../store/store";
-import {getTheme} from "../store/slices/theme/theme.slice";
 import {faStar, faPaintBrush, faCircleDot} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import Loader from "../component/loader/loader";
 
 const Skills = () => {
   const [openLeft, setOpenLeft] = useState(false);
@@ -25,7 +17,7 @@ const Skills = () => {
     setOpenRight(false);
   };
 
-  const bakEndSkills: {id: number, name: string}[] = [
+  const backEndSkills: {id: number, name: string}[] = [
     {id: 1, name: "Javascript"},
     {id: 2, name: "Java"},
     {id: 3, name: "Python"},
@@ -34,6 +26,17 @@ const Skills = () => {
     {id: 6, name: "Django"},
     {id: 7, name: "MongoDb"},
     {id: 8, name: "PostgreSql"}
+  ];
+  const frontEndSkills: {id: number, name: string}[] = [
+    {id: 1, name: "React js "},
+    {id: 2, name: "Next js"},
+    {id: 3, name: "Redux Toolkit"},
+    {id: 4, name: "Html"},
+    {id: 9, name: "Css / Sccs"},
+    {id: 10, name: "styled component"},
+    {id: 5, name: "Material Ui"},
+    {id: 6, name: "Bootstrap"},
+    {id: 7, name: "StoryBook"},
   ];
 
   return (
@@ -54,7 +57,7 @@ const Skills = () => {
           </div>
           <div
             className={openLeft ? styles.openLeft : styles.closeLeft}>
-            {bakEndSkills.map((b) => {
+            {backEndSkills.map((b) => {
               return (
                 <div
                   onClick={() => {
@@ -66,7 +69,10 @@ const Skills = () => {
             })}
           </div>
         </div>
-        <div onClick={closeAll} className={styles.body}>En cours ...</div>
+        <div onClick={closeAll} className={styles.body}>
+          <Loader />
+          <span>En cours...</span>
+        </div>
         <div className={styles.rightCol}>
           <div className={styles.rightFirst}
                onClick={() => setOpenRight(!openRight)}
@@ -83,7 +89,16 @@ const Skills = () => {
           </div>
           <div
             className={openRight ? styles.openRight : styles.closeRight}>
-            Open
+            {frontEndSkills.map((f) => {
+              return (
+                <div
+                  onClick={() => {
+                    setOpenRight(false);
+                    setFocusSkills(f.id);
+                  }}
+                  className={f.id === focusSkills ? styles.focusSkills : styles.skills} key={f.id}>{f.name}</div>
+              );
+            })}
           </div>
         </div>
       </div>

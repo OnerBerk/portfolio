@@ -18,13 +18,28 @@
     }
 
     .last {
-      padding-top: 10%;
       background-color: rgba(223, 253, 253, 0.57);
       display: flex;
       justify-content: center;
+      height: 44vh;
 
       .contactForm {
         width: 85%;
+        display: grid;
+        grid-template-rows: 8vh auto 10vh;
+
+        .title {padding-top: 0.5em;
+          font-weight: 600;
+          font-size: 1.9em;
+          margin-bottom: 1em;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
         .placeholder {
           cursor: pointer;
           margin-right: 0.2em;
@@ -34,6 +49,7 @@
           font-weight: bold;
 
         }
+
         input {
           background-color: transparent;
           margin-right: 1em;
@@ -45,10 +61,12 @@
           outline: none;
           z-index: 1000;
         }
+
         input::placeholder {
           color: cadetblue;
           font-size: 0.7em;
         }
+
         textarea {
           background-color: transparent;
           border-bottom: 1px solid cadetblue;
@@ -59,18 +77,19 @@
           width: 95%;
           outline: none;
         }
-        button{
-          margin-top: 1em;
-          font-size: 1.1em;
-          font-weight: 700;
-          cursor: pointer;
-          background-color: transparent;
-          outline: none;
-          border: none;
-          color: #2776da;
-        }
-        button:hover{
-          color: darkgreen;
+
+        .returnButtonMain {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+
+          button {
+            cursor: pointer;
+            font-size: 0.8em;
+            width: 7em;
+            height: 3.5em;
+          }
         }
       }
     }
