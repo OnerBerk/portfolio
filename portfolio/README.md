@@ -5,6 +5,8 @@ Simple portfolio in Next js
 
 First, run the development server:
 
+Enter your env variable
+
 ```bash
 npm run dev
 # or
