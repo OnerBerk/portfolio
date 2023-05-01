@@ -18,6 +18,7 @@ import Image from "next/image";
 import Navigation from "../navigation/navigation";
 import Breadcrumb from "../breadcrumb/breadcrumb";
 import {useRouter} from "next/router";
+import Footer from "./footer/footer";
 
 export type LayoutProps = {
   title: string
@@ -63,7 +64,8 @@ const Layout = ({children, title}: LayoutProps) => {
 
   return (
     <>
-      <div style={!skills ? {backgroundColor: bgColor, color: primaryColor}:{backgroundColor:"#E0FF1BFF"}} className={styles.layoutMain}>
+      <div style={!skills ? {backgroundColor: bgColor, color: primaryColor} : {backgroundColor: "#E0FF1BFF"}}
+           className={styles.layoutMain}>
         {openPdf && <PdfPrev setOpenPdf={setOpenPdf} />}
         <>
           {open &&
@@ -219,7 +221,7 @@ const Layout = ({children, title}: LayoutProps) => {
         <Head>
           <title>{title}</title>
         </Head>
-        { !skills && <div className={styles.layoutHeader}>
+        {!skills && <div className={styles.layoutHeader}>
           <div className={styles.headerLeft}>
             <div>Öner Berk</div>
           </div>
@@ -236,17 +238,16 @@ const Layout = ({children, title}: LayoutProps) => {
                              }
                              icon={faArrowRight} />
 
-            {!open && <Image width={30} height={30}
+            {!open && <Image width={50} height={50}
                              onClick={() => dispatch(setOpenThemeHeader())} alt="changé de theme"
-                             src="/daruma1.png" />}
+                             src="/sakura.png" />}
           </div>
         </div>}
         <div className={styles.layoutChildren}>
           {children}
         </div>
       </div>
-      <SocialMedia setOpenPdf={setOpenPdf} />
-      <Navigation />
+      <Footer setOpenPdf={setOpenPdf} />
     </>
   );
 };
