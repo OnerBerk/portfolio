@@ -2,7 +2,7 @@ import styles from "./navigation.module.scss";
 import SocialIcon from "../../ui-component/social-icon/social-icon";
 import {faConnectdevelop} from "@fortawesome/free-brands-svg-icons";
 import {faEllipsisVertical, faFingerprint} from "@fortawesome/free-solid-svg-icons";
-import {faIdBadge, faStamp,faIgloo, faBriefcase} from "@fortawesome/free-solid-svg-icons";
+import {faIdBadge, faStamp, faIgloo, faBriefcase} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useSelector} from "../../store/store";
 import {getTheme} from "../../store/slices/theme/theme.slice";
@@ -13,7 +13,8 @@ const Navigation = () => {
   const routeur = useRouter();
   const iconList = [
     {
-      icon: faIgloo, name: "home", onclick: () => {}, link: "/"
+      icon: faStamp, name: "stamp",
+      onclick: () => {}, link: "/"
     },
     {
       icon: faFingerprint, name: "me", onclick: () => {
@@ -31,18 +32,16 @@ const Navigation = () => {
       icon: faIdBadge, name: "contact", onclick: () => {
       }, link: "/contact"
     },
-    {
-      icon: faStamp, name: "stamp", onclick: () => {
-      }, link: "/stamp"
-    }
   ];
-const returnColor=()=>{
-  return routeur.pathname.includes('skills') ? "black" : secondaryColor
-}
+  const returnColor = () => {
+    return routeur.pathname.includes("skills") ? "black" : secondaryColor;
+  };
 
   return (
     <div style={
-      routeur.pathname.includes("me") ? {backgroundColor: bgColor} : {backgroundColor: "transparent"}
+      routeur.pathname.includes("me")
+        ? {backgroundColor: bgColor}
+        : {backgroundColor: "transparent"}
     }
          className={styles.navigationMain}>
       {iconList.map((el, index: number) => {
@@ -52,7 +51,7 @@ const returnColor=()=>{
             onclick={el.onclick}
             icon={el.icon}
             url={el.link}
-            linkUrl  />
+            linkUrl />
         );
       })}
       <>
