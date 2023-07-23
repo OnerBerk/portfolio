@@ -6,11 +6,15 @@ import Layout from "../component/layout/layout";
 import {faStar, faPaintBrush, faCircleDot} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Loader from "../component/loader/loader";
+import Head from "next/head";
+import SocialMedia from "../component/social-media/social-media";
+import Navigation from "../component/navigation/navigation";
 
 const Skills = () => {
   const [openLeft, setOpenLeft] = useState(false);
   const [openRight, setOpenRight] = useState(false);
   const [focusSkills, setFocusSkills] = useState(0);
+  const [openPdf, setOpenPdf] = useState(false);
 
   const closeAll = () => {
     setOpenLeft(false);
@@ -37,12 +41,19 @@ const Skills = () => {
     {id: 15, name: "styled component"},
     {id: 16, name: "Material Ui"},
     {id: 17, name: "Bootstrap"},
-    {id: 18, name: "StoryBook"},
+    {id: 18, name: "StoryBook"}
   ];
 
   return (
-    <Layout title="Skills">
-      <div className={styles.scrollContainer}>
+    <div className={styles.scrollContainer}>
+      <Head>
+        <title>Compétence</title>
+      </Head>
+      <div className={styles.borderSkills}>
+        <SocialMedia setOpenPdf={setOpenPdf} />
+      </div>
+
+      <div className={styles.body}>
         <div className={styles.leftCol}>
           <div className={styles.leftFirst}
                onClick={() => setOpenLeft(!openLeft)}>
@@ -70,14 +81,13 @@ const Skills = () => {
             })}
           </div>
         </div>
-        <div onClick={closeAll} className={styles.body}>
+        <div onClick={closeAll} className={styles.bodyBody}>
           <Loader />
           <span>En cours...</span>
         </div>
         <div className={styles.rightCol}>
           <div className={styles.rightFirst}
-               onClick={() => setOpenRight(!openRight)}
-          >
+               onClick={() => setOpenRight(!openRight)}>
             <FontAwesomeIcon className={styles.arrow}
                              icon={faStar} />
             <FontAwesomeIcon className={styles.arrow}
@@ -88,13 +98,12 @@ const Skills = () => {
           <div className={styles.rightSecond}>
             <span>Frontend & Logiciels</span>
           </div>
-          <div
-            className={openRight ? styles.openRight : styles.closeRight}>
+          <div className={openRight ? styles.openRight : styles.closeRight}>
             {frontEndSkills.map((f) => {
               return (
                 <div
                   onClick={() => {
-                    setOpenRight(false);
+                    setOpenLeft(false);
                     setFocusSkills(f.id);
                   }}
                   className={f.id === focusSkills ? styles.focusSkills : styles.skills} key={f.id}>{f.name}</div>
@@ -103,7 +112,11 @@ const Skills = () => {
           </div>
         </div>
       </div>
-    </Layout>
+
+      <div className={styles.borderSkills1}>
+        <Navigation />
+      </div>
+    </div>
   );
 };
 
