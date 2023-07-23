@@ -46,9 +46,7 @@ const Skills = () => {
 
   return (
     <div className={styles.scrollContainer}>
-      <Head>
-        <title>Compétence</title>
-      </Head>
+
       <div className={styles.borderSkills}>
         <SocialMedia setOpenPdf={setOpenPdf} />
       </div>

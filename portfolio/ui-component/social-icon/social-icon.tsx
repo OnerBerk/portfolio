@@ -56,7 +56,7 @@ const SocialIcon = ({icon, url, onclick, linkUrl}: SocialIconProps) => {
               ? {color: routeur.pathname.includes("skills") ? "black" : secondaryColor}
               : {
                 color: thirdColor,
-                height: "1.7em",
+                height: "1.5em",
                 fontWeight: 700
               }}
             icon={icon} />
