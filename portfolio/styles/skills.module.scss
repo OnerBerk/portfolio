@@ -11,11 +11,12 @@ $magenta: magenta;
 
   .borderSkills {
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     bottom: 0;
     left: 1em;
   }
   .borderSkills1 {
+    z-index: 5;
     position: absolute;
     right: 1em;
     bottom: 0;

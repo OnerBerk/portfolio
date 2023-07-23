@@ -218,7 +218,7 @@ const Layout = ({children, title}: LayoutProps) => {
       <Head>
         <title>{title}</title>
       </Head>
-      {skills && <div className={styles.layoutHeader}>
+      {!skills && <div className={styles.layoutHeader}>
         <div className={styles.headerLeft}>
           <div>Öner Berk</div>
         </div>
