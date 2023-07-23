@@ -237,7 +237,7 @@ const Layout = ({children, title}: LayoutProps) => {
 
           {!open && <Image width={50} height={50}
                            onClick={() => dispatch(setOpenThemeHeader())} alt="changé de theme"
-                           src="/sakura.png" />}
+                           src="/Sakura.png" />}
         </div>
       </div>}
       <div className={styles.layoutChildren}>
