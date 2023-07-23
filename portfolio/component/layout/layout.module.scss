@@ -1,11 +1,12 @@
 .layoutMain {
   width: 100vw;
+  height: 100vh;
   display: grid;
   grid-template-rows: 8vh 92vh;
   position: relative;
 
   .themeContainer {
-    z-index: 1;
+    z-index: 2;
     opacity: 1;
     position: absolute;
     top: 0;
@@ -88,6 +89,18 @@
   }
 
   .layoutChildren {
-    padding: 1em;
+    display: grid;
+    grid-template-columns: 4em auto 4em;
+    height: 92vh;
+
+    .border {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 92vh;
+    }
+    .children{
+      padding: 1em;
+    }
   }
 }

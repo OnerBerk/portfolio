@@ -18,9 +18,18 @@
     height: 67vh;
     width: 75%;
     color: snow;
-    font-size: 2em;
-    span{
+    font-size: 1.5vw;
+    span {
+      font-size: 1.7vw;
       color: #b3a577;
+    }
+  }
+  @media (max-width: 800px) {
+    .meCarrousel {
+      font-size: 2vw;
+      span{
+        font-size: 2.2vw;
+      }
     }
   }
 }
@@ -29,20 +38,20 @@
   display: flex;
   align-items: center;
   position: absolute;
-  right: 0.5em;
-  width: 4em;
-  height: 14vh;
+  right: 2.5em;
+  height: 24vh;
+  background-color: transparent;
   font-weight: 700;
-  font-size: 2em;
   z-index: 1;
 }
 
 .meTitleLeft {
   position: absolute;
   padding: 1em;
+  width: 4em;
   font-weight: bold;
-  left: -0.5em;
   top: 46%;
+  left: 0;
   writing-mode: vertical-rl;
   transform: scaleY(-1) scaleX(-1);
   z-index: 1;
@@ -53,7 +62,7 @@
   font-weight: bold;
   position: absolute;
   padding: 1em;
-  left: -0.5em;
+  left: 0;
   top: 17%;
   writing-mode: vertical-rl;
   transform: scaleY(-1) scaleX(-1);
@@ -63,8 +72,9 @@
   z-index: 1;
   font-weight: bold;
   position: absolute;
-  padding: 1em;
-  right: 1em;
-  bottom: 2vh;
-  font-size: 1.4em;
+  top: 94%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+

@@ -10,6 +10,7 @@ function Home() {
 
   return (
     <Layout title="Öner home">
+
       <div className={styles.stampMain}>
         <div style={{
           border: "8px",
