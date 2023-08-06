@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 44vh;
+  border: 3px solid #4A919E;
+  width: 50vw;
 
   .lastForm {
     display: flex;
@@ -10,16 +11,16 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding: 2em;
     img{
+      top: 0.5em;
+      right: 0.5em;
       cursor: pointer;
-      top: -1em;
-      right: 2em;
       width: 1.5em;
       position: absolute;
     }
     .contactForm {
       width: 80%;
-
       .titles {
         padding-top: 0.5em;
         font-weight: 600;
@@ -27,38 +28,40 @@
       }
 
       div {
+        font-size: 0.8em;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 1em;
+        min-height: 8vh;
 
         label {
           margin-bottom: 0.5em;
         }
-
+        strong{
+          color: red;
+          font-size: 0.8em;
+        }
         input {
           width: 100%;
           background-color: transparent;
-          border-bottom: 1px solid cadetblue;
+          border-bottom: 1px solid #4A919E;
           border-top: none;
           border-left: none;
           border-right: none;
           outline: none;
           z-index: 1000;
         }
-
+        input[type="email"]:focus{
+        }
         input::placeholder {
-          color: cadetblue;
-          font-size: 0.8em;
+          color: #4A919E;
         }
-
         textarea::placeholder {
-          color: cadetblue;
-          font-size: 0.8em;
+          color: #4A919E;
         }
-
         textarea {
-          border: 1px solid cadetblue;
+          border: 1px solid #4A919E;
           padding: 0.5em;
           display: flex;
           background-color: transparent;
@@ -67,6 +70,7 @@
           width: 100%;
         }
       }
+
 
       .bt {
         align-items: center;

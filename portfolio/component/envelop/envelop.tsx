@@ -6,6 +6,6 @@ type EnvelopProps = {
 }
 const Envelop = (props: EnvelopProps) =>
   <div onClick={() => props.setOpen(true)} className={styles.envelop}>
-    Clique la
+    Cliquez la
     !</div>;
 export default Envelop;

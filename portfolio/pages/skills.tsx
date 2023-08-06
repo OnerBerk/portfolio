@@ -1,7 +1,6 @@
 "use client";
 import styles from "../styles/skills.module.scss";
 import React, {useState} from "react";
-import Layout from "../component/layout/layout";
 
 import {faStar, faPaintBrush, faCircleDot} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
