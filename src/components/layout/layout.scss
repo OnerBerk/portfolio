@@ -3,43 +3,33 @@
 .yellow {
   background-color: map-get($theme-yellow, background);
   color: map-get($theme-yellow, primaryText);
-  .ligne {
-    border-left: 4px solid map-get($theme-yellow, primaryText);
-  }
   .top-ligne {
-    border-top: 4px solid map-get($theme-yellow, primaryText);
+    border-top: 2px solid map-get($theme-yellow, medium);
   }
 }
 .dark {
   background-color: map-get($theme-dark, background);
-  color: map-get($theme-dark, primaryText);
-  .ligne {
-    border-left: 4px solid map-get($theme-dark, primaryText);
-  }
+  color: map-get($theme-dark, light);
   .top-ligne {
-    border-top: 4px solid map-get($theme-dark, primaryText);
+    border-top: 2px solid map-get($theme-dark, medium);
   }
 }
 .light {
   background-color: map-get($theme-light, background);
   color: map-get($theme-light, primaryText);
-  .ligne {
-    border-left: 4px solid map-get($theme-light, primaryText);
-  }
   .top-ligne {
-    border-top: 4px solid map-get($theme-light, primaryText);
+    border-top: 2px solid map-get($theme-light, medium);
   }
 }
 
 .layout-main {
+  position: relative;
   width: 100vw;
-  min-height: 100%;
+  height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: hidden;
-  position: relative;
-  height: 100vh;
-  padding: 4vh;
+  padding: 3.3em;
 }
 
 .l {
@@ -62,22 +52,33 @@
 
     .date {
       position: absolute;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      bottom: 3vh;
+      left: -2em;
+      transform: rotate(270deg);
+      bottom: 9vh;
+      white-space: nowrap;
+      svg {
+        margin-right: 0.5em;
+      }
     }
-    .ligne {
+    .top-left {
       position: absolute;
       top: 3vh;
-      width: 2px;
-      height: 10em;
+      height: 30em;
+    }
+    .layout-nav {
+      display: flex;
+      flex-direction: column;
+      .svg {
+        cursor: pointer;
+        margin-top: 1em;
+      }
     }
   }
 
   .top-block {
     display: grid;
     grid-template-columns: 50% 50%;
-    padding-left: 2vh;
+    padding-left: 3vh;
     padding-right: 2vh;
     top: 0;
     position: absolute;

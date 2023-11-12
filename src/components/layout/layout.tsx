@@ -1,9 +1,13 @@
 import "./layout.scss";
-import {Dispatch, ReactNode, SetStateAction, useEffect} from "react";
+import {Dispatch, ReactNode, SetStateAction} from "react";
 import darkDot from "../../assets/dot.svg";
 import lightDot from "../../assets/light-dot.svg";
 import yellowDot from "../../assets/yellow-dot.svg";
 import {ThemeEnum} from "../../domain/domain";
+import {faCopyright} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import IconUi from "../icon-ui/icon-ui";
+import {IconArray} from "./icons-array";
 
 type LayoutProps = {
   children: ReactNode;
@@ -11,24 +15,15 @@ type LayoutProps = {
   setTheme: Dispatch<SetStateAction<ThemeEnum>>;
 };
 const Layout = ({children, theme, setTheme}: LayoutProps) => {
-  const symboleCopyright = "\u00A9";
   const year = new Date().getFullYear();
   const returnTheme = () => theme;
 
   return (
     <div className={`layout-main ${returnTheme()}`}>
       <div className="l">
-        <div className="left-block">
-          <div className="ligne" />
-          <span className="date">
-            {symboleCopyright}
-            {year}
-          </span>
-        </div>
         <div className={"top-block"}>
           <div className="top-ligne" />
           <div className="top-right">
-            <span>Öner</span>
             <img
               onClick={() => setTheme(ThemeEnum.dark)}
               alt="dark theme"
@@ -45,6 +40,27 @@ const Layout = ({children, theme, setTheme}: LayoutProps) => {
               src={yellowDot}
             />
           </div>
+        </div>
+        <div className="left-block">
+          <div className="top-left">
+            <div className="layout-nav">
+              {IconArray.map((f, i) => {
+                return (
+                  <IconUi
+                    key={i}
+                    theme={returnTheme()}
+                    icon={f.icon}
+                    classname={f.classname}
+                    size={f.size}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <span className="date">
+            <FontAwesomeIcon className="svg" icon={faCopyright} />
+            {`Öner Berk -- ${year}`}
+          </span>
         </div>
       </div>
       {children}

@@ -1,0 +1,11 @@
+@import "src/styles/_variables";
+
+.yellow {
+  color: map-get($theme-yellow, medium);
+}
+.dark {
+  color: map-get($theme-dark, medium);
+}
+.light {
+  color: map-get($theme-light, medium);
+}
