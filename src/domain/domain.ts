@@ -9,7 +9,7 @@ export enum ThemeEnum {
 export interface Iicon {
   icon: any;
   size?: SizeProp;
-  onClick?: () => void;
+  navigatePath?: string;
   classname?: string;
   theme?: ThemeEnum;
 }

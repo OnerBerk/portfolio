@@ -1,5 +1,5 @@
 import "./layout.scss";
-import {Dispatch, ReactNode, SetStateAction} from "react";
+import {useState} from "react";
 import darkDot from "../../assets/dot.svg";
 import lightDot from "../../assets/light-dot.svg";
 import yellowDot from "../../assets/yellow-dot.svg";
@@ -8,18 +8,21 @@ import {faCopyright} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import IconUi from "../icon-ui/icon-ui";
 import {IconArray} from "./icons-array";
+import {Outlet} from "react-router-dom";
+import {returnTheme} from "../../utils/return-theme";
+import {returnBackground} from "../../utils/return-background";
 
-type LayoutProps = {
-  children: ReactNode;
-  theme: ThemeEnum;
-  setTheme: Dispatch<SetStateAction<ThemeEnum>>;
-};
-const Layout = ({children, theme, setTheme}: LayoutProps) => {
+const Layout = () => {
+  const [theme, setTheme] = useState<ThemeEnum>(ThemeEnum.dark);
   const year = new Date().getFullYear();
-  const returnTheme = () => theme;
 
   return (
-    <div className={`layout-main ${returnTheme()}`}>
+    <div className={`layout-main ${returnTheme(theme)}`}>
+      <img
+        alt={returnBackground(theme).toString()}
+        className="background"
+        src={returnBackground(theme)}
+      />
       <div className="l">
         <div className={"top-block"}>
           <div className="top-ligne" />
@@ -48,10 +51,11 @@ const Layout = ({children, theme, setTheme}: LayoutProps) => {
                 return (
                   <IconUi
                     key={i}
-                    theme={returnTheme()}
+                    theme={returnTheme(theme)}
                     icon={f.icon}
                     classname={f.classname}
                     size={f.size}
+                    navigatePath={f.navigatePath && f.navigatePath}
                   />
                 );
               })}
@@ -63,7 +67,7 @@ const Layout = ({children, theme, setTheme}: LayoutProps) => {
           </span>
         </div>
       </div>
-      {children}
+      <Outlet />
     </div>
   );
 };
