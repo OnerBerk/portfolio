@@ -2,21 +2,18 @@
 
 .yellow {
   background-color: map-get($theme-yellow, background);
-  color: map-get($theme-yellow, primaryText);
   .top-ligne {
     border-top: 2px solid map-get($theme-yellow, medium);
   }
 }
 .dark {
   background-color: map-get($theme-dark, background);
-  color: map-get($theme-dark, light);
   .top-ligne {
-    border-top: 2px solid map-get($theme-dark, medium);
+    border-top: 2px solid map-get($theme-dark, light);
   }
 }
 .light {
   background-color: map-get($theme-light, background);
-  color: map-get($theme-light, primaryText);
   .top-ligne {
     border-top: 2px solid map-get($theme-light, medium);
   }
@@ -34,7 +31,10 @@
 .background {
   left: 0;
   top: 0;
+  bottom: 0;
+  object-fit: cover;
   width: 100%;
+  height: 100vh;
   opacity: 3%;
   position: absolute;
 }
