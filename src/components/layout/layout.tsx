@@ -4,14 +4,15 @@ import darkDot from "../../assets/dot.svg";
 import lightDot from "../../assets/light-dot.svg";
 import yellowDot from "../../assets/yellow-dot.svg";
 import {ThemeEnum} from "../../domain/domain";
-import {faCopyright} from "@fortawesome/free-solid-svg-icons";
+import {faCopyright, faCircleDown} from "@fortawesome/free-solid-svg-icons";
+import {faLinkedin, faGithub} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import IconUi from "../icon-ui/icon-ui";
 import {IconArray} from "./icons-array";
 import {Outlet} from "react-router-dom";
 import {returnTheme} from "../../utils/return-theme";
 import {returnBackground} from "../../utils/return-background";
-
+import {Link} from "react-router-dom";
 const Layout = () => {
   const [theme, setTheme] = useState<ThemeEnum>(ThemeEnum.dark);
   const year = new Date().getFullYear();
@@ -65,6 +66,21 @@ const Layout = () => {
             <FontAwesomeIcon className="svg" icon={faCopyright} />
             {`Öner Berk -- ${year}`}
           </span>
+        </div>
+        <div className="bottom-block">
+          <Link
+            className="link-a"
+            to="https://www.linkedin.com/in/onerberk/"
+            target="_blank">
+            <IconUi theme={returnTheme(theme)} icon={faLinkedin} />
+          </Link>
+          <Link
+            className="link-a"
+            to="https://github.com/OnerBerk"
+            target="_blank">
+            <IconUi theme={returnTheme(theme)} icon={faGithub} />
+          </Link>
+          <IconUi theme={returnTheme(theme)} icon={faCircleDown} />
         </div>
       </div>
       <Outlet />

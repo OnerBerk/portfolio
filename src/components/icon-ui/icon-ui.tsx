@@ -13,14 +13,14 @@ const IconUi = ({icon, size, navigatePath, classname, theme}: Iicon) => {
       style={{color: enter && theme ? returnColors(theme) : ""}}
       onMouseEnter={() => setEnter(true)}
       onMouseLeave={() => setEnter(false)}
+      size={size}
+      icon={icon}
       className={`${classname}`}
       onClick={
         navigatePath
           ? () => navigate(navigatePath)
           : () => console.log("Pas de Navigation")
       }
-      size={size}
-      icon={icon}
     />
   );
 };

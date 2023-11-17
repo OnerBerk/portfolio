@@ -50,7 +50,7 @@
 
   .left-block {
     position: relative;
-    padding-left: 1.9vh;
+    padding-left: 1.8vh;
     width: 4vh;
     height: 98vh;
     .date {
@@ -67,6 +67,7 @@
       transform: scale(-1, -1);
       svg {
         margin-bottom: 1em;
+        height: 2.5vh;
       }
     }
     .top-left {
@@ -80,6 +81,7 @@
       .svg {
         cursor: pointer;
         margin-top: 1em;
+        height: 2.5vh;
       }
     }
   }
@@ -112,6 +114,24 @@
         cursor: pointer;
         width: 1.5em;
       }
+    }
+  }
+  .bottom-block {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 0.5em;
+    bottom: 0;
+    right: 0;
+    padding-right: 1.9vh;
+    padding-bottom: 0.5em;
+    .link-a {
+      color: #016dd9;
+    }
+    svg {
+      cursor: pointer;
+      height: 3vh;
     }
   }
 }
