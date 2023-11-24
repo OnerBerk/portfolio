@@ -1,4 +1,5 @@
 import {SizeProp} from "@fortawesome/fontawesome-svg-core";
+import {Dispatch, SetStateAction} from "react";
 
 export enum ThemeEnum {
   dark = "dark",
@@ -7,6 +8,7 @@ export enum ThemeEnum {
 }
 
 export interface Iicon {
+  setPdf?: Dispatch<SetStateAction<boolean>>;
   icon: any;
   size?: SizeProp;
   navigatePath?: string;

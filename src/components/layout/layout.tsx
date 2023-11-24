@@ -4,24 +4,43 @@ import darkDot from "../../assets/dot.svg";
 import lightDot from "../../assets/light-dot.svg";
 import yellowDot from "../../assets/yellow-dot.svg";
 import {ThemeEnum} from "../../domain/domain";
-import {faCopyright, faCircleDown} from "@fortawesome/free-solid-svg-icons";
+import {faCircleDown} from "@fortawesome/free-solid-svg-icons";
 import {faLinkedin, faGithub} from "@fortawesome/free-brands-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import IconUi from "../icon-ui/icon-ui";
 import {IconArray} from "./icons-array";
 import {Outlet} from "react-router-dom";
 import {returnTheme} from "../../utils/return-theme";
 import {returnBackground} from "../../utils/return-background";
 import {Link} from "react-router-dom";
+import {Viewer} from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import close from "../../assets/close.png";
+// @ts-ignore
+import cv from "../../assets/pdf/cv.pdf";
+
 const Layout = () => {
   const [theme, setTheme] = useState<ThemeEnum>(ThemeEnum.dark);
   const year = new Date().getFullYear();
+  const [openPdf, setOpenPdf] = useState<boolean>(false);
 
   return (
     <div className={`layout-main ${returnTheme(theme)}`}>
+      {openPdf && (
+        <div className="pdf">
+          <div className="pdf-paper">
+            <img
+              className="close"
+              alt="Fermer la modale"
+              src={close}
+              onClick={() => setOpenPdf(false)}
+            />
+            <Viewer fileUrl={cv} />;
+          </div>
+        </div>
+      )}
       <img
-        alt={returnBackground(theme).toString()}
         className="background"
+        alt={returnBackground(theme).toString()}
         src={returnBackground(theme)}
       />
       <div className="l">
@@ -62,10 +81,7 @@ const Layout = () => {
               })}
             </div>
           </div>
-          <span className="date">
-            <FontAwesomeIcon className="svg" icon={faCopyright} />
-            {`Öner Berk -- ${year}`}
-          </span>
+          <span className="date">{`Öner Berk -- ${year}`}</span>
         </div>
         <div className="bottom-block">
           <Link
@@ -80,7 +96,11 @@ const Layout = () => {
             target="_blank">
             <IconUi theme={returnTheme(theme)} icon={faGithub} />
           </Link>
-          <IconUi theme={returnTheme(theme)} icon={faCircleDown} />
+          <IconUi
+            setPdf={setOpenPdf}
+            theme={returnTheme(theme)}
+            icon={faCircleDown}
+          />
         </div>
       </div>
       <Outlet />
