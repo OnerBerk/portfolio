@@ -15,7 +15,7 @@ export const IconArray: Iicon[] = [
   {icon: faHome, classname: "svg", navigatePath: "/"},
   {icon: faFingerprint, classname: "svg"},
   {icon: faStamp, classname: "svg", navigatePath: "/stamp"},
-  {icon: faEllipsisVertical, size: "sm", classname: "svg"},
+  {icon: faEllipsisVertical, size: "sm", classname: "sv"},
   {icon: faEllipsisVertical, size: "sm"},
   {icon: faEllipsisVertical, size: "sm"},
 ];
