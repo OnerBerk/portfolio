@@ -2,6 +2,7 @@ import {createBrowserRouter} from "react-router-dom";
 import HomePage from "../home.page";
 import StampPage from "../stamp.page";
 import Layout from "../../components/layout/layout";
+import ContactPage from "../contact.page";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ export const router = createBrowserRouter([
       {
         path: "/stamp",
         element: <StampPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
     ],
   },
