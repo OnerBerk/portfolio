@@ -18,7 +18,7 @@
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "normalize.css": "^8.0.1",
-    "pdfjs-dist": "^3.4.120",
+    "pdfjs-dist": "3.4.120",
     "@emailjs/browser": "^3.11.0",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
