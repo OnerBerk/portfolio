@@ -20,13 +20,11 @@ const Contact = () => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const body = {des: description, tel: tel};
     const project = JSON.stringify(body);
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID ?? "";
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID ?? "";
+    const userId = process.env.REACT_APP_EMAILJS_USER_ID ?? "";
     e.preventDefault();
-    send(
-      "service_ne7fxvi",
-      "template_n70txwb",
-      {name, email, project},
-      "qTbzjvyC63bokoWKZ",
-    )
+    send(serviceId, templateId, {name, email, project}, userId)
       .then((response) => {
         stampVisble();
         console.log("SUCCESS!", response.status, response.text);
