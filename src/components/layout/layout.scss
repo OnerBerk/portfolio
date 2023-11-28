@@ -1,0 +1,187 @@
+@import "../../styles/_variables";
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');.yellow {
+  background-color: map-get($theme-yellow, background);
+
+  .top-ligne {
+    border-top: 2px solid map-get($theme-yellow, medium);
+  }
+}
+
+.dark {
+  background-color: map-get($theme-dark, background);
+
+  .top-ligne {
+    border-top: 2px solid map-get($theme-dark, light);
+  }
+}
+
+.light {
+  background-color: map-get($theme-light, background);
+
+  .top-ligne {
+    border-top: 2px solid map-get($theme-light, medium);
+  }
+}
+
+.layout-main {
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 3.3em;
+}
+
+.pdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background-color: rgba(2, 29, 35, 0.67);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+
+  .pdf-paper {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 70%;
+    height: 90vh;
+    .close{
+      cursor: pointer;
+      width: 2em;
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      z-index: 2000;
+    }
+  }
+}
+
+.background {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  opacity: 3%;
+  position: absolute;
+}
+
+.l {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  height: 99vh;
+  width: 99.5vw;
+
+  .left-block {
+    position: relative;
+    padding-left: 1.8vh;
+    width: 4vh;
+    height: 98vh;
+
+    .date {
+      position: absolute;
+      bottom: 0;
+      left: 2vh;
+      white-space: nowrap;
+      writing-mode: vertical-rl;
+      text-orientation: sideways;
+      -moz-transform: scale(-1, -1);
+      -webkit-transform: scale(-1, -1);
+      -o-transform: scale(-1, -1);
+      -ms-transform: scale(-1, -1);
+      transform: scale(-1, -1);
+
+      svg {
+        margin-bottom: 1em;
+        height: 2.5vh;
+      }
+    }
+
+    .top-left {
+      position: absolute;
+      top: 3vh;
+      height: 30em;
+    }
+
+    .layout-nav {
+      display: flex;
+      flex-direction: column;
+
+      .svg {
+        cursor: pointer;
+        margin-top: 1em;
+        height: 1.2em;
+      }
+      .sv{
+        margin-top: 1em;
+      }
+    }
+  }
+
+  .top-block {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-left: 3vh;
+    padding-right: 2vh;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 4vh;
+    padding-top: 3vh;
+
+    .top-ligne {
+      width: 10em;
+      display: block;
+      height: 1px;
+      padding: 0;
+    }
+
+    .top-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      column-gap: 1em;
+      padding-right: 4vh;
+
+      img {
+        cursor: pointer;
+        width: 1.5em;
+      }
+    }
+  }
+
+  .bottom-block {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 0.5em;
+    bottom: 0;
+    right: 0;
+    padding-right: 1.9vh;
+    padding-bottom: 0.5em;
+
+    .link-a {
+      color: #016dd9;
+    }
+
+    svg {
+      cursor: pointer;
+      height: 1.5em;
+    }
+  }
+}
