@@ -1,6 +1,5 @@
 @import "../../styles/_variables";
-
-.yellow {
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');.yellow {
   background-color: map-get($theme-yellow, background);
 
   .top-ligne {
@@ -25,6 +24,7 @@
 }
 
 .layout-main {
+  font-family: 'Raleway', sans-serif;
   position: relative;
   width: 100vw;
   height: 100vh;
