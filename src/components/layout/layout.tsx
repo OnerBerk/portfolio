@@ -19,17 +19,26 @@ import cv from "../../assets/pdf/cv.pdf";
 import {changeLang} from "../../redux/actions/lang/lang-action";
 import useAppDispatch from "../../hook/useAppDispatch";
 
+import Stack from "@mui/material/Stack";
+import {IconButton} from "@mui/material";
+
+import frFlag from "../../../src/assets/france.png";
+import enFlag from "../../../src/assets/united-kingdom.png";
+import {useSelector} from "react-redux";
+import {RootState} from "../../redux/store/store";
+import Grid from "@mui/material/Grid";
+
 const Layout = () => {
   const dispatch = useAppDispatch();
   const year = new Date().getFullYear();
 
+  const lang = useSelector((state: RootState) => state.lang?.lang);
   const [openPdf, setOpenPdf] = useState<boolean>(false);
   const [theme, setTheme] = useState<ThemeEnum>(ThemeEnum.dark);
 
   const handleChangeLang = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      const selectedLang = event.target.value as Lang;
-      dispatch(changeLang(selectedLang));
+    (lang: Lang) => {
+      dispatch(changeLang(lang));
     },
     [dispatch],
   );
@@ -58,10 +67,28 @@ const Layout = () => {
         <div className={"top-block"}>
           <div>
             <div className="top-ligne" />
-            <select onChange={handleChangeLang}>
-              <option value={Lang.fr}>Français</option>
-              <option value={Lang.en}>English</option>
-            </select>
+            <Grid container>
+              <Grid item width="45px">
+                <IconButton onClick={() => handleChangeLang(Lang.fr)}>
+                  <img
+                    width="100%"
+                    alt="french flag"
+                    className={`flag ${lang === Lang.fr ? "" : "dimmed"}`}
+                    src={frFlag}
+                  />
+                </IconButton>
+              </Grid>
+              <Grid item width="45px">
+                <IconButton onClick={() => handleChangeLang(Lang.en)}>
+                  <img
+                    className={`flag ${lang === Lang.en ? "" : "dimmed"}`}
+                    width="100%"
+                    alt="english flag"
+                    src={enFlag}
+                  />
+                </IconButton>
+              </Grid>
+            </Grid>
           </div>
           <div className="top-right">
             <img
