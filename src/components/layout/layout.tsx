@@ -1,27 +1,38 @@
 import "./layout.scss";
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import darkDot from "../../assets/dot.svg";
 import lightDot from "../../assets/light-dot.svg";
 import yellowDot from "../../assets/yellow-dot.svg";
-import {ThemeEnum} from "../../domain/domain";
+import {Lang, ThemeEnum} from "../../domain/domain";
 import {faCircleDown} from "@fortawesome/free-solid-svg-icons";
-import {faLinkedin, faGithub} from "@fortawesome/free-brands-svg-icons";
+import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import IconUi from "../icon-ui/icon-ui";
 import {IconArray} from "./icons-array";
-import {Outlet} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 import {returnTheme} from "../../utils/return-theme";
 import {returnBackground} from "../../utils/return-background";
-import {Link} from "react-router-dom";
 import {Viewer} from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import close from "../../assets/close.png";
 // @ts-ignore
 import cv from "../../assets/pdf/cv.pdf";
+import {changeLang} from "../../redux/actions/lang/lang-action";
+import useAppDispatch from "../../hook/useAppDispatch";
 
 const Layout = () => {
-  const [theme, setTheme] = useState<ThemeEnum>(ThemeEnum.dark);
+  const dispatch = useAppDispatch();
   const year = new Date().getFullYear();
+
   const [openPdf, setOpenPdf] = useState<boolean>(false);
+  const [theme, setTheme] = useState<ThemeEnum>(ThemeEnum.dark);
+
+  const handleChangeLang = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      const selectedLang = event.target.value as Lang;
+      dispatch(changeLang(selectedLang));
+    },
+    [dispatch],
+  );
 
   return (
     <div className={`layout-main ${returnTheme(theme)}`}>
@@ -45,7 +56,13 @@ const Layout = () => {
       />
       <div className="l">
         <div className={"top-block"}>
-          <div className="top-ligne" />
+          <div>
+            <div className="top-ligne" />
+            <select onChange={handleChangeLang}>
+              <option value={Lang.fr}>Français</option>
+              <option value={Lang.en}>English</option>
+            </select>
+          </div>
           <div className="top-right">
             <img
               onClick={() => setTheme(ThemeEnum.dark)}

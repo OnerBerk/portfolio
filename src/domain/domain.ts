@@ -15,3 +15,8 @@ export interface Iicon {
   classname?: string;
   theme?: ThemeEnum;
 }
+
+export enum Lang {
+  fr = "fr",
+  en = "en",
+}
