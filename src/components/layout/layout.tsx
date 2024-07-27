@@ -19,7 +19,6 @@ import cv from "../../assets/pdf/cv.pdf";
 import {changeLang} from "../../redux/actions/lang/lang-action";
 import useAppDispatch from "../../hook/useAppDispatch";
 
-import Stack from "@mui/material/Stack";
 import {IconButton} from "@mui/material";
 
 import frFlag from "../../../src/assets/france.png";
