@@ -1,12 +1,15 @@
 import React, {useCallback} from "react";
+
 import {RouterProvider} from "react-router-dom";
 import {router} from "./pages/router/router";
-import {Worker} from "@react-pdf-viewer/core";
 import {IntlProvider} from "react-intl";
-import {useSelector} from "react-redux";
+
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import {RootState} from "./redux/store/store";
+import {useSelector} from "react-redux";
 
 import {Lang} from "./domain/domain";
+
 import enMessages from "./lang/en.json";
 import frMessages from "./lang/fr.json";
 
@@ -18,11 +21,10 @@ function App() {
     return lang === Lang.en ? enMessages : frMessages;
   }, [lang]);
   return (
-    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
       <IntlProvider locale={locale} messages={messages()}>
         <RouterProvider router={router} />
+        <SpeedInsights />
       </IntlProvider>
-    </Worker>
   );
 }
 export default App;
