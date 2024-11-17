@@ -24,6 +24,7 @@
     "@types/node": "^16.18.61",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
+    "framer-motion": "^11.2.10",
     "normalize.css": "^8.0.1",
     "pdfjs-dist": "3.4.120",
     "prettier": "^3.0.3",

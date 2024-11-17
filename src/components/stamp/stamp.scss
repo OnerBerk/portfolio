@@ -25,7 +25,7 @@ $height: calc($width / 2);
         justify-content: center;
         align-items: center;
         text-align: center;
-        font-size: 4vw;
+        font-size: 3.5vw;
         letter-spacing: 0.2em;
       }
 
@@ -51,11 +51,11 @@ $height: calc($width / 2);
         padding: 1em;
 
         .lastname {
-          font-size: 19vw;
+          font-size: 16vw;
         }
 
         .firstname {
-          font-size: 6vw;
+          font-size: 5vw;
           margin-top: 0.2em;
           writing-mode: vertical-rl;
           transform: scaleY(-1) scaleX(-1);

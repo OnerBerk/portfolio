@@ -1,3 +1,15 @@
 {
-  "hello_world": "Bonjour !"
+  "home.meDesc1":"Bienvenue sur mon portfolio, où l'expertise se mêle au dynamisme !",
+  "home.meDesc2":"Salut à tous ! Je suis Öner Berk, un développeur web passionné, spécialisé dans l'univers fascinant du JavaScript et du TypeScript.",
+  "home.meDesc3":"Imaginez un cocktail détonant de caféine et de lignes de code, et vous aurez un aperçu de mon univers !",
+  "home.meDesc4":"Mon terrain de jeu préféré ? Les interfaces utilisateur réactives et les applications web dynamiques. \uD83D\uDE80\n\n",
+  "home.meDesc5":"En plus de ma maîtrise des technologies front-end telles que React.js, Next.js et Redux,",
+  "home.meDesc6":"je suis également plongé dans l'exploration de l'écosystème back-end avec Nest.js, Prisma et PostgreSQL.",
+  "home.meDesc7":"Cette aventure me permet d'enrichir mes compétences et de rester à la pointe de l'innovation.",
+  "home.meDesc8":"Mon objectif est simple : créer des applications web de qualité supérieure qui répondent aux besoins des utilisateurs tout en offrant une expérience utilisateur exceptionnelle.",
+  "home.meDesc9":"Si vous êtes prêts à découvrir ce que l'avenir du développement web nous réserve, rejoignez-moi dans cette passionnante aventure technologique.",
+
+  "projects.wip":"Travail en cours.",
+
+  "stamp.title":"Développeur Full-stack"
 }
