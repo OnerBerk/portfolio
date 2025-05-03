@@ -1,5 +1,6 @@
 import React from 'react';
-import {Typography, Stack} from '@mui/material';
+import {Stack} from '@mui/material';
+import Text from '../../ui-components/text';
 
 interface Props {
   text1: string;
@@ -26,15 +27,15 @@ const Motion1: React.FC<Props> = ({
 }) => {
   return (
     <Stack spacing={1}>
-      <Typography>{text1}</Typography>
-      <Typography>{text2}</Typography>
-      <Typography>{text3}</Typography>
-      <Typography>{text4}</Typography>
-      <Typography>{text5}</Typography>
-      <Typography>{text6}</Typography>
-      <Typography>{text7}</Typography>
-      <Typography>{text8}</Typography>
-      <Typography>{text9}</Typography>
+      <Text label={text1} />
+      <Text label={text2} />
+      <Text label={text3} />
+      <Text label={text4} />
+      <Text label={text5} />
+      <Text label={text6} />
+      <Text label={text7} />
+      <Text label={text8} />
+      <Text label={text9} />
     </Stack>
   );
 };
