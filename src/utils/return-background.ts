@@ -1,8 +1,9 @@
 import {returnTheme} from "./return-theme";
 import {ThemeEnum} from "../domain/domain";
-import mangas from "../assets/collage.webp";
-import istanbul from "../assets/istanbul.jpg";
-import moi1 from "../assets/moi1.jpeg";
+
+import istanbul from '@/assets/istanbul.jpg'
+import mangas from '@/assets/collage.webp'
+import moi1 from '@/assets/moi1.jpeg'
 
 export const returnBackground = (theme: ThemeEnum) => {
   switch (returnTheme(theme)) {

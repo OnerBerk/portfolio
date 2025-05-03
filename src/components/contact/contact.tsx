@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./contact.scss";
-import timbre from "../../assets/timbre.png";
+import timbre from '@/assets/timbre.png'
 import {onchange} from "../../utils/onchange";
 import stamp from "../../assets/stamp-bg.png";
 import {send} from "@emailjs/browser";
@@ -16,7 +16,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState(0);
 
-  const stampVisble = () => setFinish(true);
+  const stampVisible = () => setFinish(true);
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const body = {des: description, tel: tel};
     const project = JSON.stringify(body);
@@ -26,7 +26,7 @@ const Contact = () => {
     e.preventDefault();
     send(serviceId, templateId, {name, email, project}, userId)
       .then((response) => {
-        stampVisble();
+        stampVisible();
         console.log("SUCCESS!", response.status, response.text);
       })
       .catch((err) => {

@@ -1,11 +1,12 @@
-@import "src/styles/_variables";
+@use "@/styles/variables" as *;
+@use "sass:map";
 
 .yellow {
-  color: map-get($theme-yellow, medium);
+  color: map.get($theme-yellow, medium);
 }
 .dark {
-  color: map-get($theme-dark, light);
+  color: map.get($theme-dark, light);
 }
 .light {
-  color: map-get($theme-light, medium);
+  color: map.get($theme-light, medium);
 }

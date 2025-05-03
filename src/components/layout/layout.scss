@@ -1,29 +1,31 @@
-@import "../../styles/_variables";
+@use "@/styles/variables" as *;
+@use "sass:map";
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
 .yellow {
-  background-color: map-get($theme-yellow, background);
+  background-color: map.get($theme-yellow, background);
 
   .top-ligne {
-    border-top: 2px solid map-get($theme-yellow, medium);
+    border-top: 2px solid map.get($theme-yellow, medium);
   }
 }
 
 .dark {
-  background-color: map-get($theme-dark, background);
+  background-color: map.get($theme-dark, background);
 
   .top-ligne {
-    border-top: 2px solid map-get($theme-dark, light);
+    border-top: 2px solid map.get($theme-dark, light);
   }
 }
 
 .light {
-  background-color: map-get($theme-light, background);
+  background-color: map.get($theme-light, background);
 
   .top-ligne {
-    border-top: 2px solid map-get($theme-light, medium);
+    border-top: 2px solid map.get($theme-light, medium);
   }
 }
 
