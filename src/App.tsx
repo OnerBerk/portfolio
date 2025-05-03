@@ -15,7 +15,7 @@ import frMessages from './lang/fr.json';
 
 function App() {
   const locale = 'fr';
-  const lang = useSelector((state: RootState) => state.lang?.lang);
+  const lang = useSelector((state: RootState) => state.langReducer?.lang);
 
   const messages = useCallback(() => {
     return lang === Lang.en ? enMessages : frMessages;

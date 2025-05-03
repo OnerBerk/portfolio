@@ -1,8 +1,8 @@
 import {returnTheme} from "./return-theme";
 import {ThemeEnum} from "../domain/domain";
 
-import istanbul from '@/assets/istanbul.jpg'
-import mangas from '@/assets/collage.webp'
+import eye from '@/assets/eye.jpg'
+import koi from '@/assets/koi.jpg'
 import moi1 from '@/assets/moi1.jpeg'
 
 export const returnBackground = (theme: ThemeEnum) => {
@@ -11,10 +11,10 @@ export const returnBackground = (theme: ThemeEnum) => {
       return moi1;
     }
     case ThemeEnum.yellow: {
-      return istanbul;
+      return eye;
     }
     case ThemeEnum.light: {
-      return mangas;
+      return koi;
     }
   }
 };

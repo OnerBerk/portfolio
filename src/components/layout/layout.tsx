@@ -1,4 +1,4 @@
-import {useCallback, useState} from 'react';
+import {useCallback, useMemo} from 'react';
 
 import {Link, Outlet} from 'react-router-dom';
 
@@ -16,7 +16,7 @@ import frFlag from '../../../src/assets/france.png';
 import lightDot from '../../assets/light-dot.svg';
 import darkDot from '../../assets/dot.svg';
 
-import {IconButton} from '@mui/material';
+import IconButton from '@mui/material/IconButton';
 import {IconArray} from './icons-array';
 import IconUi from '../icon-ui/icon-ui';
 
@@ -26,13 +26,15 @@ import {returnTheme} from '../../utils/return-theme';
 import Grid from '@mui/material/Grid';
 
 import './layout.scss';
+import {changeTheme} from '../../redux/actions/theme/theme-action';
 
 const Layout = () => {
   const dispatch = useAppDispatch();
   const year = new Date().getFullYear();
 
-  const lang = useSelector((state: RootState) => state.lang?.lang);
-  const [theme, setTheme] = useState<ThemeEnum>(ThemeEnum.dark);
+  const lang = useSelector((state: RootState) => state.langReducer.lang);
+  const reducerTheme = useSelector((state: RootState) => state.themeReducer.theme);
+  const localTheme=localStorage.getItem('theme');
 
   const handleChangeLang = useCallback(
     (lang: Lang) => {
@@ -43,10 +45,29 @@ const Layout = () => {
 
   const handleChangeTheme = useCallback(
     (color: ThemeEnum) => () => {
-      setTheme(color);
+      dispatch((changeTheme(color)))
     },
-    []
+    [dispatch]
   );
+
+  const theme = useMemo(():ThemeEnum=>{
+    if(reducerTheme){
+      return reducerTheme
+    }else{
+
+      if (localTheme ==="light" ){
+        return ThemeEnum.light
+      }
+      else if (localTheme === "dark"){
+        return ThemeEnum.dark
+      }
+      else if (localTheme === "yellow"){
+        return ThemeEnum.yellow
+      }
+      else return ThemeEnum.dark
+    }
+    },[reducerTheme,localTheme])
+
 
   return (
     <div className={`layout-main ${returnTheme(theme)}`}>
