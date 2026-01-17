@@ -1,36 +1,36 @@
-import React, {useEffect, useState} from "react";
-import "./contact.scss";
-import timbre from '@/assets/timbre.png'
-import {onchange} from "../../utils/onchange";
-import stamp from "../../assets/stamp-bg.png";
-import {send} from "@emailjs/browser";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCircleCheck} from "@fortawesome/free-regular-svg-icons";
-import {faUmbrellaBeach, faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import React, {useEffect, useState} from 'react';
+import './contact.scss';
+import timbre from '@/assets/timbre.png';
+import {onchange} from '../../utils/onchange';
+import stamp from '../../assets/stamp-bg.png';
+import {send} from '@emailjs/browser';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCircleCheck} from '@fortawesome/free-regular-svg-icons';
+import {faUmbrellaBeach, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
 const Contact = () => {
   const [finish, setFinish] = useState(false);
   const [display, setDisplay] = useState(true);
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [email, setEmail] = useState('');
   const [tel, setTel] = useState(0);
 
   const stampVisible = () => setFinish(true);
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const body = {des: description, tel: tel};
     const project = JSON.stringify(body);
-    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID ?? "";
-    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID ?? "";
-    const userId = process.env.REACT_APP_EMAILJS_USER_ID ?? "";
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID ?? '';
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID ?? '';
+    const userId = process.env.REACT_APP_EMAILJS_USER_ID ?? '';
     e.preventDefault();
     send(serviceId, templateId, {name, email, project}, userId)
       .then((response) => {
         stampVisible();
-        console.log("SUCCESS!", response.status, response.text);
+        console.log('SUCCESS!', response.status, response.text);
       })
       .catch((err) => {
-        console.log("FAILED...", err);
+        console.log('FAILED...', err);
       });
   };
 
@@ -40,56 +40,46 @@ const Contact = () => {
         setDisplay(false);
       }, 2000);
   }, [finish]);
-
   return (
     <>
       {display ? (
-        <form onSubmit={onSubmit} className="postal">
-          <div className="timbre">
-            <img alt="timbre" src={timbre} />
-            <div className={`stamp-ext ${finish ? "visible" : "hidden"}`}>
-              <img alt="tampon" className="s" src={stamp} />
-              <div className="stamp-title"></div>
+        <form onSubmit={onSubmit} className='postal'>
+          <div className='timbre'>
+            <img alt='timbre' src={timbre} />
+            <div className={`stamp-ext ${finish ? 'visible' : 'hidden'}`}>
+              <img alt='tampon' className='s' src={stamp} />
+              <div className='stamp-title'></div>
             </div>
           </div>
-          <div className="postal-title">
+          <div className='postal-title'>
             <FontAwesomeIcon icon={faEnvelope} />
             <span>Contactez moi</span>
             <FontAwesomeIcon icon={faUmbrellaBeach} />
           </div>
-          <div className="form-left">
+          <div className='form-left'>
             <textarea
               required
               onChange={(e) => onchange(setDescription, e.target.value)}
-              placeholder="Vôtre texte ici"
+              placeholder='Vôtre texte ici'
             />
           </div>
-          <div className="separator" />
-          <div className="form-right">
-            <input
-              onChange={(e) => onchange(setName, e.target.value)}
-              required
-              type="text"
-              placeholder="John do"
-            />
+          <div className='separator' />
+          <div className='form-right'>
+            <input onChange={(e) => onchange(setName, e.target.value)} required type='text' placeholder='John do' />
             <input
               onChange={(e) => onchange(setEmail, e.target.value)}
               required
-              type="email"
-              placeholder="John-do@gmail.com"
+              type='email'
+              placeholder='John-do@gmail.com'
             />
-            <input
-              onChange={(e) => onchange(setTel, e.target.value)}
-              type="tel"
-              placeholder="07.XX.XX.XX.54"
-            />
+            <input onChange={(e) => onchange(setTel, e.target.value)} type='tel' placeholder='07.XX.XX.XX.54' />
           </div>
-          <button type="submit" className="send">
+          <button type='submit' className='send'>
             Envoyer
           </button>
         </form>
       ) : (
-        <div className="email-send">
+        <div className='email-send'>
           <FontAwesomeIcon icon={faCircleCheck} />
           <div>
             Merci
