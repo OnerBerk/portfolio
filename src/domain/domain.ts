@@ -1,10 +1,10 @@
-import {SizeProp} from "@fortawesome/fontawesome-svg-core";
-import {Dispatch, SetStateAction} from "react";
+import {SizeProp} from '@fortawesome/fontawesome-svg-core';
+import {Dispatch, SetStateAction} from 'react';
 
 export enum ThemeEnum {
-  dark = "dark",
-  light = "light",
-  yellow = "yellow",
+  dark = 'dark',
+  light = 'light',
+  yellow = 'yellow',
 }
 
 export interface Iicon {
@@ -12,11 +12,12 @@ export interface Iicon {
   icon: any;
   size?: SizeProp;
   navigatePath?: string;
+  externalUrl?: string;
   classname?: string;
   theme?: ThemeEnum;
 }
 
 export enum Lang {
-  fr = "fr",
-  en = "en",
+  fr = 'fr',
+  en = 'en',
 }

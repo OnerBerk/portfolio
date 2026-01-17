@@ -7,6 +7,7 @@ $height: calc($width / 2);
   height: 92vh;
 
   .stampBody {
+    padding: 2vh;
     width: $width vw;
     height: $height vh;
     display: flex;
@@ -17,7 +18,7 @@ $height: calc($width / 2);
       display: grid;
       width: 100%;
       grid-template-rows: 20% 5% 75%;
-      font-family: "Roboto", sans-serif;
+      font-family: 'Instrument Serif', serif;
       font-weight: 600;
 
       .stampTitle {
@@ -25,7 +26,7 @@ $height: calc($width / 2);
         justify-content: center;
         align-items: center;
         text-align: center;
-        font-size: 3.5vw;
+        font-size: 3.8vw;
         letter-spacing: 0.2em;
       }
 
@@ -46,19 +47,17 @@ $height: calc($width / 2);
 
       .stampName {
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 1em;
 
         .lastname {
-          font-size: 16vw;
+          font-size: 20vw;
         }
 
         .firstname {
-          font-size: 5vw;
+          font-size: 10vw;
           margin-top: 0.2em;
           writing-mode: vertical-rl;
           transform: scaleY(-1) scaleX(-1);
+          align-self: center;
         }
       }
     }

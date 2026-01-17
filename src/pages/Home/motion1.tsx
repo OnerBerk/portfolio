@@ -14,17 +14,7 @@ interface Props {
   text9: string;
 }
 
-const Motion1: React.FC<Props> = ({
-  text1,
-  text2,
-  text3,
-  text4,
-  text5,
-  text6,
-  text7,
-  text8,
-  text9,
-}) => {
+const Motion1: React.FC<Props> = ({text1, text2, text3, text4, text5, text6, text7, text8, text9}) => {
   return (
     <Stack spacing={1}>
       <Text label={text1} />

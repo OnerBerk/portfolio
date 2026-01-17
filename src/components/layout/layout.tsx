@@ -1,127 +1,68 @@
 import {useCallback, useMemo} from 'react';
 
-import {Link, Outlet} from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
 
 import useAppDispatch from '../../hook/useAppDispatch';
-import {changeLang} from '../../redux/actions/lang/lang-action';
 import {RootState} from '../../redux/store/store';
 import {useSelector} from 'react-redux';
 
-import {Lang, ThemeEnum} from '../../domain/domain';
+import {ThemeEnum} from '../../domain/domain';
 
-import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons';
-import enFlag from '../../../src/assets/united-kingdom.png';
 import yellowDot from '../../assets/yellow-dot.svg';
-import frFlag from '../../../src/assets/france.png';
 import lightDot from '../../assets/light-dot.svg';
 import darkDot from '../../assets/dot.svg';
 
-import IconButton from '@mui/material/IconButton';
 import {IconArray} from './icons-array';
 import IconUi from '../icon-ui/icon-ui';
 
 import {returnBackground} from '../../utils/return-background';
 import {returnTheme} from '../../utils/return-theme';
 
-import Grid from '@mui/material/Grid';
-
 import './layout.scss';
 import {changeTheme} from '../../redux/actions/theme/theme-action';
+import {Box} from '@mui/material';
 
 const Layout = () => {
   const dispatch = useAppDispatch();
   const year = new Date().getFullYear();
 
-  const lang = useSelector((state: RootState) => state.langReducer.lang);
   const reducerTheme = useSelector((state: RootState) => state.themeReducer.theme);
-  const localTheme=localStorage.getItem('theme');
-
-  const handleChangeLang = useCallback(
-    (lang: Lang) => {
-      dispatch(changeLang(lang));
-    },
-    [dispatch]
-  );
+  const localTheme = localStorage.getItem('theme');
 
   const handleChangeTheme = useCallback(
     (color: ThemeEnum) => () => {
-      dispatch((changeTheme(color)))
+      dispatch(changeTheme(color));
     },
     [dispatch]
   );
 
-  const theme = useMemo(():ThemeEnum=>{
-    if(reducerTheme){
-      return reducerTheme
-    }else{
-
-      if (localTheme ==="light" ){
-        return ThemeEnum.light
-      }
-      else if (localTheme === "dark"){
-        return ThemeEnum.dark
-      }
-      else if (localTheme === "yellow"){
-        return ThemeEnum.yellow
-      }
-      else return ThemeEnum.dark
+  const theme = useMemo((): ThemeEnum => {
+    if (reducerTheme) {
+      return reducerTheme;
+    } else {
+      if (localTheme === 'light') {
+        return ThemeEnum.light;
+      } else if (localTheme === 'dark') {
+        return ThemeEnum.dark;
+      } else if (localTheme === 'yellow') {
+        return ThemeEnum.yellow;
+      } else return ThemeEnum.dark;
     }
-    },[reducerTheme,localTheme])
-
+  }, [reducerTheme, localTheme]);
 
   return (
     <div className={`layout-main ${returnTheme(theme)}`}>
-      <img
-        className='background'
-        alt={returnBackground(theme).toString()}
-        src={returnBackground(theme)}
-      />
+      <img className='background' alt={returnBackground(theme).toString()} src={returnBackground(theme)} />
+
       <div className='l'>
-        <div className={'top-block'}>
-          <div>
-            <div className='top-ligne' />
-            <Grid container pl={2}>
-              <Grid item width='40px'>
-                <IconButton onClick={() => handleChangeLang(Lang.fr)}>
-                  <img
-                    width='100%'
-                    alt='french flag'
-                    className={`flag ${lang === Lang.fr ? '' : 'dimmed'}`}
-                    src={frFlag}
-                  />
-                </IconButton>
-              </Grid>
-              <Grid item width='40px'>
-                <IconButton onClick={() => handleChangeLang(Lang.en)}>
-                  <img
-                    className={`flag ${lang === Lang.en ? '' : 'dimmed'}`}
-                    width='100%'
-                    alt='english flag'
-                    src={enFlag}
-                  />
-                </IconButton>
-              </Grid>
-            </Grid>
-          </div>
+        <Box height={50} position='absolute' p={5} top={0} right={0}>
           <div className='top-right'>
-            <img
-              onClick={handleChangeTheme(ThemeEnum.dark)}
-              style={{objectFit: 'cover'}}
-              alt='dark theme'
-              src={darkDot}
-            />
-            <img
-              alt='light theme'
-              src={lightDot}
-              onClick={handleChangeTheme(ThemeEnum.light)}
-            />
-            <img
-              alt='yellow theme'
-              src={yellowDot}
-              onClick={handleChangeTheme(ThemeEnum.yellow)}
-            />
+            <img alt='dark theme' src={darkDot} onClick={handleChangeTheme(ThemeEnum.dark)} />
+            <img alt='light theme' src={lightDot} onClick={handleChangeTheme(ThemeEnum.light)} />
+            <img alt='yellow theme' src={yellowDot} onClick={handleChangeTheme(ThemeEnum.yellow)} />
           </div>
-        </div>
+        </Box>
+
         <div className='left-block'>
           <div className='top-left'>
             <div className='layout-nav'>
@@ -134,26 +75,13 @@ const Layout = () => {
                     classname={f.classname}
                     size={f.size}
                     navigatePath={f.navigatePath && f.navigatePath}
+                    externalUrl={f.externalUrl && f.externalUrl}
                   />
                 );
               })}
             </div>
           </div>
           <span className='date'>{`Öner Berk -- ${year}`}</span>
-        </div>
-        <div className='bottom-block'>
-          <Link
-            className='link-a'
-            to='https://www.linkedin.com/in/onerberk/'
-            target='_blank'>
-            <IconUi theme={returnTheme(theme)} icon={faLinkedin} />
-          </Link>
-          <Link
-            className='link-a'
-            to='https://github.com/OnerBerk'
-            target='_blank'>
-            <IconUi theme={returnTheme(theme)} icon={faGithub} />
-          </Link>
         </div>
       </div>
       <Outlet />
