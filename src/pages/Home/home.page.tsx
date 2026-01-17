@@ -2,7 +2,7 @@ import {Grid, useMediaQuery, useTheme} from '@mui/material';
 import {motion} from 'framer-motion';
 import PageLayout from '../../components/layout/page-layout/page-layout';
 import MotionContainer from './motion-container';
-import photo from '@/assets/me.png';
+import photo from '@/assets/me.PNG';
 import './home.page.scss';
 
 const HomePage = () => {
