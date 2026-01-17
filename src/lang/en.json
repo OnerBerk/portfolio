@@ -1,15 +1,7 @@
 {
   "home.about": "About",
-  "home.meDesc1": "Welcome to my portfolio, where expertise meets dynamism!",
-  "home.meDesc2": "Hi everyone! I'm Öner Berk, a passionate web developer specializing in the fascinating world of JavaScript and TypeScript. ",
-  "home.meDesc3": "Imagine a powerful mix of caffeine and lines of code, and you'll get a glimpse of my world !",
-  "home.meDesc4": "My favorite playground ? Reactive user interfaces and dynamic web applications. \uD83D\uDE80\n\n ",
-  "home.meDesc5": "In addition to mastering front-end technologies such as React.js, Next.js, and Redux, ",
-  "home.meDesc6": "I'm also diving into exploring the back-end ecosystem with Nest.js, Prisma, and PostgreSQL. ",
-  "home.meDesc7": "This journey allows me to enrich my skills and stay at the forefront of innovation. ",
-  "home.meDesc8": "My goal is simple: to create top-quality web applications that meet users' needs while providing an exceptional user experience.",
-  "home.meDesc9": "If you're ready to discover what the future of web development holds, join me in this exciting technological adventure.",
-
+  "home.title": "I'm Öner Berk.\nI write code, I solve problems and I try to do it with style",
+  "home.meDesc": "Welcome to my portfolio, where expertise meets dynamism!\nI'm a passionate web developer specializing in the fascinating world of JavaScript and TypeScript.\nImagine a powerful mix of caffeine and lines of code, and you'll get a glimpse of my world !\nMy favorite playground ? user interfaces and dynamic web applications. \uD83D\uDE80\nIn addition to mastering front-end technologies such as React.js, Next.js, and Redux,\nI'm also diving into exploring the back-end ecosystem with Nest.js, Prisma, and PostgreSQL.\nThis journey allows me to enrich my skills and stay at the forefront of innovation.\nMy goal is simple: to create top-quality web applications that meet users' needs while providing an exceptional user experience.\nIf you're ready to discover what the future of web development holds, join me in this exciting technological adventure.",
   "projects.wip": "Work in progress.",
 
   "stamp.title": "Full-stack developer"

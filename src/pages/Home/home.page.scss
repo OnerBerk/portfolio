@@ -1,0 +1,7 @@
+.fade-image {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  mask-image: radial-gradient(ellipse 80% 100% at center, black 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 100% at center, black 5%, transparent 100%);
+}

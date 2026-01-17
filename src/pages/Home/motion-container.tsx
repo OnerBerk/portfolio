@@ -5,32 +5,49 @@ import {motion} from 'framer-motion';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import Motion1 from './motion1';
 import messages from './messages';
+import {Box, useMediaQuery, useTheme} from '@mui/material';
 
 const MotionContainer = () => {
   const intl = useIntl();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
-    <Stack width='80%' height='70vh' justifyContent='center' overflow='auto'>
+    <Stack height='100%' justifyContent='center' overflow='hidden' py={5}>
       <motion.div
         initial={{opacity: 0, y: -20}}
         animate={{opacity: 1, y: 0}}
-        transition={{duration: 3, ease: 'backInOut'}}>
-        <Typography variant='h4' sx={{mb: 3, fontWeight: 'bold'}}>
+        transition={{duration: 2, ease: 'backInOut'}}>
+        <Typography variant='h1' sx={{mb: 3, fontWeight: 'bold', fontSize: isMobile ? '4.5rem' : '6.5rem'}}>
           {intl.formatMessage(messages.about)}
         </Typography>
       </motion.div>
-      <Motion1
-        text1={intl.formatMessage(messages.meDesc1)}
-        text2={intl.formatMessage(messages.meDesc2)}
-        text3={intl.formatMessage(messages.meDesc3)}
-        text4={intl.formatMessage(messages.meDesc4)}
-        text5={intl.formatMessage(messages.meDesc5)}
-        text6={intl.formatMessage(messages.meDesc6)}
-        text7={intl.formatMessage(messages.meDesc7)}
-        text8={intl.formatMessage(messages.meDesc8)}
-        text9={intl.formatMessage(messages.meDesc9)}
-      />
+      <motion.div
+        initial={{opacity: 0, y: -20}}
+        animate={{opacity: 1, y: 0}}
+        transition={{duration: 2, ease: 'backInOut'}}>
+        <Typography variant='h2' sx={{mb: 3, fontSize: isMobile ? '2.5rem' : '3rem', whiteSpace: 'pre-line'}}>
+          {intl.formatMessage(messages.title)}
+        </Typography>
+      </motion.div>
+      <Box
+        sx={{
+          overflow: 'auto',
+          msOverflowStyle: 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+          zIndex: 1,
+        }}>
+        <motion.div
+          initial={{opacity: 0, y: -20}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 2, ease: 'circIn', delay: 2}}>
+          <Typography sx={{fontSize: '1.5rem', whiteSpace: 'pre-line', fontFamily: 'Merriweather, serif'}}>
+            {intl.formatMessage(messages.meDesc)}
+          </Typography>
+        </motion.div>
+      </Box>
     </Stack>
   );
 };
