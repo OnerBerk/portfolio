@@ -13,12 +13,12 @@ const MotionContainer = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
-    <Stack height='100%' justifyContent='center' overflow='hidden' py={5}>
+    <Stack height='100%' justifyContent='center' overflow='hidden' py={5} pl={isMobile ? 2 : 0}>
       <motion.div
         initial={{opacity: 0, y: -20}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 2, ease: 'backInOut'}}>
-        <Typography variant='h1' sx={{mb: 3, fontWeight: 'bold', fontSize: isMobile ? '4.5rem' : '6.5rem'}}>
+        <Typography variant='h1' sx={{mb: 3, fontWeight: 'bold', fontSize: isMobile ? '2rem' : '6.5rem'}}>
           {intl.formatMessage(messages.about)}
         </Typography>
       </motion.div>
@@ -26,7 +26,7 @@ const MotionContainer = () => {
         initial={{opacity: 0, y: -20}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 2, ease: 'backInOut'}}>
-        <Typography variant='h2' sx={{mb: 3, fontSize: isMobile ? '2.5rem' : '3rem', whiteSpace: 'pre-line'}}>
+        <Typography variant='h2' sx={{mb: 3, fontSize: isMobile ? '1.3rem' : '3rem', whiteSpace: 'pre-line'}}>
           {intl.formatMessage(messages.title)}
         </Typography>
       </motion.div>
@@ -43,7 +43,7 @@ const MotionContainer = () => {
           initial={{opacity: 0, y: -20}}
           animate={{opacity: 1, y: 0}}
           transition={{duration: 2, ease: 'circIn', delay: 2}}>
-          <Typography sx={{fontSize: '1.5rem', whiteSpace: 'pre-line', fontFamily: 'Merriweather, serif'}}>
+          <Typography sx={{fontSize: isMobile ? '1rem' : '1.1rem'}}>
             {intl.formatMessage(messages.meDesc)}
           </Typography>
         </motion.div>

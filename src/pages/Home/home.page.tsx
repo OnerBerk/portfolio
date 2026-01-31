@@ -10,8 +10,8 @@ const HomePage = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <PageLayout>
-      <Grid container>
-        <Grid px={5} item xs={12} md={8} alignItems='center' justifyContent='center' display='flex' height='95vh'>
+      <Grid container  width='100%'>
+        <Grid px={isMobile ? 0 : 5} item xs={12} md={8} alignItems='center' justifyContent='center' display='flex' height='95vh' >
           <MotionContainer />
         </Grid>
         <Grid borderColor='primary.main' item xs={12} md={4} display='flex' justifyContent='center' alignItems='center'>
