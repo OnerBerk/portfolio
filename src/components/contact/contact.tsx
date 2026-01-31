@@ -18,13 +18,11 @@ const Contact = () => {
 
   const stampVisible = () => setFinish(true);
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    const body = {des: description, tel: tel};
-    const project = JSON.stringify(body);
-    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID ?? '';
-    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID ?? '';
-    const userId = process.env.REACT_APP_EMAILJS_USER_ID ?? '';
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID ?? '';
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? '';
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID ?? '';
     e.preventDefault();
-    send(serviceId, templateId, {name, email, project}, userId)
+    send(serviceId, templateId, {name, email, message: description, tel: tel || ''}, userId)
       .then((response) => {
         stampVisible();
         console.log('SUCCESS!', response.status, response.text);
