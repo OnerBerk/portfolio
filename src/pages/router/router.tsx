@@ -4,8 +4,13 @@ import StampPage from '../stamp.page';
 import Layout from '../../components/layout/layout';
 import ContactPage from '../contact.page';
 import Projects from '../projects/projects';
+import CvPage from '../me.page';
 
 export const router = createBrowserRouter([
+  {
+    path: '/cv',
+    element: <CvPage />,
+  },
   {
     element: <Layout />,
     children: [
