@@ -1,0 +1,78 @@
+.stampMain {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.stampBody {
+  width: min(72vw, 960px);
+  aspect-ratio: 2 / 1;
+  border: 6px solid var(--foreground);
+  padding: clamp(10px, 2.2vw, 24px);
+  container-type: inline-size;
+}
+
+.stampRight {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 20% 8% 72%;
+  font-family: 'Times New Roman', serif;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.stampTitle {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  font-size: clamp(12px, 6cqw, 56px);
+}
+
+.stampDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+
+  span {
+    width: 46%;
+    border-bottom: 6px solid var(--foreground);
+  }
+
+  svg {
+    margin-inline: 8px;
+    flex: 0 0 auto;
+  }
+}
+
+.stampName {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lastname {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-right: clamp(10px, 4cqw, 32px);
+  font-size: clamp(48px, 31cqw, 300px);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  margin-bottom: 0.12em;
+}
+
+.firstname {
+  margin: 0 clamp(4px, 1cqw, 10px) clamp(2px, 0.8cqw, 8px) clamp(6px, 1.4cqw, 14px);
+  font-size: clamp(24px, 12cqw, 112px);
+  line-height: 0.8;
+  writing-mode: vertical-rl;
+  transform: scaleY(-1) scaleX(-1);
+  transform-origin: center;
+  white-space: nowrap;
+}

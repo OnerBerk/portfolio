@@ -1,0 +1,29 @@
+[data-theme] {
+  --theme-one-background: #f8f6f1;
+  --theme-two-background: #111111;
+  --theme-three-background: #f5e9d8;
+}
+
+[data-theme='theme-one'] {
+  --background: #f8f6f1;
+  --foreground: #111111;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --border: #d1d5db;
+}
+
+[data-theme='theme-two'] {
+  --background: #111111;
+  --foreground: #f9fafb;
+  --accent: #22d3ee;
+  --muted: #9ca3af;
+  --border: #374151;
+}
+
+[data-theme='theme-three'] {
+  --background: #f5e9d8;
+  --foreground: #0f4c5c;
+  --accent: #b45309;
+  --muted: #57737a;
+  --border: #d6c6ad;
+}

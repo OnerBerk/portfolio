@@ -1,0 +1,83 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 60px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  background: var(--background);
+  border-right: 1px solid var(--border);
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  width: 220px;
+}
+
+.nav,
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 0 8px;
+  color: var(--foreground);
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover,
+.item:focus-visible {
+  border-color: var(--border);
+  outline: none;
+}
+
+.icon {
+  flex: 0 0 20px;
+  color: var(--foreground);
+}
+
+.label {
+  opacity: 0;
+  max-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--muted);
+  transition:
+    opacity 0.2s ease,
+    max-width 0.2s ease;
+}
+
+.sidebar:hover .label {
+  opacity: 1;
+  max-width: 140px;
+}
+
+.footer {
+  position: absolute;
+  left: 1;
+  bottom: 16px;
+  margin: 0;
+  padding: 0 8px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}

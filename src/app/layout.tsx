@@ -1,4 +1,7 @@
 import type { Metadata } from 'next';
+import MainLayout from '@/components/layout/main-layout/main-layout';
+import { ThemeProvider } from '@/components/providers/theme-provider';
+
 import '@/styles/globals.scss';
 
 const siteName = 'Portfolio - Berk Oner';
@@ -30,8 +33,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body>{children}</body>
+    <html lang="fr" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>
+          <MainLayout>{children}</MainLayout>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

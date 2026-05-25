@@ -1,18 +1,4 @@
-$color-background: #f5f5f7;
-$color-surface: #ffffff;
-$color-text: #111827;
-$color-muted: #6b7280;
-
-$space-1: 4px;
-$space-2: 8px;
-$space-3: 12px;
-$space-4: 16px;
-$space-6: 24px;
-$space-8: 32px;
-
-$breakpoint-sm: 640px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
+@use '@/styles/themes';
 
 *,
 *::before,
@@ -24,12 +10,13 @@ html,
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
-  color: $color-text;
-  background-color: $color-background;
+  color: var(--foreground);
+  background-color: var(--background);
   font-family:
     Inter,
     -apple-system,
@@ -54,17 +41,13 @@ video {
   max-width: 100%;
 }
 
-.construction-page {
+.anchor-section {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: $space-8;
-  text-align: center;
+  padding: 80px 32px 32px;
+  border-bottom: 1px solid var(--border);
+}
 
-  h1 {
-    margin: 0;
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 600;
-    color: $color-muted;
-  }
+.anchor-section h1 {
+  margin: 0;
+  color: var(--foreground);
 }
