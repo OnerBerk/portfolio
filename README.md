@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Portfolio - Berk Öner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio personnel migré progressivement vers Next.js.
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+- Next.js 15 (App Router)
+- TypeScript (strict)
+- SCSS Modules / SCSS global
+- Zustand
 
-### `npm start`
+## Migration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Le code historique React + Vite est conservé temporairement dans `_legacy/` afin de récupérer
+progressivement composants, styles, animations et contenus.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- `_legacy/` reste versionné dans Git.
+- Le projet Next.js actif vit à la racine.
+- `_legacy/` est exclu de TypeScript et ESLint.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+pnpm install
+```
 
-### `npm run build`
+## Scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `pnpm dev` : lance le serveur de développement
+- `pnpm build` : build de production
+- `pnpm start` : lance le build de production
+- `pnpm lint` : lance ESLint
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```text
+.
+├── _legacy/            # Ancien projet React + Vite (temporaire)
+├── public/
+├── src/
+│   ├── app/            # Routes App Router, metadata, sitemap, robots
+│   ├── components/     # Composants UI
+│   ├── lib/            # Utilitaires métier
+│   ├── store/          # Stores Zustand
+│   ├── styles/         # Styles SCSS globaux/modules
+│   └── types/          # Types partagés
+└── ...
+```
