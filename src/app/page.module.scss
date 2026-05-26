@@ -1,0 +1,10 @@
+.stampSection {
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 500px) {
+  .stampSection {
+    padding: 24px 12px;
+  }
+}

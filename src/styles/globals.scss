@@ -19,6 +19,7 @@ body {
 
 body {
   min-height: 100vh;
+  min-height: 100svh;
   color: var(--foreground);
   background-color: var(--background);
   font-family:
@@ -47,6 +48,7 @@ video {
 
 .anchor-section {
   min-height: 100vh;
+  min-height: 100svh;
   padding: 80px 32px 32px;
   border-bottom: 1px solid var(--border);
 }
@@ -54,4 +56,32 @@ video {
 .anchor-section h1 {
   margin: 0;
   color: var(--foreground);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 100;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--foreground);
+  border: 2px solid var(--accent);
+}
+
+.skip-link:focus-visible {
+  top: 16px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

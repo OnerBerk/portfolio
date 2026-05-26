@@ -12,6 +12,10 @@ const themeOptions = [
   { name: 'theme-three', swatch: 'var(--theme-three-background)', label: 'Thème 3' },
 ] as const;
 
+type ThemeSwitcherProps = {
+  className?: string;
+};
+
 function isThemeName(theme: string | undefined): theme is ThemeName {
   if (!theme) {
     return false;
@@ -20,7 +24,7 @@ function isThemeName(theme: string | undefined): theme is ThemeName {
   return themeNames.includes(theme as ThemeName);
 }
 
-const ThemeSwitcher = () => {
+const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { theme, setTheme } = useTheme();
   const selectedTheme = useThemeStore((state) => state.selectedTheme);
   const setSelectedTheme = useThemeStore((state) => state.setSelectedTheme);
@@ -60,9 +64,10 @@ const ThemeSwitcher = () => {
   }
 
   const activeTheme = isThemeName(theme) ? theme : selectedTheme;
+  const switcherClassName = className ? `${styles.switcher} ${className}` : styles.switcher;
 
   return (
-    <div className={styles.switcher} aria-label="Sélecteur de thème">
+    <div className={switcherClassName} role="group" aria-label="Sélecteur de thème">
       {themeOptions.map((option) => {
         const isActive = activeTheme === option.name;
 
@@ -73,6 +78,7 @@ const ThemeSwitcher = () => {
             className={`${styles.button} ${isActive ? styles.active : ''}`}
             onClick={() => handleThemeChange(option.name)}
             aria-label={option.label}
+            aria-pressed={isActive}
             style={{ '--swatch': option.swatch } as CSSProperties}
           />
         );

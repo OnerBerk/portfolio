@@ -1,4 +1,5 @@
 .stampMain {
+  width: 100%;
   min-height: 100%;
   display: grid;
   place-items: center;
@@ -6,9 +7,11 @@
 
 .stampBody {
   width: min(72vw, 960px);
+  max-width: 100%;
   aspect-ratio: 2 / 1;
   border: 6px solid var(--foreground);
   padding: clamp(10px, 2.2vw, 24px);
+  margin-inline: auto;
   container-type: inline-size;
 }
 
@@ -75,4 +78,46 @@
   transform: scaleY(-1) scaleX(-1);
   transform-origin: center;
   white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+  .stampBody {
+    width: 100%;
+    border-width: 4px;
+    padding: clamp(8px, 2.2vw, 12px);
+  }
+
+  .stampRight {
+    grid-template-rows: 22% 10% 68%;
+  }
+
+  .stampTitle {
+    font-size: clamp(10px, 4.8cqw, 20px);
+    letter-spacing: 0.14em;
+  }
+
+  .stampDivider {
+    span {
+      border-bottom-width: 4px;
+    }
+  }
+
+  .stampName {
+    align-items: center;
+    text-align: center;
+  }
+
+  .lastname {
+    font-size: clamp(44px, 28cqw, 128px);
+    line-height: 0.74;
+    margin-bottom: 0;
+    align-self: center;
+    padding-right: clamp(4px, 1.8cqw, 12px);
+  }
+
+  .firstname {
+    font-size: clamp(18px, 11cqw, 56px);
+    line-height: 0.8;
+    margin: 0 clamp(2px, 0.7cqw, 6px) 0 clamp(3px, 0.9cqw, 8px);
+  }
 }

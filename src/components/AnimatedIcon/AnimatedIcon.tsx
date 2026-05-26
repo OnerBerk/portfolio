@@ -12,7 +12,6 @@ type AnimatedIconProps = {
   filled?: boolean;
   emphasized?: boolean;
   className?: string;
-  'aria-label'?: string;
 };
 
 const AnimatedIcon = ({
@@ -22,7 +21,6 @@ const AnimatedIcon = ({
   filled = false,
   emphasized = false,
   className,
-  'aria-label': ariaLabel,
 }: AnimatedIconProps) => {
   const prefersReducedMotion = useReducedMotion();
   const wrapperClassName = className ? `${styles.wrapper} ${className}` : styles.wrapper;
@@ -56,8 +54,7 @@ const AnimatedIcon = ({
     <motion.span
       className={wrapperClassName}
       style={wrapperStyle}
-      aria-label={ariaLabel}
-      role={ariaLabel ? 'img' : undefined}
+      aria-hidden="true"
       animate={{ scale: emphasized ? 1.18 : 1 }}
       transition={scaleTransition}
     >

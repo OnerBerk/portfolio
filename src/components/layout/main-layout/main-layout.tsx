@@ -13,8 +13,10 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div className={styles.container}>
       <Sidebar />
-      <ThemeSwitcher />
-      <main className={styles.main}>{children}</main>
+      <ThemeSwitcher className={styles.desktopThemeSwitcher} />
+      <main id="main-content" className={styles.main} tabIndex={-1}>
+        {children}
+      </main>
     </div>
   );
 };
