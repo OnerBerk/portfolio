@@ -1,8 +1,10 @@
+@use '@/styles/tokens' as t;
+
 .wrapper {
   position: relative;
   display: inline-flex;
-  inline-size: var(--icon-size, 24px);
-  block-size: var(--icon-size, 24px);
+  inline-size: t.$space-3xl;
+  block-size: t.$space-3xl;
   flex: 0 0 auto;
 }
 
@@ -28,6 +30,6 @@
 }
 
 .fill {
-  color: var(--icon-accent, currentColor);
+  color: var(--accent, currentColor);
   z-index: 1;
 }

@@ -1,17 +1,19 @@
+@use '@/styles/tokens' as t;
+
 .sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: t.$space-none;
+  left: t.$space-none;
   z-index: 20;
   width: 60px;
   height: 100vh;
   height: 100svh;
   display: flex;
   flex-direction: column;
-  padding: 16px 12px;
+  padding: t.$space-xl t.$space-md;
   background: var(--background);
-  border-right: 1px solid var(--border);
-  transition: width 0.3s ease;
+  border-right: t.$border-thin solid var(--border);
+  transition: width t.$duration-normal ease;
   overflow: hidden;
 }
 
@@ -27,21 +29,20 @@
 .social {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: t.$space-xs;
 }
 
 .item {
   width: 100%;
   height: 40px;
-  border-radius: 10px;
+  border-radius: t.$radius-md;
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 12px;
-  padding: 0 8px;
+  gap: t.$space-md;
+  padding: t.$space-none t.$space-xs;
   color: var(--foreground);
-  --icon-accent: var(--accent);
-  border: 1px solid transparent;
+  border: t.$border-thin solid transparent;
 }
 
 .item:hover,
@@ -50,19 +51,19 @@
 }
 
 .icon {
-  flex: 0 0 20px;
+  flex: 0 0 t.$space-2xl;
   color: var(--foreground);
 }
 
 .label {
-  opacity: 0;
-  max-width: 0;
+  opacity: t.$space-none;
+  max-width: t.$space-none;
   white-space: nowrap;
   overflow: hidden;
   color: var(--muted);
   transition:
-    opacity 0.2s ease,
-    max-width 0.2s ease;
+    opacity t.$duration-fast ease,
+    max-width t.$duration-fast ease;
 }
 
 .sidebar:hover .label {
@@ -72,12 +73,13 @@
 
 .footer {
   position: absolute;
-  left: 8px;
-  bottom: 16px;
-  margin: 0;
-  padding: 0 8px;
+  left: t.$space-xs;
+  bottom: t.$space-xl;
+  margin: t.$space-none;
+  padding: t.$space-none t.$space-xs;
   color: var(--muted);
   font-size: 1rem;
+  font-weight: t.$font-weight-medium;
   line-height: 1;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -86,7 +88,7 @@
   text-overflow: clip;
 }
 
-@media (max-width: 768px) {
+@media (max-width: t.$breakpoint-md) {
   .sidebar:hover {
     width: 60px;
   }
@@ -98,7 +100,7 @@
   .footer {
     left: 50%;
     bottom: max(15px, env(safe-area-inset-bottom));
-    padding: 0;
+    padding: t.$space-none;
     font-size: 0.9rem;
     transform: translateX(-50%) rotate(180deg);
   }

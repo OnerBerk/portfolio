@@ -2,15 +2,15 @@
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import type { CSSProperties } from 'react';
-import { themeNames, type ThemeName, useThemeStore } from '@/store/theme-store';
 import styles from './theme-switcher.module.scss';
 
 const themeOptions = [
-  { name: 'theme-one', swatch: 'var(--theme-one-background)', label: 'Thème 1' },
-  { name: 'theme-two', swatch: 'var(--theme-two-background)', label: 'Thème 2' },
-  { name: 'theme-three', swatch: 'var(--theme-three-background)', label: 'Thème 3' },
+  { name: 'theme-one', swatch: '#f9fafb', label: 'Thème 1' },
+  { name: 'theme-two', swatch: '#1b211a', label: 'Thème 2' },
+  { name: 'theme-three', swatch: '#efb036', label: 'Thème 3' },
 ] as const;
+const themeNames = themeOptions.map((themeOption) => themeOption.name);
+type ThemeName = (typeof themeOptions)[number]['name'];
 
 type ThemeSwitcherProps = {
   className?: string;
@@ -26,36 +26,13 @@ function isThemeName(theme: string | undefined): theme is ThemeName {
 
 const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { theme, setTheme } = useTheme();
-  const selectedTheme = useThemeStore((state) => state.selectedTheme);
-  const setSelectedTheme = useThemeStore((state) => state.setSelectedTheme);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (!mounted) {
-      return;
-    }
-
-    if (isThemeName(theme) && theme !== selectedTheme) {
-      setSelectedTheme(theme);
-    }
-  }, [mounted, selectedTheme, setSelectedTheme, theme]);
-
-  useEffect(() => {
-    if (!mounted) {
-      return;
-    }
-
-    if (!isThemeName(theme) || theme !== selectedTheme) {
-      setTheme(selectedTheme);
-    }
-  }, [mounted, selectedTheme, setTheme, theme]);
-
   const handleThemeChange = (nextTheme: ThemeName) => {
-    setSelectedTheme(nextTheme);
     setTheme(nextTheme);
   };
 
@@ -63,7 +40,7 @@ const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     return null;
   }
 
-  const activeTheme = isThemeName(theme) ? theme : selectedTheme;
+  const activeTheme = isThemeName(theme) ? theme : 'theme-one';
   const switcherClassName = className ? `${styles.switcher} ${className}` : styles.switcher;
 
   return (
@@ -79,7 +56,7 @@ const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
             onClick={() => handleThemeChange(option.name)}
             aria-label={option.label}
             aria-pressed={isActive}
-            style={{ '--swatch': option.swatch } as CSSProperties}
+            style={{ backgroundColor: option.swatch }}
           />
         );
       })}

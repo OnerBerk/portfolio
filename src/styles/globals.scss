@@ -1,8 +1,5 @@
 @use '@/styles/themes';
-
-:root {
-  --icon-accent: currentColor;
-}
+@use '@/styles/tokens' as t;
 
 *,
 *::before,
@@ -10,25 +7,28 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
+  margin: t.$space-none;
+  padding: t.$space-none;
   min-height: 100vh;
   min-height: 100svh;
   color: var(--foreground);
   background-color: var(--background);
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
-  line-height: 1.5;
+  font-family: t.$font-family-body;
+  font-size: t.$text-base;
+  line-height: t.$line-height-base;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -49,39 +49,40 @@ video {
 .anchor-section {
   min-height: 100vh;
   min-height: 100svh;
-  padding: 80px 32px 32px;
-  border-bottom: 1px solid var(--border);
+  padding: t.$space-6xl t.$padding-big t.$padding-big;
+  border-bottom: t.$border-thin solid var(--border);
 }
 
 .anchor-section h1 {
-  margin: 0;
+  margin: t.$space-none;
   color: var(--foreground);
 }
 
 .skip-link {
   position: absolute;
   top: -100%;
-  left: 16px;
+  left: t.$space-xl;
   z-index: 100;
-  padding: 10px 14px;
-  border-radius: 8px;
+  padding: t.$space-sm t.$space-lg;
+  border-radius: t.$radius-sm;
   background: var(--background);
   color: var(--foreground);
-  border: 2px solid var(--accent);
+  border: t.$border-medium solid var(--accent);
 }
 
 .skip-link:focus-visible {
-  top: 16px;
+  top: t.$space-xl;
 }
 
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
+  width: t.$border-thin;
+  height: t.$border-thin;
+  padding: t.$space-none;
   margin: -1px;
   overflow: hidden;
+  clip-path: inset(50%);
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-  border: 0;
+  border: t.$space-none;
 }

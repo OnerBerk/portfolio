@@ -1,3 +1,11 @@
+@use '../styles/tokens' as t;
+
+.heroTitle {
+  font-size: t.$text-title;
+  font-weight: t.$font-weight-light;
+  text-align: center;
+}
+
 .stampSection {
   display: grid;
   place-items: center;
@@ -5,6 +13,6 @@
 
 @media (max-width: 500px) {
   .stampSection {
-    padding: 24px 12px;
+    padding: t.$space-3xl t.$space-md;
   }
 }

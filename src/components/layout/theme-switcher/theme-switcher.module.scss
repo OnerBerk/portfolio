@@ -1,19 +1,20 @@
+@use '@/styles/tokens' as t;
+
 .switcher {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: t.$space-2xl;
+  right: t.$space-2xl;
   z-index: 30;
   display: inline-flex;
-  gap: 10px;
-  border-radius: 999px;
+  gap: t.$space-sm;
+  border-radius: t.$radius-pill;
 }
 
 .button {
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: var(--swatch);
+  width: t.$size-control-base;
+  height: t.$size-control-base;
+  border-radius: t.$radius-pill;
+  border: t.$border-thin solid transparent;
   cursor: pointer;
 }
 
@@ -21,13 +22,13 @@
   border-color: var(--foreground);
 }
 
-@media (max-width: 768px) {
+@media (max-width: t.$breakpoint-md) {
   .switcher {
-    gap: 20px;
+    gap: t.$space-2xl;
   }
 
   .button {
-    width: 17px;
-    height: 17px;
+    width: t.$size-control-small;
+    height: t.$size-control-small;
   }
 }

@@ -2,7 +2,6 @@
 
 import { HugeiconsIcon, type IconSvgElement } from '@hugeicons/react';
 import { motion, useReducedMotion } from 'motion/react';
-import type { CSSProperties } from 'react';
 import styles from './AnimatedIcon.module.scss';
 
 type AnimatedIconProps = {
@@ -24,7 +23,7 @@ const AnimatedIcon = ({
 }: AnimatedIconProps) => {
   const prefersReducedMotion = useReducedMotion();
   const wrapperClassName = className ? `${styles.wrapper} ${className}` : styles.wrapper;
-  const wrapperStyle = { '--icon-size': `${size}px` } as CSSProperties;
+  const wrapperStyle = { width: `${size}px`, height: `${size}px` };
 
   const scaleTransition = prefersReducedMotion
     ? { duration: 0 }
@@ -81,8 +80,8 @@ const AnimatedIcon = ({
           size={size}
           strokeWidth={0}
           showAlt
-          color="var(--icon-accent, currentColor)"
-          fill="var(--icon-accent, currentColor)"
+          color="var(--accent, currentColor)"
+          fill="var(--accent, currentColor)"
           aria-hidden="true"
           data-ai-fill
         />

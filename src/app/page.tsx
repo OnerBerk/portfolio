@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <section id="hero" className="anchor-section">
-        <h1>Hero — en construction</h1>
+        <h1 className={styles.heroTitle}>Hero — en cours de construction</h1>
       </section>
       <section id="projects" className="anchor-section">
         <h2 className="sr-only">Projets</h2>

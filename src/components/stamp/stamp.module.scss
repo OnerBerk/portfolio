@@ -1,3 +1,5 @@
+@use '@/styles/tokens' as t;
+
 .stampMain {
   width: 100%;
   min-height: 100%;
@@ -9,7 +11,7 @@
   width: min(72vw, 960px);
   max-width: 100%;
   aspect-ratio: 2 / 1;
-  border: 6px solid var(--foreground);
+  border: t.$border-heavy solid var(--foreground);
   padding: clamp(10px, 2.2vw, 24px);
   margin-inline: auto;
   container-type: inline-size;
@@ -20,13 +22,13 @@
   height: 100%;
   display: grid;
   grid-template-rows: 20% 8% 72%;
-  font-family: 'Times New Roman', serif;
-  font-weight: 600;
+  font-family: t.$font-family-heading;
+  font-weight: t.$font-weight-semibold;
   color: var(--foreground);
 }
 
 .stampTitle {
-  margin: 0;
+  margin: t.$space-none;
   display: grid;
   place-items: center;
   text-align: center;
@@ -43,11 +45,11 @@
 
   span {
     width: 46%;
-    border-bottom: 6px solid var(--foreground);
+    border-bottom: t.$border-heavy solid var(--foreground);
   }
 
   svg {
-    margin-inline: 8px;
+    margin-inline: t.$space-xs;
     flex: 0 0 auto;
   }
 }
@@ -83,7 +85,7 @@
 @media (max-width: 500px) {
   .stampBody {
     width: 100%;
-    border-width: 4px;
+    border-width: t.$border-strong;
     padding: clamp(8px, 2.2vw, 12px);
   }
 
@@ -98,7 +100,7 @@
 
   .stampDivider {
     span {
-      border-bottom-width: 4px;
+      border-bottom-width: t.$border-strong;
     }
   }
 

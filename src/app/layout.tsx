@@ -3,6 +3,7 @@ import MainLayout from '@/components/layout/main-layout/main-layout';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 
 import '@/styles/globals.scss';
+import { chillax } from './fonts';
 
 const siteName = 'Portfolio - Berk Oner';
 const siteDescription = 'Portfolio personnel de Berk Oner, actuellement en migration vers Next.js.';
@@ -37,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
-      <body>
+      <body className={chillax.className}>
         <a href="#main-content" className="skip-link">
           Aller au contenu principal
         </a>
