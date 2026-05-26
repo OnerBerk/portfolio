@@ -1,5 +1,9 @@
 @use '@/styles/themes';
 
+:root {
+  --icon-accent: currentColor;
+}
+
 *,
 *::before,
 *::after {

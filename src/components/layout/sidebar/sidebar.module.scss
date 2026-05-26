@@ -35,8 +35,8 @@
   gap: 12px;
   padding: 0 8px;
   color: var(--foreground);
+  --icon-accent: var(--accent);
   border: 1px solid transparent;
-  transition: border-color 0.2s ease;
 }
 
 .item:hover,

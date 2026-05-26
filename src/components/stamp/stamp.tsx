@@ -1,4 +1,5 @@
-import { Star } from 'lucide-react';
+import { StarIcon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 import styles from './stamp.module.scss';
 
 export function Stamp() {
@@ -10,7 +11,7 @@ export function Stamp() {
 
           <div className={styles.stampDivider}>
             <span />
-            <Star size={18} aria-hidden="true" />
+            <HugeiconsIcon icon={StarIcon} size={18} strokeWidth={2} aria-hidden="true" />
             <span />
           </div>
 

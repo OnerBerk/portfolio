@@ -1,8 +1,8 @@
-import { LucideIcon } from 'lucide-react';
+import type { IconSvgElement } from '@hugeicons/react';
 
 export type NavItem = {
   href: string;
   label: string;
-  icon: LucideIcon;
+  icon: IconSvgElement;
   external?: boolean;
 };
