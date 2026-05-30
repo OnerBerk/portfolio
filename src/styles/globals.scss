@@ -50,6 +50,7 @@ video {
   min-height: 100vh;
   min-height: 100svh;
   padding: t.$space-6xl t.$padding-big t.$padding-big;
+  overflow: hidden;
 }
 
 .anchor-section h1 {

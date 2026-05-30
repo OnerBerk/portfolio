@@ -3,94 +3,11 @@
 .heroSection {
   position: relative;
   overflow: hidden;
-}
 
-.heroTitleContent {
-  position: relative;
-  z-index: 1;
-  padding: 200px t.$space-6xl;
-}
-
-.heroParallaxContent {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.skyLayer {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-
-  :global(img) {
-    object-fit: cover;
-    object-position: center bottom;
-  }
-}
-
-.mountainLayer {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-
-  :global(img) {
-    object-fit: cover;
-    object-position: center bottom;
-  }
-}
-
-.moonLayer {
-  position: absolute;
-  right: 190px;
-  top: 50px;
-  z-index: 2;
-
-  :global(img) {
-    object-fit: cover;
-  }
-}
-
-.heroTitle {
-  font-size: 135px;
-  font-weight: t.$font-weight-bold;
-  line-height: 0.9;
-  text-align: left;
-}
-
-.heroSubtitle {
-  font-size: t.$text-title;
-  font-weight: t.$font-weight-light;
-  line-height: 1.5;
-  text-align: left;
-  color: var(--muted);
-}
-
-@media (max-width: t.$breakpoint-md) {
-  .heroTitleContent {
-    padding: 100px t.$space-4xl;
-  }
-  .heroTitle {
-    font-size: 90px;
-  }
-
-  .heroSubtitle {
-    font-size: 34px;
-  }
-  .moonLayer {
-    right: 50px;
-    top: 20px;
-  }
-}
-
-@media (max-width: t.$breakpoint-sm) {
-  .heroTitleContent {
-    padding: 80px t.$space-4xl;
-  }
-  .heroTitle {
-    font-size: 50px;
-  }
-
-  .heroSubtitle {
-    font-size: 14px;
+  @media (max-width: t.$breakpoint-md) {
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
+    padding: 0;
   }
 }

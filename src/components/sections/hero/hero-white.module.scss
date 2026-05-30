@@ -1,0 +1,124 @@
+@use '@/styles/tokens' as t;
+
+.heroTitleContent {
+  position: relative;
+  z-index: 2;
+  padding: 200px t.$space-6xl;
+}
+
+.heroTitleContentThemeOne {
+  padding-top: 370px;
+  padding-right: 350px;
+
+  .heroTitle,
+  .heroSubtitle {
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 900px;
+  }
+}
+
+.heroParallaxContent {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.whiteLevel3 {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  :global(img) {
+    object-fit: cover;
+  }
+}
+
+.whiteLevel2 {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  :global(img) {
+    object-fit: cover;
+    object-position: center bottom;
+  }
+}
+
+.whiteLevel1Left,
+.whiteLevel1Right {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  :global(img) {
+    object-fit: cover;
+  }
+}
+
+.whiteLevel1Left :global(img) {
+  object-position: left bottom;
+}
+
+.whiteLevel1Right :global(img) {
+  object-position: right bottom;
+}
+
+.heroTitle {
+  font-size: 135px;
+  font-weight: t.$font-weight-bold;
+  line-height: 0.9;
+  text-align: left;
+}
+
+.heroSubtitle {
+  font-size: t.$text-title;
+  font-weight: t.$font-weight-light;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--muted);
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .heroTitleContent {
+    padding-left: 80px;
+  }
+
+  .heroTitleContentThemeOne {
+    padding-top: 280px;
+    padding-right: 0;
+
+    .heroTitle,
+    .heroSubtitle {
+      text-align: left;
+      margin-left: 0;
+      margin-right: auto;
+      max-width: 900px;
+    }
+  }
+
+  .heroTitle {
+    font-size: 90px;
+  }
+
+  .heroSubtitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: t.$breakpoint-sm) {
+  .heroTitleContentThemeOne {
+    padding-top: 160px;
+    padding-right: 0;
+  }
+
+  .heroTitle {
+    font-size: 50px;
+  }
+
+  .heroSubtitle {
+    font-size: 14px;
+  }
+}
