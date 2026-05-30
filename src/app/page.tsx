@@ -1,12 +1,11 @@
+import HeroSection from '@/components/sections/hero/hero-section';
 import { Stamp } from '@/components/stamp/stamp';
 import styles from './page.module.scss';
 
 export default function Home() {
   return (
-    <>
-      <section id="hero" className="anchor-section">
-        <h1 className={styles.heroTitle}>Hero — en cours de construction</h1>
-      </section>
+    <div>
+      <HeroSection />
       <section id="projects" className="anchor-section">
         <h2 className="sr-only">Projets</h2>
       </section>
@@ -20,6 +19,6 @@ export default function Home() {
         <h2 className="sr-only">Stamp</h2>
         <Stamp />
       </section>
-    </>
+    </div>
   );
 }

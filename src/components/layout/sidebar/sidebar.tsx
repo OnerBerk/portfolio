@@ -13,6 +13,13 @@ const Sidebar = () => {
   const [activeItem, setActiveItem] = useState('Home');
   const [interactionItem, setInteractionItem] = useState<string | null>(null);
 
+  const getInteractionHandlers = (label: string) => ({
+    onMouseEnter: () => setInteractionItem(label),
+    onMouseLeave: () => setInteractionItem(null),
+    onFocus: () => setInteractionItem(label),
+    onBlur: () => setInteractionItem(null),
+  });
+
   useEffect(() => {
     const sections = navItems.reduce<Array<{ id: string; label: string }>>((acc, item) => {
       if (item.external || !item.href.startsWith('/#')) {
@@ -71,6 +78,20 @@ const Sidebar = () => {
       <nav className={styles.nav}>
         {navItems.map(({ href, label, icon: Icon, external }) => {
           const isCurrent = interactionItem ? interactionItem === label : activeItem === label;
+          const interactionHandlers = getInteractionHandlers(label);
+          const itemContent = (
+            <>
+              <AnimatedIcon
+                icon={Icon}
+                size={24}
+                strokeWidth={2}
+                filled={isCurrent}
+                emphasized={isCurrent}
+                className={styles.icon}
+              />
+              <span className={styles.label}>{label}</span>
+            </>
+          );
 
           return external ? (
             <a
@@ -79,43 +100,21 @@ const Sidebar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.item}
-              onMouseEnter={() => setInteractionItem(label)}
-              onMouseLeave={() => setInteractionItem(null)}
-              onFocus={() => setInteractionItem(label)}
-              onBlur={() => setInteractionItem(null)}
+              {...interactionHandlers}
               aria-label={`${label} (nouvel onglet)`}
             >
-              <AnimatedIcon
-                icon={Icon}
-                size={24}
-                strokeWidth={2}
-                filled={isCurrent}
-                emphasized={isCurrent}
-                className={styles.icon}
-              />
-              <span className={styles.label}>{label}</span>
+              {itemContent}
             </a>
           ) : (
             <Link
               key={label}
               href={href}
               className={styles.item}
-              onMouseEnter={() => setInteractionItem(label)}
-              onMouseLeave={() => setInteractionItem(null)}
-              onFocus={() => setInteractionItem(label)}
-              onBlur={() => setInteractionItem(null)}
+              {...interactionHandlers}
               onClick={() => setActiveItem(label)}
               aria-current={isCurrent ? 'location' : undefined}
             >
-              <AnimatedIcon
-                icon={Icon}
-                size={24}
-                strokeWidth={2}
-                filled={isCurrent}
-                emphasized={isCurrent}
-                className={styles.icon}
-              />
-              <span className={styles.label}>{label}</span>
+              {itemContent}
             </Link>
           );
         })}

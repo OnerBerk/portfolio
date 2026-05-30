@@ -7,19 +7,11 @@
   color: var(--foreground);
 }
 
-.main {
-  margin-left: 60px;
-}
-
 .desktopThemeSwitcher {
   display: inline-flex;
 }
 
 @media (max-width: t.$breakpoint-md) {
-  .main {
-    margin-left: 60px;
-  }
-
   .desktopThemeSwitcher {
     display: none !important;
   }
