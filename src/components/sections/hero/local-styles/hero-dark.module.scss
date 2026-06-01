@@ -3,20 +3,7 @@
 .heroTitleContent {
   position: relative;
   z-index: 2;
-  padding: 200px t.$space-6xl;
-}
-
-.heroTitleContentThemeOne {
-  padding-top: 370px;
-  padding-right: 350px;
-
-  .heroTitle,
-  .heroSubtitle {
-    text-align: right;
-    margin-left: auto;
-    margin-right: 0;
-    max-width: 900px;
-  }
+  padding: 100px t.$space-6xl;
 }
 
 .heroParallaxContent {
@@ -26,20 +13,10 @@
   pointer-events: none;
 }
 
-.whiteLevel3 {
+.skyLayer {
   position: absolute;
   inset: 0;
   z-index: 0;
-
-  :global(img) {
-    object-fit: cover;
-  }
-}
-
-.whiteLevel2 {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
 
   :global(img) {
     object-fit: cover;
@@ -47,34 +24,38 @@
   }
 }
 
-.whiteLevel1Left,
-.whiteLevel1Right {
+.mountainLayer {
   position: absolute;
   inset: 0;
   z-index: 3;
 
   :global(img) {
     object-fit: cover;
+    object-position: center bottom;
   }
 }
 
-.whiteLevel1Left :global(img) {
-  object-position: left bottom;
-}
+.moonLayer {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  z-index: 2;
 
-.whiteLevel1Right :global(img) {
-  object-position: right bottom;
+  :global(img) {
+    object-fit: cover;
+  }
 }
 
 .heroTitle {
-  font-size: 135px;
+  font-size: 105px;
   font-weight: t.$font-weight-bold;
   line-height: 0.9;
   text-align: left;
+  max-width: 1200px;
 }
 
 .heroSubtitle {
-  font-size: t.$text-title;
+  font-size: t.$text-xl;
   font-weight: t.$font-weight-light;
   line-height: 1.5;
   text-align: left;
@@ -83,42 +64,35 @@
 
 @media (max-width: t.$breakpoint-md) {
   .heroTitleContent {
-    padding-left: 80px;
-  }
-
-  .heroTitleContentThemeOne {
-    padding-top: 280px;
-    padding-right: 0;
-
-    .heroTitle,
-    .heroSubtitle {
-      text-align: left;
-      margin-left: 0;
-      margin-right: auto;
-      max-width: 900px;
-    }
+    padding: 100px t.$space-6xl;
   }
 
   .heroTitle {
-    font-size: 90px;
+    font-size: 70px;
   }
 
   .heroSubtitle {
-    font-size: 24px;
+    font-size: 34px;
+  }
+
+  .moonLayer {
+    right: 50px;
+    top: 20px;
   }
 }
 
 @media (max-width: t.$breakpoint-sm) {
-  .heroTitleContentThemeOne {
-    padding-top: 160px;
+  .heroTitleContent {
+    padding-top: 250px;
+    padding-left: 80px;
     padding-right: 0;
   }
 
   .heroTitle {
-    font-size: 50px;
+    font-size: 45px;
   }
 
   .heroSubtitle {
-    font-size: 14px;
+    font-size: 18px;
   }
 }

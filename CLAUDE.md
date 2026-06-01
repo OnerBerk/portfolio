@@ -25,3 +25,9 @@
 - Favor clear, understandable interactions over technical tricks.
 - Accessibility first (`focus-visible`, reduced motion support).
 - Keep animation implementations maintainable.
+
+## Accessibility & SEO
+
+- Always add meaningful `alt` text on images when it is straightforward.
+- If the right `alt` is unclear (decorative vs informative, duplicate layers, brand wording), ask before shipping.
+- Decorative parallax may stay in an `aria-hidden` container so screen readers are not flooded; still use descriptive `alt` for SEO and fallback context.

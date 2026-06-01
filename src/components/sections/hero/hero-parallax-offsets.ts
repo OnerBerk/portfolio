@@ -1,13 +1,13 @@
 export function getDarkParallaxOffsets(isMobile: boolean, isTablet: boolean) {
   if (isMobile) {
-    return { mountain: -350, moon: 400 };
+    return { mountain: -350, moon: 1000 };
   }
 
   if (isTablet) {
-    return { mountain: -550, moon: 650 };
+    return { mountain: -350, moon: 680 };
   }
 
-  return { mountain: -900, moon: 1100 };
+  return { mountain: -500, moon: 450 };
 }
 
 export function getWhiteParallaxOffsets(isMobile: boolean, isTablet: boolean) {
@@ -20,10 +20,4 @@ export function getWhiteParallaxOffsets(isMobile: boolean, isTablet: boolean) {
   }
 
   return { level1: 1200, level2: 1500 };
-}
-
-export function fadeOnScroll(progress: number, fadeStart: number, fadeEnd: number) {
-  if (progress <= fadeStart) return 1;
-  if (progress >= fadeEnd) return 0;
-  return 1 - (progress - fadeStart) / (fadeEnd - fadeStart);
 }
