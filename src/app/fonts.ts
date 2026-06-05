@@ -26,3 +26,15 @@ export const chillax = localFont({
   variable: '--font-chillax',
   display: 'swap',
 });
+
+export const gambarino = localFont({
+  src: [
+    {
+      path: './fonts/local/Gambarino-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-gambarino',
+  display: 'swap',
+});

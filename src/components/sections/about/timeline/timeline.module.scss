@@ -1,5 +1,13 @@
 @use '@/styles/tokens' as t;
 
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-md;
+  width: 100%;
+  max-width: 1100px;
+}
+
 .timeline {
   --timeline-amber: #e8a54b;
   --timeline-amber-soft: rgba(232, 165, 75, 0.55);
@@ -11,7 +19,6 @@
   align-items: center;
   gap: t.$space-md;
   width: 100%;
-  max-width: 1100px;
   padding: t.$space-3xl t.$space-xl;
   border-radius: t.$radius-md;
   background: color-mix(in srgb, var(--foreground) 6%, #000);
@@ -48,20 +55,6 @@
       outline: 2px solid var(--timeline-amber);
       outline-offset: 2px;
     }
-  }
-  h3 {
-    position: absolute;
-    top: 12px;
-    left: 50%;
-    z-index: 1;
-    transform: translateX(-50%);
-    margin: 0;
-    font-weight: t.$font-weight-bold;
-    line-height: 1.1;
-    color: var(--timeline-amber);
-    text-align: center;
-    white-space: nowrap;
-    pointer-events: none;
   }
 
   .needleLayer {

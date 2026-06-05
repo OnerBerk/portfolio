@@ -7,10 +7,20 @@
   justify-content: center;
   z-index: 10;
   padding: t.$space-6xl t.$space-4xl;
+  h3 {
+    font-size: 55px;
+    font-weight: t.$font-weight-bold;
+    line-height: 1.1;
+    color: var(--foreground);
+    text-align: center;
+  }
 }
 
 @media (max-width: t.$breakpoint-md) {
   .aboutSection {
     padding: 24px t.$space-md;
+    h3 {
+      font-size: 32px;
+    }
   }
 }

@@ -1,6 +1,6 @@
 export function getDarkParallaxOffsets(isMobile: boolean, isTablet: boolean) {
   if (isMobile) {
-    return { mountain: -350, moon: 1000 };
+    return { mountain: -350, moon: 450 };
   }
 
   if (isTablet) {
