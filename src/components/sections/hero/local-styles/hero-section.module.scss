@@ -2,6 +2,9 @@
 
 .heroSection {
   position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-1 * t.$sidebar-width);
   overflow: hidden;
   height: 100svh;
   min-height: 100svh;

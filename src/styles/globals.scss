@@ -49,8 +49,14 @@ video {
 .anchor-section {
   min-height: 100vh;
   min-height: 100svh;
-  padding: t.$space-6xl t.$padding-big t.$padding-big;
+  padding: t.$space-6xl t.$padding-big;
   overflow: hidden;
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .anchor-section {
+    padding: t.$space-4xl t.$space-md;
+  }
 }
 
 .anchor-section h1 {

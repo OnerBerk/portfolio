@@ -5,14 +5,17 @@ import {
   Home01Icon,
   Linkedin01Icon,
   Mail01Icon,
+  Tools,
   StampIcon,
   UserIcon,
+  TimelineIcon,
 } from '@hugeicons/core-free-icons';
 
 export const navItems: NavItem[] = [
   { href: '/#hero', label: 'Home', icon: Home01Icon },
+  { href: '/#about', label: 'À propos', icon: TimelineIcon },
   { href: '/#projects', label: 'Projets', icon: FolderOpenIcon },
-  { href: '/#about', label: 'À propos', icon: UserIcon },
+  { href: '/#skills', label: 'Skills', icon: Tools },
   { href: '/#contact', label: 'Contact', icon: Mail01Icon },
   { href: '/#stamp', label: 'Stamp', icon: StampIcon },
   { href: 'https://github.com/', label: 'GitHub', icon: GithubIcon, external: true },

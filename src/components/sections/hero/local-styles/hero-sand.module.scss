@@ -49,48 +49,18 @@
       height: auto;
     }
   }
-  .balloon1 {
-    left: 100px;
-    top: 3%;
-  }
-
   .balloon2 {
-    left: 15%;
-    bottom: -12%;
-    z-index: 9;
+    left: 20%;
+    bottom: -10%;
+    z-index: 10;
   }
-
-  .balloon3 {
-    left: 44%;
-    top: 38%;
-    z-index: 7;
-  }
-
-  .balloon4 {
-    left: 34%;
-    top: 18%;
-  }
-
-  .balloon5 {
-    left: 45%;
-    bottom: 8%;
-  }
-
-  .balloon6 {
-    left: 68%;
-    top: 10%;
-  }
-
   .balloon7 {
-    right: 5%;
-    bottom: 24%;
-    z-index: 7;
+    left: 80%;
+    bottom: 22%;
   }
 
   .balloon9 {
-    right: 25%;
-    bottom: 0;
-    z-index: 8;
+    display: none;
   }
 }
 
@@ -104,31 +74,6 @@
 
     .heroSubtitle {
       font-size: 24px;
-    }
-  }
-
-  .heroParallaxContent {
-    .balloon1,
-    .balloon3,
-    .balloon5,
-    .balloon6 {
-      display: none;
-    }
-
-    .balloon2 {
-      left: 10%;
-      bottom: 12%;
-    }
-    .balloon4 {
-      top: 2%;
-      left: 8%;
-    }
-    .balloon7 {
-      bottom: 18%;
-    }
-    .balloon9 {
-      right: 10%;
-      bottom: -15%;
     }
   }
 }
@@ -151,16 +96,14 @@
       transform: scale(0.8);
     }
 
-    .balloon5 {
-      display: none;
-    }
-
     .balloon2 {
+      display: flex;
       left: -30%;
       bottom: 5%;
     }
 
     .balloon9 {
+      display: flex;
       right: -10%;
       bottom: -15%;
     }

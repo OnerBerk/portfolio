@@ -1,0 +1,105 @@
+@use '@/styles/tokens' as t;
+
+.glow {
+  position: absolute;
+  width: 280px;
+  height: 240px;
+  pointer-events: none;
+}
+
+.topLeft,
+.topCenter,
+.topRight {
+  top: 12px;
+  background:
+    radial-gradient(
+      ellipse 24px 10px at 50% 0%,
+      rgba(232, 165, 75, 0.18) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 150px 240px at 50% 0%,
+      rgba(232, 165, 75, 0.14) 0%,
+      rgba(232, 165, 75, 0.06) 40%,
+      rgba(232, 165, 75, 0.02) 65%,
+      transparent 100%
+    );
+}
+
+.bottomLeft,
+.bottomCenter,
+.bottomRight {
+  bottom: 12px;
+  background:
+    radial-gradient(
+      ellipse 24px 10px at 50% 100%,
+      rgba(232, 165, 75, 0.18) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 150px 240px at 50% 100%,
+      rgba(232, 165, 75, 0.14) 0%,
+      rgba(232, 165, 75, 0.06) 40%,
+      rgba(232, 165, 75, 0.02) 65%,
+      transparent 100%
+    );
+}
+
+.topLeft,
+.bottomLeft {
+  left: 22%;
+  transform: translateX(-50%);
+}
+
+.topCenter,
+.bottomCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.topRight,
+.bottomRight {
+  left: 78%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .glow {
+    width: 200px;
+    height: 180px;
+  }
+
+  .topLeft,
+  .topCenter,
+  .topRight {
+    background:
+      radial-gradient(
+        ellipse 18px 8px at 50% 0%,
+        rgba(232, 165, 75, 0.14) 0%,
+        transparent 100%
+      ),
+      radial-gradient(
+        ellipse 100px 180px at 50% 0%,
+        rgba(232, 165, 75, 0.1) 0%,
+        rgba(232, 165, 75, 0.04) 45%,
+        transparent 100%
+      );
+  }
+
+  .bottomLeft,
+  .bottomCenter,
+  .bottomRight {
+    background:
+      radial-gradient(
+        ellipse 18px 8px at 50% 100%,
+        rgba(232, 165, 75, 0.14) 0%,
+        transparent 100%
+      ),
+      radial-gradient(
+        ellipse 100px 180px at 50% 100%,
+        rgba(232, 165, 75, 0.1) 0%,
+        rgba(232, 165, 75, 0.04) 45%,
+        transparent 100%
+      );
+  }
+}

@@ -13,7 +13,7 @@ type HeroParallaxWhiteProps = {
 const HeroParallaxWhite = ({ scrollYProgress }: HeroParallaxWhiteProps) => {
   const prefersReducedMotion = useReducedMotion();
   const { isMobile, isTablet } = useResponsive();
-  const { level1, level2 } = getWhiteParallaxOffsets(isMobile, isTablet);
+  const { level1 } = getWhiteParallaxOffsets(isMobile, isTablet);
 
   const level1LeftX = useTransform(
     scrollYProgress,
@@ -25,15 +25,20 @@ const HeroParallaxWhite = ({ scrollYProgress }: HeroParallaxWhiteProps) => {
     [0, 1],
     prefersReducedMotion ? [0, 0] : [0, level1],
   );
-  const level2Y = useTransform(
+  const level2DownY = useTransform(
     scrollYProgress,
     [0, 1],
-    prefersReducedMotion ? [0, 0] : [0, level2],
+    prefersReducedMotion ? [0, 0] : [0, 1000],
+  );
+  const level2LeftX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    prefersReducedMotion ? [0, 0] : [0, -820],
   );
 
   return (
     <div className={styles.heroParallaxContent} aria-hidden="true">
-      <motion.div className={styles.whiteLevel2} style={{ y: level2Y }}>
+      <motion.div className={styles.whiteLevel2} style={{ x: level2LeftX, y: level2DownY }}>
         <Image
           src="/assets/hero/parallax-bg-white/bg-white-level-2.png"
           alt="Formes abstraites blanches, arrière-plan décoratif du hero"
