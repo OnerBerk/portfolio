@@ -3,10 +3,9 @@
 import { gambarino } from '@/app/fonts';
 import { animate, motion, useMotionValue, useReducedMotion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
-import { flushSync } from 'react-dom';
 import TimelineDetail from './timeline-detail';
 import TimelineGlow from './timeline-glow';
-import { detailForYear, stepForYear, type TimelineStep } from './timeline-steps';
+import { detailForYear, FIRST_EVENT_YEAR, stepForYear, TIMELINE_STEPS, type TimelineStep } from './timeline-steps';
 import styles from './timeline.module.scss';
 
 const GLOW_PLACEMENTS = [
@@ -24,12 +23,12 @@ const DEFAULT_YEAR = 2015;
 
 const YEARS = Array.from({ length: END_YEAR - START_YEAR + 1 }, (_, i) => START_YEAR + i);
 const MINOR_TICKS = [1, 2, 3, 4, 5] as const;
+const EVENT_YEARS = TIMELINE_STEPS.map((step) => step.year);
+const LAST_EVENT_YEAR = EVENT_YEARS.at(-1)!;
 
 const Timeline = () => {
   const reducedMotion = useReducedMotion();
   const viewportRef = useRef<HTMLDivElement>(null);
-  const dragRef = useRef({ active: false, pointerX: 0, bandX: 0 });
-  const activeYearRef = useRef(DEFAULT_YEAR);
 
   const [width, setWidth] = useState(0);
   const [mobile, setMobile] = useState(false);
@@ -41,11 +40,9 @@ const Timeline = () => {
   const visibleYears = mobile ? 3 : 5;
   const yearWidth = width > 0 ? width / visibleYears : 0;
   const center = width / 2;
+  const minX = center - (END_YEAR - START_YEAR) * yearWidth;
 
-  const clampX = (x: number) => {
-    const min = center - (END_YEAR - START_YEAR) * yearWidth;
-    return Math.min(center, Math.max(min, x));
-  };
+  const clampX = (x: number) => Math.min(center, Math.max(minX, x));
 
   const yearAt = (x: number) => {
     const index = Math.round((center - x) / yearWidth);
@@ -55,7 +52,6 @@ const Timeline = () => {
   const xForYear = (year: number) => center - (year - START_YEAR) * yearWidth;
 
   const finishMoving = (year: number) => {
-    activeYearRef.current = year;
     setActiveYear(year);
     setShowHighlight(true);
     setRevealedStep(detailForYear(year));
@@ -64,7 +60,6 @@ const Timeline = () => {
   const goToYear = (year: number) => {
     if (yearWidth <= 0) return;
 
-    dragRef.current.active = false;
     setShowHighlight(false);
     const targetX = xForYear(year);
 
@@ -103,8 +98,15 @@ const Timeline = () => {
 
   useEffect(() => {
     if (yearWidth <= 0) return;
-    bandX.set(xForYear(activeYearRef.current));
-  }, [bandX, width, mobile, yearWidth]);
+    bandX.set(xForYear(activeYear));
+  }, [activeYear, bandX, width, mobile, yearWidth]);
+
+  const prevYear =
+    activeYear < FIRST_EVENT_YEAR
+      ? null
+      : (EVENT_YEARS.findLast((year) => year < activeYear) ?? FIRST_EVENT_YEAR - 1);
+  const nextYear =
+    activeYear >= LAST_EVENT_YEAR ? null : (EVENT_YEARS.find((year) => year > activeYear) ?? null);
 
   return (
     <div className={`${styles.root} ${gambarino.className}`}>
@@ -120,41 +122,29 @@ const Timeline = () => {
         </div>
         <button
           type="button"
-          className={styles.navButton}
-          aria-label="Année précédente"
-          onClick={() => moveTo(bandX.get() + yearWidth)}
+          className={`${styles.navButton} ${prevYear === null ? styles.navButtonHidden : ''}`}
+          aria-label="Événement précédent"
+          aria-hidden={prevYear === null}
+          tabIndex={prevYear === null ? -1 : 0}
+          disabled={prevYear === null}
+          onClick={() => {
+            if (prevYear !== null) goToYear(prevYear);
+          }}
         >
           ‹
         </button>
 
         <div className={styles.viewport} ref={viewportRef}>
-          <div
-            className={styles.dragArea}
-            onPointerDown={(event) => {
-              event.currentTarget.setPointerCapture(event.pointerId);
-              dragRef.current = { active: true, pointerX: event.clientX, bandX: bandX.get() };
-              flushSync(() => setShowHighlight(false));
-            }}
-            onPointerMove={(event) => {
-              if (!dragRef.current.active || yearWidth <= 0) return;
-              const nextX = clampX(
-                dragRef.current.bandX + (event.clientX - dragRef.current.pointerX),
-              );
-              bandX.set(nextX);
-            }}
-            onPointerUp={() => {
-              if (!dragRef.current.active) return;
-              dragRef.current.active = false;
-              moveTo(bandX.get());
-            }}
-            onPointerCancel={() => {
-              dragRef.current.active = false;
-              moveTo(bandX.get());
-            }}
-          >
+          <div className={styles.dragArea}>
             <motion.div
               className={styles.band}
               style={{ x: bandX, width: YEARS.length * yearWidth }}
+              drag={yearWidth > 0 ? 'x' : false}
+              dragConstraints={{ left: minX, right: center }}
+              dragMomentum={!reducedMotion}
+              dragElastic={0}
+              onDragStart={() => setShowHighlight(false)}
+              onDragEnd={() => moveTo(bandX.get())}
             >
               <div className={styles.ruler}>
                 {YEARS.map((year) => {
@@ -222,9 +212,14 @@ const Timeline = () => {
 
         <button
           type="button"
-          className={styles.navButton}
-          aria-label="Année suivante"
-          onClick={() => moveTo(bandX.get() - yearWidth)}
+          className={`${styles.navButton} ${nextYear === null ? styles.navButtonHidden : ''}`}
+          aria-label="Événement suivant"
+          aria-hidden={nextYear === null}
+          tabIndex={nextYear === null ? -1 : 0}
+          disabled={nextYear === null}
+          onClick={() => {
+            if (nextYear !== null) goToYear(nextYear);
+          }}
         >
           ›
         </button>

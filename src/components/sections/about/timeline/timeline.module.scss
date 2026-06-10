@@ -55,6 +55,11 @@
       outline: 2px solid var(--timeline-amber);
       outline-offset: 2px;
     }
+
+    &.navButtonHidden {
+      visibility: hidden;
+      pointer-events: none;
+    }
   }
 
   .needleLayer {

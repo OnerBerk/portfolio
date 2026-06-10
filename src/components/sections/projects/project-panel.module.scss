@@ -1,0 +1,123 @@
+@use '@/styles/tokens' as t;
+
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  height: 100svh;
+  overflow: hidden;
+  padding: t.$space-4xl;
+  padding-left: calc(t.$sidebar-width + t.$space-4xl);
+  box-sizing: border-box;
+  background: var(--background);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: t.$space-4xl;
+  height: 100%;
+  min-height: 0;
+
+  .detailsContent {
+    display: flex;
+    flex-direction: column;
+    gap: t.$space-md;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    .title {
+      text-align: center;
+      font-size: t.$text-xl;
+      font-weight: t.$font-weight-semibold;
+      margin: 0;
+    }
+
+    .href {
+      cursor: pointer;
+      text-align: center;
+      font-size: t.$text-base;
+      font-weight: t.$font-weight-semibold;
+      text-decoration: underline;
+      margin: 0;
+    }
+
+    .description {
+      font-size: t.$text-base;
+      line-height: t.$line-height-base;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: t.$space-xs;
+      justify-content: center;
+
+      img {
+        height: 22px;
+        width: auto;
+      }
+    }
+  }
+
+  .detailsPics {
+    display: flex;
+    flex-direction: column;
+    gap: t.$space-4xl;
+    min-height: 0;
+    overflow-y: auto;
+    padding-bottom: t.$space-4xl;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    .mobile,
+    .web {
+      display: grid;
+      gap: t.$space-md;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .mobile {
+      grid-template-columns: repeat(3, 1fr);
+
+      img {
+        aspect-ratio: 9 / 16;
+      }
+    }
+
+    .web {
+      grid-template-columns: repeat(2, 1fr);
+      gap: t.$space-xl;
+
+      img {
+        aspect-ratio: 16 / 10;
+      }
+    }
+  }
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .panel {
+    padding: t.$space-3xl t.$space-md;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+
+    .detailsPics {
+      .mobile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .web {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

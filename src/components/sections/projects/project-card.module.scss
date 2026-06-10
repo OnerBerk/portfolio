@@ -1,0 +1,85 @@
+@use '@/styles/tokens' as t;
+
+.card {
+  width: 88%;
+  max-width: 1220px;
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--foreground) 4%, transparent);
+  box-shadow:
+    0 2px 4px color-mix(in srgb, var(--foreground) 6%, transparent),
+    0 12px 32px color-mix(in srgb, var(--foreground) 14%, transparent);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: t.$space-xl;
+  width: 100%;
+  padding: t.$padding-base;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 2px;
+  }
+}
+
+.logo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 10%;
+  overflow: hidden;
+
+  img {
+    border-radius: 50;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-md;
+  padding: 12px;
+  height: 100%;
+
+  .title {
+    margin: 0;
+    font-size: t.$text-xl;
+    font-weight: t.$font-weight-semibold;
+    text-align: left;
+  }
+
+  .description {
+    font-size: t.$text-lg;
+    text-align: left;
+  }
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .card {
+    width: 100%;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    gap: t.$space-3xl;
+  }
+
+  .logo {
+    width: min(100%, 280px);
+    margin-inline: auto;
+  }
+}

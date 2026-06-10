@@ -13,6 +13,7 @@
   margin-left: t.$sidebar-width;
   width: calc(100% - t.$sidebar-width);
   box-sizing: border-box;
+  overflow-x: clip;
 }
 
 .desktopThemeSwitcher {

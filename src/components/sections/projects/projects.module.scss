@@ -1,0 +1,81 @@
+@use '@/styles/tokens' as t;
+
+.projectsSection {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.projectsSectionHorizontal {
+  --slide-count: 4;
+  overflow-x: clip;
+}
+
+.stickyViewport {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.rail {
+  display: flex;
+  height: 100%;
+  width: calc(var(--slide-count) * 100%);
+  will-change: transform;
+}
+
+.slide {
+  display: flex;
+  flex: 0 0 calc(100% / var(--slide-count));
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.introSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: t.$space-4xl;
+  text-align: center;
+
+  h3 {
+    font-size: t.$text-section-title;
+    font-weight: t.$font-weight-medium;
+    line-height: 1.1;
+    color: var(--foreground);
+  }
+}
+
+.verticalStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: t.$space-xl;
+  padding: t.$space-6xl t.$padding-big;
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .slide {
+    padding: 0 t.$space-xs;
+  }
+
+  .introSlide h3 {
+    font-size: 32px;
+  }
+
+  .verticalStack {
+    padding: t.$space-6xl t.$space-md;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail {
+    will-change: auto;
+  }
+}
