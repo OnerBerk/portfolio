@@ -3,6 +3,8 @@ const BADGES: Record<string, string> = {
     'https://img.shields.io/badge/-NestJS-e0234e?style=flat-square&logo=nestjs&logoColor=white',
   reactjs:
     'https://img.shields.io/badge/-React Js-45c8a2?style=flat-square&logo=react&logoColor=blue',
+  nextjs:
+    'https://img.shields.io/badge/-Next Js-000000?style=flat-square&logo=next.js&logoColor=white',
   redis: 'https://img.shields.io/badge/-Redis-DC382D?style=flat-square&logo=redis&logoColor=white',
   tailwindcss:
     'https://img.shields.io/badge/-Tailwind-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white',

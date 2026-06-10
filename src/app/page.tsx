@@ -1,3 +1,4 @@
+import SectionNumber from '@/components/section-number/section-number';
 import { Stamp } from '@/components/stamp/stamp';
 
 import ProjectsSection from '@/components/sections/projects/projects-section';
@@ -13,12 +14,15 @@ export default function Home() {
       <AboutSection />
       <ProjectsSection />
       <section id="skills" className="anchor-section">
+        <SectionNumber value="03" />
         <h2 className="sr-only">Skills</h2>
       </section>
       <section id="contact" className="anchor-section">
+        <SectionNumber value="04" />
         <h2 className="sr-only">Contact</h2>
       </section>
       <section id="stamp" className={`anchor-section ${styles.stampSection}`}>
+        <SectionNumber value="05" />
         <h2 className="sr-only">Stamp</h2>
         <Stamp />
       </section>

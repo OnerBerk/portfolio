@@ -47,6 +47,7 @@ video {
 }
 
 .anchor-section {
+  position: relative;
   min-height: 100vh;
   min-height: 100svh;
   padding: t.$space-6xl t.$padding-big;

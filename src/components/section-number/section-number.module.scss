@@ -1,0 +1,25 @@
+@use '@/styles/tokens' as t;
+
+.number {
+  position: absolute;
+  top: 50%;
+  right: t.$padding-big;
+  z-index: 0;
+  transform: translateY(-50%);
+  font-family: t.$font-family-heading;
+  font-size: 100vh;
+  font-weight: t.$font-weight-medium;
+  line-height: 0.75;
+  color: var(--foreground);
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .number {
+    right: t.$space-md;
+    font-size: 55vh;
+    opacity: 0.05;
+  }
+}

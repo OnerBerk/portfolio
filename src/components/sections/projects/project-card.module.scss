@@ -5,6 +5,7 @@
   max-width: 1220px;
   border-radius: 15px;
   background: color-mix(in srgb, var(--foreground) 4%, transparent);
+  backdrop-filter: blur(10px);
   box-shadow:
     0 2px 4px color-mix(in srgb, var(--foreground) 6%, transparent),
     0 12px 32px color-mix(in srgb, var(--foreground) 14%, transparent);

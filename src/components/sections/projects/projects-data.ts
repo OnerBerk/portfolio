@@ -51,6 +51,51 @@ export const PROJECTS: Project[] = [
     },
   },
   {
+    id: 'nar',
+    title: 'Nar',
+    image: '/assets/projects/nar-logo.webp',
+    description:
+      'Nar est une application web de suivi corporel et métabolique.' +
+      ' Elle permet à chaque utilisateur d’enregistrer ses mensurations (poids, tour de taille, hanches, etc.),' +
+      ' de visualiser son évolution dans le temps et d’obtenir automatiquement son métabolisme de base (BMR) et sa dépense énergétique quotidienne (TDEE) selon son niveau d’activité' +
+      'L’objectif : centraliser ses données de composition corporelle, suivre sa progression mois après mois et disposer d’indicateurs fiables pour ajuster son alimentation ou son entraînement.',
+    href: 'https://nar-ochre.vercel.app/auth',
+    alt: 'Nar logo',
+    technologies: [
+      'nestjs',
+      'postgresql',
+      'prisma',
+      'reactjs',
+      'material-ui',
+      'typescript',
+      'vercel',
+      'railway',
+      'neon',
+    ],
+    detailsPics: {
+      web: [
+        '/assets/preview/nar/web/nar-prev-0.webp',
+        '/assets/preview/nar/web/nar-prev-1.webp',
+        '/assets/preview/nar/web/nar-prev-2.webp',
+        '/assets/preview/nar/web/nar-prev-3.webp',
+        '/assets/preview/nar/web/nar-prev-4.webp',
+      ],
+      mobile: [],
+    },
+    detailsText:
+      'Nar est une application web de suivi corporel que j’ai conçue pour aider à suivre sa composition physique dans le temps.' +
+      ' L’utilisateur enregistre ses mensurations, consulte son historique et visualise sa progression via un tableau de bord et des graphiques.' +
+      ' L’application calcule aussi automatiquement le métabolisme de base (BMR) et la dépense énergétique quotidienne (TDEE) à partir du profil et du niveau d’activité.' +
+      'Côté technique, le projet est structuré en monorepo avec un frontend React et une API NestJS connectée à PostgreSQL.' +
+      ' L’authentification repose sur JWT, les mots de passe sont hachés, et chaque utilisateur n’accède qu’à ses propres données.' +
+      ' Les mesures déclenchent un recalcul automatique des indicateurs métaboliques.' +
+      'Nar manipule des données personnelles sensibles (mensurations, activité physique).' +
+      ' J’ai donc intégré dès la conception des principes de protection des données : accès restreint par compte, validation des entrées, stockage sécurisé et architecture pensée pour limiter l’exposition des informations.' +
+      ' L’application pose les bases d’une conformité RGPD (minimisation des données, isolation par utilisateur, suppression liée au compte).' +
+      'Déploiement : front sur Vercel, API sur Railway, domaine nar-ochre.vercel.app.' +
+      'Roadmap : intégration de nouvelles sources de données (glycémie, fréquence cardiaque, etc.),',
+  },
+  {
     id: 'hear-me-out',
     title: 'Hear me out',
     image: '/assets/projects/hmt-logo.webp',
@@ -81,26 +126,6 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 'nar',
-    title: 'Nar',
-    image: '/assets/projects/nar-logo.webp',
-    description: 'Application web pour le suivis de poids et de mesures de la santé',
-    href: 'https://nar-ochre.vercel.app/auth',
-    alt: 'Nar logo',
-    technologies: [
-      'nestjs',
-      'postgresql',
-      'prisma',
-      'reactjs',
-      'material-ui',
-      'typescript',
-      'vercel',
-      'railway',
-      'neon',
-    ],
-    detailsText: 'Nar est une application web pour le suivis de poids et de mesures de la santé.',
-  },
-  {
     id: 'portfolio',
     title: 'Ce portfolio',
     image: '/assets/projects/bee-logo.webp',
@@ -108,7 +133,7 @@ export const PROJECTS: Project[] = [
       'Site personnel animé, thèmes multiples, parallax, responsive et mise en place avec claude.',
     href: 'https://github.com/',
     alt: 'Ön Air Corp logo',
-    technologies: ['reactjs', 'scss', 'typescript', 'cursor', 'claude'],
+    technologies: ['nextjs', 'scss', 'typescript', 'cursor', 'claude'],
     detailsText:
       'Ce portfolio est un site personnel animé, thèmes multiples, parallax, responsive et mise en place avec claude.',
   },

@@ -3,6 +3,7 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { useRef, type CSSProperties } from 'react';
 
+import SectionNumber from '@/components/section-number/section-number';
 import { useResponsive } from '@/hooks/use-responsive';
 
 import ProjectCard from './project-card';
@@ -29,12 +30,14 @@ const ProjectsSection = () => {
   const intro = (
     <div className={styles.introSlide}>
       <h3>Projets</h3>
+      <p className={styles.introSubtitle}>ce sur quoi j&apos;ai passé mes nuits</p>
     </div>
   );
 
   if (useVerticalLayout) {
     return (
       <section id="projects" className={styles.projectsSection}>
+        <SectionNumber value="02" />
         <h2 className="sr-only">Projets</h2>
         <div className={styles.verticalStack}>
           {intro}
@@ -61,6 +64,7 @@ const ProjectsSection = () => {
     >
       <h2 className="sr-only">Projets</h2>
       <div className={styles.stickyViewport}>
+        <SectionNumber value="02" />
         <motion.div className={styles.rail} style={{ x }}>
           <div className={styles.slide}>{intro}</div>
           {PROJECTS.map((project) => (
