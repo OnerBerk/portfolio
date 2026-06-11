@@ -36,7 +36,7 @@ const ProjectsSection = () => {
 
   if (useVerticalLayout) {
     return (
-      <section id="projects" className={styles.projectsSection}>
+      <section ref={sectionRef} id="projects" className={styles.projectsSection}>
         <SectionNumber value="02" />
         <h2 className="sr-only">Projets</h2>
         <div className={styles.verticalStack}>

@@ -1,0 +1,36 @@
+@use '@/styles/tokens' as t;
+
+.skillsSection {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 90vh;
+  padding: t.$space-6xl t.$padding-big;
+  overflow-x: clip;
+
+  h3 {
+    font-size: t.$text-section-title;
+    font-weight: t.$font-weight-medium;
+    line-height: 1.1;
+    color: var(--foreground);
+    text-align: center;
+  }
+
+  .tree {
+    width: 100%;
+    max-width: 1500px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .skillsSection {
+    padding: t.$space-4xl t.$space-md;
+
+    h3 {
+      font-size: 32px;
+    }
+  }
+}
