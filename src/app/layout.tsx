@@ -6,13 +6,22 @@ import '@/styles/globals.scss';
 import { chillax } from './fonts';
 
 const siteName = 'Portfolio - Berk Oner';
-const siteDescription = 'Portfolio personnel de Berk Oner, actuellement en migration vers Next.js.';
+const siteDescription = 'Portfolio de Berk Öner, développeur full-stack.';
 const siteUrl = 'https://berkoner.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: siteName,
   description: siteDescription,
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
+    shortcut: '/favicon.ico',
+  },
   alternates: {
     canonical: '/',
   },

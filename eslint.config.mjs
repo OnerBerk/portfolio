@@ -15,6 +15,6 @@ export default defineConfig([
     'prettier',
   ),
   {
-    ignores: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts', '_legacy/**'],
+    ignores: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
   },
 ]);

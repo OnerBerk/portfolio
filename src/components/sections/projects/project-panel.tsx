@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- badges shields.io à largeur variable + previews */
 'use client';
 
 import { motion, useReducedMotion } from 'motion/react';

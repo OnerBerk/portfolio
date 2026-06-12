@@ -1,0 +1,76 @@
+@use '@/styles/tokens' as t;
+
+$input-block-height: 60px;
+$error-line-height: calc(t.$text-small * t.$line-height-base);
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-xs;
+
+  input,
+  textarea {
+    width: 100%;
+    border: t.$border-thin solid var(--border);
+    border-radius: t.$radius-sm;
+    padding: t.$space-xs;
+    font-size: t.$text-base;
+    font-weight: t.$font-weight-regular;
+    color: var(--foreground);
+    background-color: var(--background);
+    transition: border-color t.$duration-fast ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    &[aria-invalid='true'] {
+      border-color: var(--error);
+
+      &:focus {
+        border-color: var(--error);
+      }
+    }
+  }
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: $input-block-height;
+
+    input {
+      flex: 1;
+      min-height: 0;
+    }
+  }
+
+  .textareaContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-height: calc(200px + 5px + $error-line-height);
+
+    textarea {
+      flex: 1;
+      min-height: 200px;
+      resize: vertical;
+    }
+  }
+  label {
+    font-size: t.$text-base;
+    font-weight: t.$font-weight-medium;
+    line-height: 1.1;
+  }
+
+  .error {
+    flex-shrink: 0;
+    min-height: $error-line-height;
+    margin: 0;
+    font-size: t.$text-small;
+    font-weight: t.$font-weight-medium;
+    line-height: t.$line-height-base;
+    color: var(--error);
+  }
+}

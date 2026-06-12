@@ -89,7 +89,6 @@ export function computeTreeLayout(categories: SkillNode[]): TreeLayout {
   const leftExtent = sideDepth(-1) * LEVEL + LABEL_ROOM;
   const rightExtent = sideDepth(1) * LEVEL + LABEL_ROOM;
   const halfWidth = Math.max(leftExtent, rightExtent);
-  const width = halfWidth * 2;
   const trunkX = halfWidth;
 
   const nodes: TreeNode[] = [];

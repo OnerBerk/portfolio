@@ -1,11 +1,19 @@
 'use client';
 
+import Image from 'next/image';
+
 import { gambarino } from '@/app/fonts';
 import { animate, motion, useMotionValue, useReducedMotion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 import TimelineDetail from './timeline-detail';
 import TimelineGlow from './timeline-glow';
-import { detailForYear, FIRST_EVENT_YEAR, stepForYear, TIMELINE_STEPS, type TimelineStep } from './timeline-steps';
+import {
+  detailForYear,
+  FIRST_EVENT_YEAR,
+  stepForYear,
+  TIMELINE_STEPS,
+  type TimelineStep,
+} from './timeline-steps';
 import styles from './timeline.module.scss';
 
 const GLOW_PLACEMENTS = [
@@ -98,8 +106,8 @@ const Timeline = () => {
 
   useEffect(() => {
     if (yearWidth <= 0) return;
-    bandX.set(xForYear(activeYear));
-  }, [activeYear, bandX, width, mobile, yearWidth]);
+    bandX.set(center - (activeYear - START_YEAR) * yearWidth);
+  }, [activeYear, bandX, center, yearWidth]);
 
   const prevYear =
     activeYear < FIRST_EVENT_YEAR
@@ -118,7 +126,14 @@ const Timeline = () => {
         </div>
 
         <div className={styles.needleLayer} aria-hidden="true">
-          <img className={styles.needleImage} src="/assets/about/needle.png" alt="needle" />
+          <Image
+            className={styles.needleImage}
+            src="/assets/about/needle.png"
+            alt=""
+            width={60}
+            height={220}
+            aria-hidden
+          />
         </div>
         <button
           type="button"

@@ -1,0 +1,67 @@
+@use '@/styles/tokens' as t;
+
+.contactSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  min-height: 90vh;
+
+  h3 {
+    font-size: t.$text-section-title;
+    font-weight: t.$font-weight-medium;
+    line-height: 1.1;
+    color: var(--foreground);
+    text-align: center;
+  }
+}
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: t.$space-4xl;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  border: t.$border-thin solid var(--border);
+  border-radius: t.$radius-md;
+  padding: t.$space-xl;
+  backdrop-filter: blur(30px);
+  .contactMe {
+    height: 100%;
+    h4 {
+      font-size: t.$text-lg;
+      font-weight: t.$font-weight-medium;
+      line-height: 1.1;
+      color: var(--foreground);
+    }
+  }
+}
+
+.email {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-xs;
+  width: fit-content;
+  font-size: t.$text-small;
+  font-weight: t.$font-weight-regular;
+  line-height: 1.1;
+  color: var(--foreground);
+  text-decoration: none;
+  cursor: pointer;
+  border: t.$border-thin solid var(--border);
+  padding: t.$space-xs;
+  border-radius: t.$radius-sm;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .contactContainer {
+    grid-template-columns: 1fr;
+  }
+}

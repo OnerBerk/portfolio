@@ -1,0 +1,28 @@
+@use '@/styles/tokens' as t;
+
+.toast {
+  position: fixed;
+  top: t.$space-xl;
+  right: t.$padding-big;
+  z-index: 50;
+  max-width: min(90vw, 360px);
+  padding: t.$space-sm t.$space-md;
+  border-radius: t.$radius-sm;
+  border: 2px solid var(--border);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: t.$text-base;
+  font-weight: t.$font-weight-medium;
+  line-height: t.$line-height-base;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+}
+
+.success {
+  border-color: #4caf50;
+  background-color: color-mix(in srgb, #4caf50 18%, var(--background));
+}
+
+.error {
+  border-color: var(--error);
+  background-color: color-mix(in srgb, var(--error) 18%, var(--background));
+}

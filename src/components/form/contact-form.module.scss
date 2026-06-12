@@ -1,0 +1,8 @@
+@use '@/styles/tokens' as t;
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-xs;
+  height: 100%;
+}

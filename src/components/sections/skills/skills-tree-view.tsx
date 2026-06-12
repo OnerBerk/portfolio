@@ -48,8 +48,7 @@ const labelVariants: Variants = {
   }),
 };
 
-const branchDelay = (depth: number) =>
-  TITLE_SETTLE + TRUNK_DRAW + (depth - 1) * DEPTH_STAGGER;
+const branchDelay = (depth: number) => TITLE_SETTLE + TRUNK_DRAW + (depth - 1) * DEPTH_STAGGER;
 
 const nodeClassName = (node: TreeNode) => {
   if (!node.leaf) return `${styles.label} ${styles.junction}`;

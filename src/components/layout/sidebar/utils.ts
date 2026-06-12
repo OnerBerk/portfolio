@@ -7,7 +7,6 @@ import {
   Mail01Icon,
   Tools,
   StampIcon,
-  UserIcon,
   TimelineIcon,
 } from '@hugeicons/core-free-icons';
 

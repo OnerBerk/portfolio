@@ -1,0 +1,18 @@
+@use '@/styles/tokens' as t;
+
+.button {
+  width: 100%;
+  padding: t.$space-xs;
+  border-radius: t.$radius-sm;
+  background-color: transparent;
+  border: t.$border-thin solid var(--border);
+  color: var(--foreground);
+  font-size: t.$text-base;
+  font-weight: t.$font-weight-medium;
+  line-height: 1.1;
+  cursor: pointer;
+  transition: background-color t.$duration-fast ease;
+  &:hover {
+    background-color: var(--border);
+  }
+}

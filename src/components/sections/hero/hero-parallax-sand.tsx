@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- calques parallax décoratifs dans motion.div */
 'use client';
 
 import { motion, useReducedMotion, useTransform, type MotionValue } from 'motion/react';

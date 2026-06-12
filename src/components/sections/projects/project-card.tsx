@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { useProjectPanelStore } from '@/stores/project-panel-store';
 
 import type { Project } from '@/types/types';
@@ -16,7 +18,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <article className={styles.card}>
       <button type="button" className={styles.body} onClick={() => open(project)}>
         <div className={styles.logo}>
-          <img src={project.image} alt={project.alt} />
+          <Image src={project.image} alt={project.alt} width={280} height={280} />
         </div>
         <div className={styles.content}>
           <h4 className={styles.title}>{project.title}</h4>

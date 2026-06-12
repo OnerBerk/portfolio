@@ -38,7 +38,13 @@ const AnimatedIcon = ({
     'polygon(0% 12%, 18% 2%, 36% 15%, 52% 4%, 70% 16%, 86% 3%, 100% 11%, 100% 100%, 0% 100%)',
     fullFill,
   ];
-  const fillAnimate = prefersReducedMotion ? (filled ? fullFill : emptyFill) : filled ? liquidFrames : emptyFill;
+  const fillAnimate = prefersReducedMotion
+    ? filled
+      ? fullFill
+      : emptyFill
+    : filled
+      ? liquidFrames
+      : emptyFill;
   const fillTransition = prefersReducedMotion
     ? { duration: 0 }
     : filled
