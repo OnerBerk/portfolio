@@ -19,7 +19,7 @@
   .heroTitle {
     font-size: 135px;
     font-weight: t.$font-weight-bold;
-    line-height: 1;
+    line-height: 0.9;
     text-align: right;
   }
 
@@ -29,6 +29,7 @@
     line-height: 1.5;
     text-align: right;
     color: var(--muted);
+    margin: 0;
   }
 }
 
@@ -80,10 +81,10 @@
 
 @media (max-width: t.$breakpoint-sm) {
   .heroTitleContent {
-    padding-top: 150px;
-    padding-right: 30px;
+    padding-top: 50px;
+    padding-right: 50px;
     .heroTitle {
-      font-size: 60px;
+      font-size: 45px;
     }
 
     .heroSubtitle {

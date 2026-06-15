@@ -2,9 +2,14 @@
 
 .panel {
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 200;
-  height: 100svh;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
   padding: t.$space-4xl;
   padding-left: calc(t.$sidebar-width + t.$space-4xl);

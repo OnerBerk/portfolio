@@ -83,4 +83,12 @@
     width: min(100%, 280px);
     margin-inline: auto;
   }
+  .content {
+    .title {
+      font-size: t.$text-lg;
+    }
+    .description {
+      font-size: t.$text-base;
+    }
+  }
 }

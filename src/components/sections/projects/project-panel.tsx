@@ -19,8 +19,8 @@ const ProjectPanel = () => {
   return (
     <motion.div
       className={styles.panel}
-      initial={{ y: '-100vh' }}
-      animate={{ y: isOpen ? 0 : '-100vh' }}
+      initial={{ y: '-100dvh' }}
+      animate={{ y: isOpen ? 0 : '-100dvh' }}
       transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.5, ease: 'easeOut' }}
       style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
       onClick={close}
