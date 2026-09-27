@@ -1,0 +1,27 @@
+@use '@/styles/tokens' as t;
+
+.hint {
+  display: flex;
+  justify-content: center;
+  margin-top: t.$space-md;
+  min-height: 40px;
+  pointer-events: none;
+  color: var(--muted);
+}
+
+.anchor {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sway {
+  display: inline-flex;
+  transform-origin: bottom center;
+}

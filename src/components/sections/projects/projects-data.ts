@@ -16,9 +16,6 @@ export const PROJECTS: Project[] = [
       "Autour des événements, des couches d'information contextuelle activables à la demande : stations Vélib en temps réel, stations de métro, Space Invaders parisiens, et une météo à l'instant T avec icônes paper cut adaptées au jour et à la nuit." +
       'Stack technique : monorepo pnpm avec une API NestJS et un front React 19 / Vite en TypeScript strict. La carte utilise MapLibre GL JS avec un style aquarelle Maptiler et des marqueurs PNG personnalisés en 3D paper cut. Côté état : Zustand pour la persistance de la vue, TanStack Query pour la synchronisation des données avec refetch automatique au déplacement de la carte (debounce 800ms). Cache Redis sur Upstash pour la météo. Tests Jest avec couverture >90%, CI GitHub Actions, Husky en pre-commit.' +
       'Déploiement : front sur Vercel, API sur Railway, domaine wandercity.fr.' +
-      "Roadmap : agent IA via l'API Claude pour suggérer des parcours en langage naturel, intégration de nouvelles sources (Street Art Cities, musées nationaux), et extension à d'autres villes." +
-      'Stack technique : monorepo pnpm avec une API NestJS et un front React 19 / Vite en TypeScript strict. La carte utilise MapLibre GL JS avec un style aquarelle Maptiler et des marqueurs PNG personnalisés en 3D paper cut. Côté état : Zustand pour la persistance de la vue, TanStack Query pour la synchronisation des données avec refetch automatique au déplacement de la carte (debounce 800ms). Cache Redis sur Upstash pour la météo. Tests Jest avec couverture >90%, CI GitHub Actions, Husky en pre-commit.' +
-      'Déploiement : front sur Vercel, API sur Railway, domaine wandercity.fr.' +
       "Roadmap : agent IA via l'API Claude pour suggérer des parcours en langage naturel, intégration de nouvelles sources (Street Art Cities, musées nationaux), et extension à d'autres villes.",
     href: 'https://wandercity.fr/',
     alt: 'Wander City logo',
@@ -48,6 +45,37 @@ export const PROJECTS: Project[] = [
         '/assets/preview/wander/web/wander-prev-7.webp',
         '/assets/preview/wander/web/wander-prev-8.webp',
       ],
+    },
+  },
+  {
+    id: 'dtnr studio',
+    title: 'DTNR Studio',
+    image: '/assets/projects/dtnr-logo.png',
+    description:
+      "Mission freelance : conception et développement du site vitrine d'un studio d'architecture d'intérieur et de rendu 3D. " +
+      'Un site Next.js rapide, accessible et bien référencé, noté 100 en performances et en SEO sur Lighthouse, ' +
+      'et livré clé en main à la cliente.',
+    detailsText:
+      'Le besoin de la cliente : un site qui mette en valeur ses rendus photoréalistes sans sacrifier la vitesse de chargement, et qui lui apporte des demandes de contact. ' +
+      "J'ai géré le projet de bout en bout, de l'intégration au déploiement en passant par la mise en ligne du domaine et la passation. " +
+      'Stack : Next.js 15 (App Router), TypeScript strict et Tailwind CSS, avec ESLint et Prettier. Le formulaire de contact passe par EmailJS, sans back-end à maintenir. ' +
+      "Côté front, j'ai construit un Hero éditorial responsive avec une typographie fluide en clamp() et une grille portfolio 3×3 avec overlay, optimisée pour des images lourdes. " +
+      "Pour le SEO et l'accessibilité, j'ai mis en place un sitemap généré avec next-sitemap, des métadonnées Open Graph et Twitter, un lien d'évitement vers le contenu et une navigation par ancres. Le site est aussi une PWA grâce à next-pwa. " +
+      'Résultat Lighthouse : 100 en performances, 96 en accessibilité, 100 en bonnes pratiques et 100 en SEO. Le LCP est de 0,5 s et le TBT de 0 ms. ' +
+      "Livraison : déploiement sur Vercel et variables d'environnement sécurisées. Le dépôt GitHub a été transféré à la cliente et je reste collaborateur pour la maintenance.",
+    href: 'https://www.dtnr-studio.com/',
+    alt: 'DTNR Studio logo',
+    technologies: ['nextjs', 'typescript', 'tailwindcss', 'emailjs', 'vercel'],
+    detailsPics: {
+      web: [
+        '/assets/preview/dtnr/dtnr-prev-2.webp',
+        '/assets/preview/dtnr/dtnr-prev-3.webp',
+        '/assets/preview/dtnr/dtnr-prev-4.webp',
+        '/assets/preview/dtnr/dtnr-prev-5.webp',
+        '/assets/preview/dtnr/dtnr-prev-6.webp',
+        '/assets/preview/dtnr/lighthouse.png',
+      ],
+      mobile: ['/assets/preview/dtnr/dtnr-prev-0.webp', '/assets/preview/dtnr/dtnr-prev-1.webp'],
     },
   },
   {

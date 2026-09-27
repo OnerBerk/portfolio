@@ -7,6 +7,7 @@ import { animate, motion, useMotionValue, useReducedMotion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react';
 import TimelineDetail from './timeline-detail';
 import TimelineGlow from './timeline-glow';
+import TimelineHint from './timeline-hint';
 import {
   detailForYear,
   FIRST_EVENT_YEAR,
@@ -63,6 +64,10 @@ const Timeline = () => {
     setActiveYear(year);
     setShowHighlight(true);
     setRevealedStep(detailForYear(year));
+  };
+
+  const revealIntroDetail = () => {
+    setRevealedStep((prev) => prev ?? detailForYear(DEFAULT_YEAR));
   };
 
   const goToYear = (year: number) => {
@@ -240,6 +245,8 @@ const Timeline = () => {
         </button>
         <span className={styles.corporateLabel}>Ön-air corp</span>
       </div>
+
+      <TimelineHint onDone={revealIntroDetail} />
 
       {revealedStep ? (
         <TimelineDetail key={revealedStep.dateLabel ?? revealedStep.year} step={revealedStep} />
